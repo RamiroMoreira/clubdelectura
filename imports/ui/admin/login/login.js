@@ -30,7 +30,7 @@ Template.Login.events({
     error.set(false);
     reactivePassword.set(e.target.value);
   },
-  'keydown #password': function(e, ctx){
+  'keyup #password': function(e, ctx){
     if(e.keyCode === 13){
       Meteor.loginWithPassword(reactiveEmail.get(), reactivePassword.get(), function(err, res){
         if(!err){
