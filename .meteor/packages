@@ -24,3 +24,5 @@ accounts-ui
 accounts-password
 iron:router
 useraccounts:iron-routing
+twbs:bootstrap
+fortawesome:fontawesome
