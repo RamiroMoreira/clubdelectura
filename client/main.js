@@ -1,2 +1,2 @@
 // import '/imports/ui/body.js';
-import 'routes.js'
+import '/client/routes.js'

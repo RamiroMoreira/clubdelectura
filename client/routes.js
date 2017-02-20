@@ -1,6 +1,6 @@
 import '/imports/ui/admin/adminHome.html';
 import '/imports/ui/users/home.html';
-import '/imports/ui/admin/login/login.html';
+import '/imports/ui/admin/login/login.js';
 
 var OnBeforeActions = {
   loginRequired: function() {
