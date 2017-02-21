@@ -70,6 +70,7 @@ observe-sequence@1.0.14
 ordered-dict@1.0.9
 peppelg:bootstrap-3-modal@1.0.4
 promise@0.8.8
+rajit:bootstrap3-datepicker@1.6.4
 random@1.0.10
 rate-limit@1.0.6
 reactive-dict@1.1.8
