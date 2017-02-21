@@ -18,7 +18,7 @@ var OnBeforeActions = {
 };
 
 Router.onBeforeAction(OnBeforeActions.loginRequired, {
-  only: ['admin']
+  only: ['admin', 'admin.actividades']
 });
 
 // Router.configure({
@@ -40,7 +40,7 @@ Router.route('/login', function () {
   this.render('Login');
 });
 
-Router.route('/admin/acontecimientos', function () {
+Router.route('/admin/actividades', function () {
   // this.render('AdminHome');
   this.layout('mainNav');
 
