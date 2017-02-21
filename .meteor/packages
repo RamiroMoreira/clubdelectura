@@ -26,3 +26,4 @@ iron:router
 useraccounts:iron-routing
 twbs:bootstrap
 fortawesome:fontawesome
+peppelg:bootstrap-3-modal
