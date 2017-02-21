@@ -1,0 +1,42 @@
+<template name="mainNav">
+    <nav class="navbar navbar-inverse " role="navigation">
+        <!--<div class="col-md-1">-->
+            <!--<img style="max-width:100%;max-height:100%" src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t31.0-8/10258303_10203562614763548_2985585671116712761_o.jpg?oh=110e64200e8d6b2d83ee1c1b0068f160&oe=592DF2BE">-->
+
+        <!--</div>-->
+        <!--<div class="col-md-11">-->
+            <div class="container">
+                <div class="navbar-header">
+                    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <!--</button>-->
+                    <!--<a class="navbar-brand" href="#">Club de lectura</a>-->
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+
+                            <a href="/admin/acontecimientos"><i class="fa fa-calendar fa margin-right-10" aria-hidden="true" ></i>Acontecimientos</a>
+                        </li>
+                        <li>
+                            <a href="/admin/review"><i class="fa fa-book fa margin-right-10" aria-hidden="true" ></i>Reseñas</a>
+                        </li>
+                        <li>
+                            <a href="/admin/quienesSomos"><i class="fa fa-info fa margin-right-10" aria-hidden="true" ></i>Quienes somos</a>
+                        </li>
+                        <li>
+                            <a href="/admin/aliados"><i class="fa fa-users fa margin-right-10" aria-hidden="true" ></i>Aliados</a>
+                        </li>
+                        <li>
+                            <a href="/admin/contacto"><i class="fa fa-envelope fa margin-right-10" aria-hidden="true" ></i>Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <!--</div>-->
+
+    </nav>
+    <div class="container">
+        {{> yield }}
+    </div>
+</template>
