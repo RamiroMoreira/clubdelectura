@@ -8,15 +8,21 @@ Meteor.methods({
   'actividades.insert'(actividad){
     check(actividad.nombre, String);
     check(actividad.inicio, Date);
-
+    var user;
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
+    }
+    else{
+      user = Meteor.users.findOne(this.userId);
+
     }
     Actividades.insert({
       nombre: actividad.nombre,
       inicio: actividad.inicio,
       fin: actividad.fin,
       texto: actividad.texto,
+      dateCreated: new Date(),
+      createdBy: user.username
     });
   },
   'actividades.remove'(actividadId){
