@@ -3,6 +3,7 @@ import '/imports/ui/users/home.html';
 import '/imports/ui/admin/login/login.js';
 import '/imports/ui/admin/navbar.js'
 import '/imports/ui/admin/actividades/actividades.js';
+
 var OnBeforeActions = {
   loginRequired: function() {
     if (!Meteor.userId() && !Meteor.loggingIn()) {

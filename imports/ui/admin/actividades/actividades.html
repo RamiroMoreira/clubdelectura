@@ -1,5 +1,5 @@
 <template name="actividades">
-    <div id="wrapper">
+    <div id="wrapper" class="no-padding">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -13,11 +13,66 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
+        <div id="page-content-wrapper" class="no-padding">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        Lista de actividades
+                    <!--<ul>-->
+                        <!--{{#each Actividades}}-->
+
+                                <!--<li>{{nombre}}</li>-->
+
+                        <!--{{/each}}-->
+                    <!--</ul>-->
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <!--<div class="pull-right">-->
+                                    <!--<div class="btn-group">-->
+                                        <!--<button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>-->
+                                        <!--<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>-->
+                                        <!--<button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>-->
+                                        <!--<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="table-container">
+                                    <table class="table table-filter  table-striped ">
+                                        <tbody>
+                                        {{#each Actividades}}
+                                        <tr data-status="pagado">
+                                            <td>
+                                                <div class="ckbox">
+                                                    <input type="checkbox" id="checkbox1">
+                                                    <label for="checkbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!--<a href="javascript:;" class="star">-->
+                                                    <!--<i class="glyphicon glyphicon-star"></i>-->
+                                                <!--</a>-->
+                                            </td>
+                                            <td>
+                                                <div class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <h2><i class="fa fa-calendar" style="color:darkgreen"></i></h2>
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <span class="media-meta pull-right">{{getDate inicio}}{{#if fin}} <strong>To:</strong> {{getDate fin}} {{/if}}</span>
+                                                        <h4 class="title">
+                                                            <strong>{{nombre}}</strong>
+                                                            <!--<span class="pull-right pagado">(Pagado)</span>-->
+                                                        </h4>
+                                                        <p class="summary">{{texto}}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

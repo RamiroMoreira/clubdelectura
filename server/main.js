@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import '../imports/api/reunions/reunions.js';
+import '/imports/api/actividades/actividades.js'
+
 
 Meteor.startup(() => {
  if(!Meteor.users.findOne()){

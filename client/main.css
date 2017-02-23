@@ -148,3 +148,7 @@ body {
     cursor: pointer;
 
 }
+
+.no-padding {
+   padding:0px !important ;
+}
