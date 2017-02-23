@@ -152,3 +152,7 @@ body {
 .no-padding {
    padding:0px !important ;
 }
+
+.margin-left-15 {
+    margin-left:15px;
+}

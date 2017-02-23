@@ -26,7 +26,7 @@ Meteor.methods({
     });
   },
   'actividades.remove'(actividadId){
-     check(actividadId);
+     check(actividadId, String);
      Actividades.remove(actividadId);
   }
 })

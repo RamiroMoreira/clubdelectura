@@ -59,8 +59,16 @@
                                                         <span class="media-meta pull-right">{{getDate inicio}}{{#if fin}} <strong>To:</strong> {{getDate fin}} {{/if}}</span>
                                                         <h4 class="title">
                                                             <strong>{{nombre}}</strong>
-                                                            <!--<span class="pull-right pagado">(Pagado)</span>-->
+
                                                         </h4>
+                                                        <div class="btn-group btn-group-sm margin-left-15 pull-right">
+                                                            <button class="btn btn-default btn-remove">
+                                                                <i class="fa fa-trash fa-fw"></i>
+                                                            </button>
+                                                            <button class="btn btn-default" id="add-note">
+                                                                <i class="fa fa-pencil fa-fw"></i>
+                                                            </button>
+                                                        </div>
                                                         <p class="summary">{{texto}}</p>
                                                     </div>
                                                 </div>
