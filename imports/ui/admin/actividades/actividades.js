@@ -19,6 +19,10 @@ Template.actividades.events({
        Meteor.call('actividades.remove', id);
     }});
 
+  },
+  'click #edit-actividad': function(){
+    var id = this._id;
+    Modal.show("addActivityModal",this);
   }
 })
 

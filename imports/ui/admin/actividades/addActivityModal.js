@@ -5,11 +5,35 @@ var nombreActividad = new ReactiveVar("");
 var fechaInicio = new ReactiveVar("");
 var fechaFin = new ReactiveVar("");
 var texto = new ReactiveVar("");
+var actividadId = new ReactiveVar("")
+
+Template.addActivityModal.created = function(){
+     if(this.data && this.data._id){
+       actividadId.set(this.data._id);
+       fechaInicio.set(this.data.inicio);
+       fechaFin.set(this.data.fin);
+       texto.set(this.data.texto);
+       nombreActividad.set(this.data.nombre)
+     }
+     else{
+       actividadId.set("");
+       fechaInicio.set("");
+       fechaFin.set("");
+       texto.set("")
+       nombreActividad.set("");
+     }
+
+}
+
 
 Template.addActivityModal.rendered=function() {
   this.$('#datetimepickerFin').datetimepicker();
   this.$('#datetimepickerInicio').datetimepicker();
 
+}
+
+Template.addActivityModal.helpers=function(){
+  
 }
 
 Template.addActivityModal.events({
@@ -40,6 +64,10 @@ Template.addActivityModal.events({
       nuevaDate.setHours(hour);
       fechaFin.set(nuevaDate);
     }
+  },
+  'dropped #dropzone': function(e) {
+    console.log('dropped a file');
+    //http://experimentsinmeteor.com/photo-blog-part-1/
   },
   'change #textoActividad': function(e){
     texto.set(e.target.value);

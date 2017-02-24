@@ -1,5 +1,5 @@
 import '/imports/ui/admin/adminHome.html';
-import '/imports/ui/users/home.html';
+import '/imports/ui/users/home.js';
 import '/imports/ui/admin/login/login.js';
 import '/imports/ui/admin/navbar.js'
 import '/imports/ui/admin/actividades/actividades.js';
