@@ -25,6 +25,24 @@ Meteor.methods({
       createdBy: user.username
     });
   },
+  'actividades.update'(actividad){
+    check(actividad.nombre, String);
+    // check(actividad.inicio, Date);
+    var user;
+    if (! this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+    else{
+      user = Meteor.users.findOne(this.userId);
+
+    }
+    Actividades.update({_id: actividad._id},{
+      nombre: actividad.nombre,
+      inicio: actividad.inicio,
+      fin: actividad.fin,
+      texto: actividad.texto
+    });
+  },
   'actividades.remove'(actividadId){
      check(actividadId, String);
      Actividades.remove(actividadId);

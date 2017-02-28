@@ -27,14 +27,33 @@ Template.addActivityModal.created = function(){
 
 
 Template.addActivityModal.rendered=function() {
-  this.$('#datetimepickerFin').datetimepicker();
-  this.$('#datetimepickerInicio').datetimepicker();
+  if(fechaInicio.get()){
+    this.$('#datetimepickerInicio').datetimepicker({defaultDate:fechaInicio.get(), format:"DD/MM/YYYY h:mm A"});
+
+  }
+  else{
+    this.$('#datetimepickerInicio').datetimepicker({format:"DD/MM/YYYY h:mm A"});
+  }
+
+  if(fechaInicio.get()){
+    this.$('#datetimepickerFin').datetimepicker({defaultDate:fechaFin.get(), format:"DD/MM/YYYY h:mm A"});
+
+  }
+  else{
+    this.$('#datetimepickerFin').datetimepicker({format:"DD/MM/YYYY h:mm A"});
+
+  }
 
 }
 
-Template.addActivityModal.helpers=function(){
-  
-}
+Template.addActivityModal.helpers({
+  'nombreActividad': function(){
+     return nombreActividad.get();
+  },
+  'textoActividad' : function(){
+    return texto.get();
+  }
+})
 
 Template.addActivityModal.events({
    //https://github.com/CollectionFS/Meteor-CollectionFS
@@ -75,30 +94,22 @@ Template.addActivityModal.events({
   'click .save-btn': function(e){
     var stringFechaInicio = $('#datetimepickerInicio')[0].value;
     if(stringFechaInicio) {
-      var arrayDate = stringFechaInicio.split(" ");
-      var nuevaDate = new Date(stringFechaInicio);
-      var hour = Number(arrayDate[1].split(":")[0]);
-      var minutes = Number(arrayDate[1].split(":")[1])
-      if (arrayDate[2] === "PM") {
-        hour = hour + 12;
-      }
-      nuevaDate.setHours(hour);
-      nuevaDate.setMinutes(minutes);
-      fechaInicio.set(nuevaDate);
+      // var arrayDate = stringFechaInicio.split(" ");
+      // var nuevaDate = new Date(stringFechaInicio);
+      // var hour = Number(arrayDate[1].split(":")[0]);
+      // var minutes = Number(arrayDate[1].split(":")[1])
+      // if (arrayDate[2] === "PM") {
+      //   hour = hour + 12;
+      // }
+      // nuevaDate.setHours(hour);
+      // nuevaDate.setMinutes(minutes);
+      // fechaInicio.set(nuevaDate);
+      fechaInicio.set(moment($('#datetimepickerInicio')[0].value, "DD/MM/YYYY h:mm A").toDate());
     }
 
 
     if($('#datetimepickerFin')[0].value) {
-      var arrayDateFin = $('#datetimepickerFin')[0].value.split(" ");
-      var nuevaDateFin = new Date($('#datetimepickerFin')[0].value);
-      var hourFin = Number(arrayDateFin[1].split(":")[0]);
-      var minutesFin = Number(arrayDateFin[1].split(":")[1])
-      if (arrayDateFin[2] === "PM") {
-        hourFin = hourFin + 12;
-      }
-      nuevaDateFin.setHours(hourFin);
-      nuevaDateFin.setMinutes(minutesFin);
-      fechaFin.set(nuevaDateFin);
+      fechaFin.set(moment($('#datetimepickerFin')[0].value, "DD/MM/YYYY h:mm A").toDate());
     }
 
     var nuevaActividad = {}
@@ -111,16 +122,24 @@ Template.addActivityModal.events({
     if(fechaFin.get()){
       nuevaActividad.fin = fechaFin.get();
     }
-    if(fechaFin.get()){
-      nuevaActividad.fin = fechaFin.get();
-    }
+
     if(texto.get()){
       nuevaActividad.texto = texto.get();
     }
+    if(actividadId.get()){
+      nuevaActividad._id = actividadId.get();
+    }
+    if(actividadId.get()){
+      Meteor.call('actividades.update', nuevaActividad, function(err, res){
+        Modal.hide();
+      })
+    }
+    else{
+      Meteor.call('actividades.insert', nuevaActividad, function(err, res){
+        Modal.hide();
+      })  
+    }
     
-    Meteor.call('actividades.insert', nuevaActividad, function(err, res){
-      Modal.hide();
-    })
     
   }
 })
