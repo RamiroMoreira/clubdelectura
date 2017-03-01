@@ -22,7 +22,6 @@ Template.addActivityModal.created = function(){
        texto.set("")
        nombreActividad.set("");
      }
-
 }
 
 
@@ -94,16 +93,6 @@ Template.addActivityModal.events({
   'click .save-btn': function(e){
     var stringFechaInicio = $('#datetimepickerInicio')[0].value;
     if(stringFechaInicio) {
-      // var arrayDate = stringFechaInicio.split(" ");
-      // var nuevaDate = new Date(stringFechaInicio);
-      // var hour = Number(arrayDate[1].split(":")[0]);
-      // var minutes = Number(arrayDate[1].split(":")[1])
-      // if (arrayDate[2] === "PM") {
-      //   hour = hour + 12;
-      // }
-      // nuevaDate.setHours(hour);
-      // nuevaDate.setMinutes(minutes);
-      // fechaInicio.set(nuevaDate);
       fechaInicio.set(moment($('#datetimepickerInicio')[0].value, "DD/MM/YYYY h:mm A").toDate());
     }
 

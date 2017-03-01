@@ -3,6 +3,7 @@ import '/imports/ui/users/home.js';
 import '/imports/ui/admin/login/login.js';
 import '/imports/ui/admin/navbar.js'
 import '/imports/ui/admin/actividades/actividades.js';
+import '/imports/ui/admin/quienesSomos/quienesSomosAdmin.js';
 
 var OnBeforeActions = {
   loginRequired: function() {
@@ -32,7 +33,7 @@ Router.route('/', function () {
 });
 //
 Router.route('/admin', function () {
-  this.render('AdminHome');
+  this.redirect("/admin/actividades")
   this.layout('mainNav');
 
 });
@@ -54,7 +55,7 @@ Router.route('/admin/review', function () {
 });
 
 Router.route('/admin/quienesSomos', function () {
-  // this.render('AdminHome');
+  this.render('quienesSomosAdmin');
   this.layout('mainNav');
 
 });

@@ -3,6 +3,8 @@ import { Template } from 'meteor/templating';
 import {Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
 
+
+
 Template.Home.onRendered(function(){
   skrollr.init({
     easing: {

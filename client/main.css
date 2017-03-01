@@ -157,4 +157,11 @@ body {
     margin-left:15px;
 }
 
+ul.notifications {
+    position: fixed;
+}
+
+li.notification {
+     background-color: #449d44;
+}
 /*for test */
