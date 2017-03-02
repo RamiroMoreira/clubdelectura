@@ -4,6 +4,7 @@ import { Textos} from '/imports/api/textos/textos.js';
 import { Personas} from '/imports/api/personas/personas.js';
 
 var presentacion;
+var personsToUpdate = [];
 
 Template.quienesSomosAdmin.created = function(){
   presentacion = new ReactiveVar(false);
@@ -33,12 +34,55 @@ Template.quienesSomosAdmin.events({
     if(_.isString(presentacion.get()))
     Meteor.call('textos.upsert', presentacion.get(), "presentacion", function(err, res){
       if(!err){
-        Notifications.success('', 'Sus cambios han sido guardados');
+        Notifications.success('', 'Presentacion guardada con exito');
       }
+    })
+    _.each(personsToUpdate, function(person){
+      Meteor.call("personas.update", person, function(err, res){
+        if(!err){
+          var display = person.nombre || "Persona";
+          Notifications.success('', display + ' guardada con exito');
+        }
+      });
     })
   },
   "click .addPersona": function(){
     Meteor.call('personas.insert')
+  },
+  'click .btn-remove-person': function(){
+    var id = this._id;
+    var displayPersona = this.nombre || "esta persona";
+    Modal.show("confirmModal",{title:"Eliminar actividad", texto:"Estas seguro que deseas eliminar a"+displayPersona+"?", actionIfConfirm: function(){
+      Meteor.call('personas.remove', id);
+    }});
+  },
+  'change .persona-Nombre': function(e, ctx){
+    var updated = false;
+    _.each(personsToUpdate,function(person){
+       if(person._id === this._id){
+         person.nombre = e.target.value;
+         updated = true;
+       }
+    })
+    if(!updated){
+      var toUpdate = this;
+      toUpdate.nombre = e.target.value;
+      personsToUpdate.push(toUpdate);
+    }
+  },
+  'change .descripcion-persona': function(e, ctx){
+    var updated = false;
+    _.each(personsToUpdate,function(person){
+      if(person._id === this._id){
+        person.texto = e.target.value;
+        updated = true;
+      }
+    })
+    if(!updated){
+      var toUpdate = this;
+      toUpdate.texto = e.target.value;
+      personsToUpdate.push(toUpdate);
+    }
   }
 })
 
