@@ -164,4 +164,25 @@ ul.notifications {
 li.notification {
      background-color: #449d44;
 }
+
+.top-menu {
+    position:fixed;
+    width:100%;
+    z-index:1;
+    top:0px
+}
+
+#sidebar-wrapper {
+    top:50px
+}
+
+#page-content-wrapper{
+    /*left:250px;*/
+    position:relative;
+    padding-left:250px;
+}
+
+.container{
+    padding-left:0px;
+}
 /*for test */
