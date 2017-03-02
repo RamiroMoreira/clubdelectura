@@ -72,5 +72,9 @@ Router.route('/admin/contacto', function () {
 
 });
 
+Router.route('/libraryOrganizer', function(){
+  
+})
+
 // Router.setTemplateNameConverter(_.identity);
 // AccountsTemplates.configureRoute('signIn');

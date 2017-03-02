@@ -33,3 +33,4 @@ cfs:gridfs
 cfs:s3
 tsega:skrollr
 gfk:notifications
+bdunnette:leaflet-draw
