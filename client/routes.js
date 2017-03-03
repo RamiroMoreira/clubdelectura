@@ -4,6 +4,7 @@ import '/imports/ui/admin/login/login.js';
 import '/imports/ui/admin/navbar.js'
 import '/imports/ui/admin/actividades/actividades.js';
 import '/imports/ui/admin/quienesSomos/quienesSomosAdmin.js';
+import '/imports/ui/libraryOrganizer/libraryOrganizer.js';
 
 var OnBeforeActions = {
   loginRequired: function() {
@@ -73,7 +74,7 @@ Router.route('/admin/contacto', function () {
 });
 
 Router.route('/libraryOrganizer', function(){
-  
+  this.render('libraryOrganizer')
 })
 
 // Router.setTemplateNameConverter(_.identity);
