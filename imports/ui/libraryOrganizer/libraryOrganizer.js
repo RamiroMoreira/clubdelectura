@@ -6,12 +6,16 @@ Template.map.created = function(){
   Meteor.subscribe('markers')
 }
 
+
+
 Template.map.rendered = function() {
   L.Icon.Default.imagePath = 'packages/bevanhunt_leaflet/images';
 
   var map = L.map('map', {
     doubleClickZoom: false
   }).setView([45, - 93.2], 12);
+
+  debugger;
 
   L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
 
@@ -20,8 +24,10 @@ Template.map.rendered = function() {
   map.addControl(new L.Control.Draw({
     draw: {
       polyline: false,
-      polygon: false,
-      rectangle: true
+      polygon: true,
+      rectangle: true,
+      marker: false,
+      circle: false
     },
     edit: {
       featureGroup: drawnItems,
@@ -40,15 +46,11 @@ Template.map.rendered = function() {
       layerType: event.layerType
     };
     switch (event.layerType) {
-      case 'marker':
-        feature.latlng = event.layer._latlng;
-        break;
-      case 'circle':
-        feature.latlng = event.layer._latlng;
-        feature.radius = event.layer._mRadius;
-        break;
       case 'rectangle':
-        debugger;
+        feature.latlngs = event.layer._latlngs;
+        // feature.radius = event.layer._mRadius;
+        break;
+      case 'polygon':
         feature.latlngs = event.layer._latlngs;
         // feature.radius = event.layer._mRadius;
         break;
@@ -58,35 +60,34 @@ Template.map.rendered = function() {
 
   });
 
+
+
   map.on('draw:deleted', function(event) {
     console.log(event);
     console.log(event.layers._layers);
     for (var l in event.layers._layers) {
       console.log(l);
-      Markers.remove({_id: l});
+      Meteor.call('markers.remove', l)
     }
   });
+
+
+
 
   var query = Markers.find();
   query.observe({
     added: function(document) {
       console.log(document);
       switch (document.layerType) {
-        case 'marker':
-          var marker = L.marker(document.latlng);
-          marker._leaflet_id = document._id;
-          marker.addTo(drawnItems);
-          break;
-        case 'circle':
-          var circle = L.circle(document.latlng, document.radius);
-          circle._leaflet_id = document._id;
-          circle.addTo(drawnItems);
-          break;
-        case 'rectangle':
-          debugger;
+       case 'rectangle':
           var rectangle = L.rectangle(document.latlngs);
           rectangle._leaflet_id = document._id;
           rectangle.addTo(drawnItems);
+          break;
+        case 'polygon':
+          var polygon = L.polygon(document.latlngs);
+          polygon._leaflet_id = document._id;
+          polygon.addTo(drawnItems);
           break;
       }
     },
@@ -117,3 +118,9 @@ $(function() {
     });
   });
 });
+
+Template.libraryOrganizer.events({
+  'click .leaflet-clickable': function(){
+    debugger;
+  }
+})

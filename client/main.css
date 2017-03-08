@@ -186,3 +186,15 @@ li.notification {
     padding-left:0px;
 }
 /*for test */
+.facebookLink{
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 49px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:#357c8d;
+    position:fixed;
+    /*height:100%;*/
+    /*margin-right:40px;*/
+}

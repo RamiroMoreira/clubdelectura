@@ -22,6 +22,10 @@ if (Meteor.isServer) {
       //
       // }
       Markers.insert(marker);
+    },
+    'markers.remove'(markerId){
+      check(markerId, String);
+      Markers.remove({_id:markerId});
     }
   })
   Meteor.publish('markers', function markersPublication() {

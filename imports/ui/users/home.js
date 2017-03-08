@@ -1,9 +1,11 @@
 import { Template } from 'meteor/templating';
 // import './body.html';
-import {Actividades} from '/imports/api/actividades/actividades.js';
+import { Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
 
-
+Template.Home.onCreated(function(){
+  Meteor.subscribe('actividades');
+})
 
 Template.Home.onRendered(function(){
   skrollr.init({
@@ -15,4 +17,10 @@ Template.Home.onRendered(function(){
       }
     }
   });
+})
+
+Template.Home.helpers({
+  'actividades': function(){
+     return Actividades.find();
+  }
 })
