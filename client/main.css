@@ -188,13 +188,78 @@ li.notification {
 /*for test */
 .facebookLink{
     font-family: Tahoma, Verdana, Segoe, sans-serif;
-    font-size: 49px;
+    font-size: 110px;
     font-style: normal;
     font-variant: normal;
     font-weight: bold;
     line-height: 53.9px;
-    color:#357c8d;
+    color:white;
     position:fixed;
     /*height:100%;*/
     /*margin-right:40px;*/
+}
+
+
+/*///////////////////////////////////////////////*/
+
+.rotation-slow {
+   -webkit-animation: myOrbit 15s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit 15s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit 15s linear infinite; /* Opera 12+ */
+    animation: myOrbit 15s linear infinite; /* Chrome, Firefox 16+,*/
+}
+
+.rotation-very-slow {
+   -webkit-animation: myOrbit-small 10s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit-small 10s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit-small 10s linear infinite; /* Opera 12+ */
+    animation: myOrbit-small 10s linear infinite;
+}
+
+
+/*
+ * Set up the keyframes to actually describe the begining and end states of
+ * the animation.  The browser will interpolate all the frames between these
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+/**/
+
+@-webkit-keyframes myOrbit-small {
+    from { -webkit-transform: rotate(0deg) translateX(15px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit-small {
+    from { -moz-transform: rotate(0deg) translateX(15px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit-small {
+    from { -o-transform: rotate(0deg) translateX(15px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+}
+
+@keyframes myOrbit-small {
+    from { transform: rotate(0deg) translateX(15px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(15px) rotate(-360deg); }
 }
