@@ -199,6 +199,43 @@ li.notification {
     /*margin-right:40px;*/
 }
 
+.bottom-menu{
+    position:fixed;
+    bottom:0px;
+    height:40px;
+    width:100%;
+    background-color:#171f2a;
+    padding:0px;
+    padding-top:10px;
+}
+
+.horizontal-menu-item{
+    cursor:pointer;
+    display: inline;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    color:lightgray;
+    height:100%;
+    margin-left:2%;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:10px;
+    padding-bottom:30px;
+
+}
+
+.horizontal-menu-item:hover{
+    background-color:black;
+    color:white;
+}
+
+@media only screen and (max-device-width: 720px) {
+    .horizontal-menu-item {
+        margin-left:0%;
+        margin-right:0%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 
 /*///////////////////////////////////////////////*/
 
