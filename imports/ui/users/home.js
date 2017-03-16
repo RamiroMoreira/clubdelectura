@@ -2,6 +2,8 @@ import { Template } from 'meteor/templating';
 // import './body.html';
 import { Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
+import './actividadItem.js'
+
 
 Template.Home.onCreated(function(){
   Meteor.subscribe('actividades');
