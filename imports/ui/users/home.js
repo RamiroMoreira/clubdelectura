@@ -10,7 +10,7 @@ Template.Home.onCreated(function(){
 })
 
 Template.Home.onRendered(function(){
-  skrollr.init({
+  SK = skrollr.init({
     easing: {
       //This easing will sure drive you crazy
       wtf: Math.random,
@@ -23,6 +23,11 @@ Template.Home.onRendered(function(){
 
 Template.Home.helpers({
   'actividades': function(){
-     return Actividades.find();
+     var iterator = -1;
+     var extendedActivities = _.map(Actividades.find().fetch(), function(act){
+       iterator++;
+       return _.extend(act, {position:iterator})
+     })
+     return extendedActivities;
   }
 })
