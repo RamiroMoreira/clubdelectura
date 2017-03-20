@@ -6,8 +6,8 @@ export const Markers = new Mongo.Collection('markers');
 if (Meteor.isServer) {
   Meteor.startup(function() {
     // code to run on server at startup
-    Queue.setInterval('deleteAllMarkers','Markers.remove({})', 86400000); /* once a day */
-    Queue.run();
+    // Queue.setInterval('deleteAllMarkers','Markers.remove({})', 86400000); /* once a day */
+    // Queue.run();
   });
   Meteor.methods({
     'markers.insert'(marker){
