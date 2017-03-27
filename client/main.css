@@ -4,6 +4,7 @@
 
 body {
     overflow-x: hidden;
+    height:auto !important ;
 }
 
 /* Toggle Styles */
@@ -313,4 +314,39 @@ li.notification {
 @keyframes myOrbit-small {
     from { transform: rotate(0deg) translateX(15px) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+}
+
+/**/
+
+.informacion-actividad {
+    margin-top:40vh;
+    margin-left:15vh;
+    width:60vh;
+}
+
+.actividad-nombre{
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 49px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:white;
+    position:fixed;
+    /*height:100%;*/
+    /*margin-right:40px;*/
+}
+
+.actividad-descripcion{
+    margin-top:50px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:white;
+    position:fixed;
+    /*height:100%;*/
+    /*margin-right:40px;*/
 }
