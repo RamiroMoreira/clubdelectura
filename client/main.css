@@ -350,3 +350,18 @@ li.notification {
     /*height:100%;*/
     /*margin-right:40px;*/
 }
+
+#txtlzr
+{
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:white;
+    font-size: 40px;
+    width: 70vh;
+    height: 40vh;
+    margin-left: 100px;
+    margin-top: 50px;
+}

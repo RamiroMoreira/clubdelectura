@@ -1,14 +1,25 @@
 <template name="actividadItem">
-    <div class="event-timeLine" style="position:fixed;width:100%;height:100%;padding:0;">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="textualizer.js"></script>
+
+    <div id="itemEvent" class="event-timeLine" style="position:fixed;width:100%;height:100%;padding:0;">
         <div class="rotation-very-slow" style="background-position:center top;background-image:url('letras_lineadetiempo.png'); background-repeat: no-repeat;position:fixed;width:100%;min-height:100%;margin-top:0%;"></div>
         <div class="rotation-slow" style="background-position:center top;background-image:url('letras_lineadetiempo2.png');background-repeat: no-repeat;position:fixed;width:100%;min-height:100%;margin-top:0%"></div>
         <div class="informacion-actividad">
            <span class="actividad-nombre">
-              {{nombre}}
+              <!--{{nombre}}-->
            </span>
-           <p class="actividad-descripcion">
-              {{texto}}
-           </p>
+            <div id="container">
+
+            <div id="txtlzr">
+               <p class="actividad-descripcion">
+                   {{getRandomText}}
+               </p>
+               <p class="actividad-descripcion">
+                  {{nombre}}
+               </p>
+           </div>
+            </div>
         </div>
     </div>
 </template>
