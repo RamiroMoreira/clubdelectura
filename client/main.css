@@ -318,40 +318,11 @@ li.notification {
 
 /**/
 
-.informacion-actividad {
-    margin-top:40vh;
-    margin-left:15vh;
-    width:60vh;
-}
 
-.actividad-nombre{
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
-    font-size: 49px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: bold;
-    line-height: 53.9px;
-    color:white;
-    position:fixed;
-    /*height:100%;*/
-    /*margin-right:40px;*/
-}
 
-.actividad-descripcion{
-    margin-top:50px;
-    font-family: Tahoma, Verdana, Segoe, sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: bold;
-    line-height: 53.9px;
-    color:white;
-    position:fixed;
-    /*height:100%;*/
-    /*margin-right:40px;*/
-}
 
-#txtlzr
+
+.txtlzr-mobile
 {
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     font-style: normal;
@@ -360,8 +331,214 @@ li.notification {
     line-height: 53.9px;
     color:white;
     font-size: 40px;
-    width: 70vh;
-    height: 40vh;
+    width:60vw;
+    height:60vh;
     margin-left: 100px;
     margin-top: 50px;
 }
+
+.txtlzr-descripcion-mobile
+{
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:white;
+    font-size: 30px;
+    width:60vw;
+    height:60vh;
+    margin-left: 100px;
+    margin-top: 100px;
+
+
+}
+
+@media only screen and (min-device-width: 768px)  {
+    .mobileOnly{
+        display:none !important;
+    }
+}
+
+@media only screen and (max-device-width:767px)  {
+    .desktopOnly{
+        display:none !important;
+    }
+}
+
+@media only screen and (min-device-width: 1000px)  {
+    .informacion-actividad{
+        margin-top:30vh;
+        width:420px;
+        height:60vh;
+        display:block;
+        position:relative;
+        float:left;
+        margin-left:30px;
+
+    }
+    .template-dibujo {
+        width:550px;
+        height:50vh;
+        margin-top:30vh;
+        position:relative;
+        display:block;
+        float:right;
+
+    }
+    .actividad-nombre{
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 49px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        position:fixed;
+        height:100%;
+        width:450px;
+
+        /*margin-right:40px;*/
+    }
+    .actividad-descripcion{
+        margin-top:50px;
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        position:fixed;
+        width:450px;
+    }
+    #txtlzr
+    {
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        font-size: 40px;
+        width:100%;
+        height:60vh;
+    }
+
+    #txtlzr-descripcion
+    {
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        font-size: 20px;
+        font-kerning: auto;
+        width:100%;
+        height:60vh;
+        margin-top:50px;
+
+    }
+}
+
+@media only screen and (max-device-width:767px)  {
+    .informacion-actividad{
+        display:none !important;
+    }
+}
+
+@media only screen and (max-device-width: 999px)  {
+    .informacion-actividad{
+        margin-top:30vh;
+        width:420px;
+        height:60vh;
+        display:block;
+        position:relative;
+        float:left;
+        margin-left:30px;
+
+    }
+    .template-dibujo {
+        width:550px;
+        height:50vh;
+        margin-top:30vh;
+        position:relative;
+        display:block;
+        float:right;
+
+    }
+    .actividad-nombre{
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 49px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        position:fixed;
+        height:100%;
+        width:450px;
+
+        /*margin-right:40px;*/
+    }
+    .actividad-descripcion{
+        margin-top:50px;
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        position:fixed;
+        width:450px;
+    }
+    #txtlzr
+    {
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        font-size: 30px;
+        width:100%;
+        height:60vh;
+    }
+
+    #txtlzr-descripcion
+    {
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: bold;
+        line-height: 53.9px;
+        color:white;
+        font-size: 10px;
+        font-kerning: auto;
+        width:100%;
+        height:60vh;
+        margin-top:50px;
+
+    }
+}
+
+
+/*.informacion-actividad {*/
+    /*margin-top:30vh;*/
+    /*margin-left:5vw;*/
+    /*width:60vw;*/
+    /*float:left;*/
+    /*height:60vh*/
+/*}*/
+
+/*.template-dibujo {*/
+    /*width:40vw;*/
+    /*height:50vh;*/
+    /*margin-right:5vw;*/
+    /*margin-top:30vh;*/
+    /*float:right;*/
+    /*position:fixed;*/
+    /*display:inline;*/
+/*}*/

@@ -11,7 +11,9 @@
 <!---->
 <template name="Home">
     <!--<a href="https://imgflip.com/i/1k24g3"><img src="https://i.imgflip.com/1k24g3.jpg" title="made at imgflip.com"/></a>-->
-    <div  style="height:1000px; margin-bottom:-5px; width:100%;background-color: #2d3e54">
+
+    <div   style="height:1000px; margin-bottom:-5px; width:100%;background-color: #2d3e54;z-index:-1 !important">
+
         <!--<div data-0="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(214, 30%, 25%), hsl(214, 30%, 25%));"-->
              <!--data-250 ="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(214, 0%, 25%), hsl(214, 30%, 25%));"-->
              <!--data-251 ="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(0, 0%, 25%), hsl(214, 30%, 25%));"-->
@@ -89,6 +91,8 @@
                 <span data-1500="margin-top:-1000px" data-2100="margin-top:15px" data-2200="margin-top:0px" class="facebookLink" style="right:580px">F</span>
                 <a data-1000="margin-top:-1000px;display:none" data-1300="margin-top:-10px;display:none" data-2200="margin-top:-97px;display:block" class="facebookLink-click" href="https://www.facebook.com/groups/clubdelectura.uy" target="_blank" style="cursor: pointer;position: fixed; width: 630px; height: 169px;right: 35px; margin-top:-97px; display: block;"></a>
             </h1>
+            <br>
+
         </div>
         <!--<div ata-0="transform: translate3d(0px, 0px, 0px);top:95%" data-1000="transform: translate3d(0px, -150px, 0px);top:100%" data-1001="display:block;bottom:100%" data-1500="top:100%" data-2000="top:80%" data-2500="top:50%" style="text-align:right;background-color:green;position: fixed;background-position: bottom right;"><h3><span >FACEBOOK</span></h3>-->
         <!--</div>-->
@@ -128,29 +132,18 @@
         </ul>
     </div>
 
-    <div id="body" style="position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
 
 
-        <div style="width:100%;margin-top:4500px;background-color:#2d3e54">
+
+    <div id="body" style="margin-top:-5px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
+        <div data-2900="top:100%" data-3400="top:0" class="rotation-very-slow" style="background-position:center top;background-image:url('letras_lineadetiempo.png'); background-repeat: no-repeat;position:fixed;width:100%;min-height:100vh;margin-top:0%"></div>
+        <div data-2900="top:100%" data-3400="top:0" class="rotation-slow" style="background-position:center top;background-image:url('letras_lineadetiempo2.png');background-repeat: no-repeat;position:fixed;width:100%;min-height:100vh;margin-top:0%;top:0px;"></div>
+
+        <div style="z-index:6;width:100%;margin-top:4500px;background-color:#2d3e54">
+
             {{#each actividades}}
                 {{>actividadItem}}
             {{/each}}
-                <!--<div data-0="display:none;top:200%" data-3000="display:block" data-3500="display:block;top:10%" data-4000="top:10%" data-4500="display:none;top:-100%" style="position:fixed;width:80%;min-height:80%;background-color:green;margin-left:10%;margin-right:10%;">-->
-                    <!--<span class="uniteALink">asdasd</span>-->
-                <!--</div>-->
-
-                <!--<div data-0="display:none;top:200%" data-4000="display:block" data-4500="display:block;top:10%" data-5000="top:10%" data-5500="display:none;top:-100%" style="position:fixed;width:80%;min-height:80%;background-color:green;margin-left:10%;margin-right:10%;">-->
-                    <!--<span class="uniteALink">asdas2d</span>-->
-                <!--</div>-->
-
-                <!--<div data-0="display:none;top:200%" data-5000="display:block" data-5500="display:block;top:10%" data-6000="top:10%" data-6500="display:none;top:-100%" style="position:fixed;width:80%;min-height:80%;background-color:green;margin-left:10%;margin-right:10%;">-->
-                    <!--<span class="uniteALink">asdas2d</span>-->
-                <!--</div>-->
-
-                <!--<div style="min-height:800px;background-color:green;margin:100px;">-->
-                    <!--<span class="uniteALink">{{nombre}}</span>-->
-                <!--</div>-->
-
         </div>
 
 

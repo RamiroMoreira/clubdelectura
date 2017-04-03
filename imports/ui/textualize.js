@@ -26,11 +26,11 @@
 
 var Textualizer,
 
-    COMMON_CHARACTER_ARRANGE_DELAY = 1000,
-    REMAINING_CHARACTERS_DELAY = 500,
-    EFFECT_DURATION = 2000,
-    REMAINING_CHARACTERS_APPEARANCE_MAX_DELAY = 2000,
-    REMOVE_CHARACTERS_MAX_DELAY = 2000,
+    COMMON_CHARACTER_ARRANGE_DELAY = 1,
+    REMAINING_CHARACTERS_DELAY = 1,
+    EFFECT_DURATION = 1,
+    REMAINING_CHARACTERS_APPEARANCE_MAX_DELAY = 1,
+    REMOVE_CHARACTERS_MAX_DELAY = 1,
 
     EVENT_CHANGED = 'textualizer.changed';
 
@@ -279,12 +279,14 @@ Textualizer = function ($element, data, options) {
     }
 
     function showCharacters(snippet) {
-        var effects = $.fn.textualizer.effects,
+        if($.fn.textualizer) {
+            var effects = $.fn.textualizer.effects,
 
-            effect = options.effect === 'random' ? effects[Math.floor(Math.random() * (effects.length - 2)) + 1][1] : showCharEffect,
+                effect = options.effect === 'random' ? effects[Math.floor(Math.random() * (effects.length - 2)) + 1][1] : showCharEffect,
 
-            finalDfd = $.Deferred(),
-            animationDfdList = [];
+                finalDfd = $.Deferred(),
+                animationDfdList = [];
+        }
 
         // Iterate through all ch objects
         $.each(snippet.characterList, function (index, ch) {
@@ -309,13 +311,16 @@ Textualizer = function ($element, data, options) {
 
             }
         });
-
+        if(finalDfd) {
         // When all characters have finished moving to their position, resolve the final promise
         $.when.apply(null, animationDfdList).done(function () {
-            finalDfd.resolve();
+
+                finalDfd.resolve();
+
         });
 
         return finalDfd.promise();
+        }
     }
 
     function moveAndShowRemainingCharacters(characters, currentSnippet) {
@@ -338,6 +343,7 @@ Textualizer = function ($element, data, options) {
             // When all the characters have moved to their new position, show the remaining characters
             $.when.apply(null, rearrangeDfdList).done(function () {
                 window.setTimeout(function () {
+                    if(showCharacters(currentSnippet))
                     showCharacters(currentSnippet).done(function () {
                         finalDfd.resolve();
                     });
@@ -350,6 +356,7 @@ Textualizer = function ($element, data, options) {
 
     function rotater() {
         // If we've reached the last snippet
+        console.log("finished timeout")
         if (index === list.length - 1) {
 
             // Reset the position of every character in every snippet
@@ -407,7 +414,8 @@ Textualizer = function ($element, data, options) {
                 $element.trigger(EVENT_CHANGED, {
                     index: i
                 });
-                window.setTimeout(rotater, options.duration);
+                console.log("StartedTimeout")
+                window.setTimeout(rotater, 1);
 
         });
     }
@@ -505,7 +513,7 @@ $.fn.textualizer = function ( /*args*/ ) {
 
 $.fn.textualizer.defaults = {
     effect: 'random',
-    duration: 2000,
+    duration: 0,
     rearrangeDuration: 1000,
     centered: false,
     loop: true
