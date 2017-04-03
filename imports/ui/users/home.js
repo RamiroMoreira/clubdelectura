@@ -4,8 +4,11 @@ import { Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
 import './actividadItem.js'
 
-
+var satie = new ReactiveVar(false)
+var audio;
 Template.Home.onCreated(function(){
+    satie.set(false);
+    audio = false;
   Meteor.subscribe('actividades');
 })
 
@@ -29,5 +32,26 @@ Template.Home.helpers({
        return _.extend(act, {position:iterator})
      })
      return extendedActivities;
+  },
+  'satie': function(){
+      return satie.get() ? "satieFalse" :  "satie";
+  }
+})
+
+Template.Home.events({
+  'click .satie': function(){
+     if(!audio) {
+         audio = new Audio('satie.mp3');
+         audio.loop = true;
+     }
+     if(!satie.get()) {
+         audio.play();
+         satie.set(true);
+     }
+
+  },
+  'click .satieFalse': function(){
+      audio.pause();
+      satie.set(false)
   }
 })

@@ -200,6 +200,30 @@ li.notification {
     /*margin-right:40px;*/
 }
 
+.satie{
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 110px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:#357c8d;
+    position:fixed;
+    cursor:pointer;
+}
+
+.satieFalse{
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 110px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 53.9px;
+    color:white;
+    position:fixed;
+    cursor:pointer;
+}
+
 .uniteALink{
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     font-size: 70px;
@@ -530,10 +554,10 @@ li.notification {
 
 
 .up-and-fadeout {
-    -webkit-animation: upandfadeout 3s linear infinite; /* Chrome, Safari 5 */
-    -moz-animation: upandfadeout 3s linear infinite; /* Firefox 5-15 */
-    -o-animation: upandfadeout 3s linear infinite; /* Opera 12+ */
-    animation: upandfadeout 3s linear infinite;
+    -webkit-animation: upandfadeout 4s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: upandfadeout 4s linear infinite; /* Firefox 5-15 */
+    -o-animation: upandfadeout 4s linear infinite; /* Opera 12+ */
+    animation: upandfadeout 4s linear infinite;
 }
 
 
