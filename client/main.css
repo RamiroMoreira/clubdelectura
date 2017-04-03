@@ -269,6 +269,7 @@ li.notification {
 }
 
 
+
 /*
  * Set up the keyframes to actually describe the begining and end states of
  * the animation.  The browser will interpolate all the frames between these
@@ -525,20 +526,40 @@ li.notification {
 }
 
 
-/*.informacion-actividad {*/
-    /*margin-top:30vh;*/
-    /*margin-left:5vw;*/
-    /*width:60vw;*/
-    /*float:left;*/
-    /*height:60vh*/
-/*}*/
+.up-and-fadeout {
+    -webkit-animation: upandfadeout 3s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: upandfadeout 3s linear infinite; /* Firefox 5-15 */
+    -o-animation: upandfadeout 3s linear infinite; /* Opera 12+ */
+    animation: upandfadeout 3s linear infinite;
+}
 
-/*.template-dibujo {*/
-    /*width:40vw;*/
-    /*height:50vh;*/
-    /*margin-right:5vw;*/
-    /*margin-top:30vh;*/
-    /*float:right;*/
-    /*position:fixed;*/
-    /*display:inline;*/
-/*}*/
+
+
+/*
+ * Set up the keyframes to actually describe the begining and end states of
+ * the animation.  The browser will interpolate all the frames between these
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+@-webkit-keyframes upandfadeout {
+    0% { opacity: 0; bottom:0px }
+    50% { opacity: 1; bottom:30px }
+    100%   { opacity: 0; bottom:60px }
+}
+
+@-moz-keyframes upandfadeout {
+    0% { opacity: 0; bottom:0px }
+    50% { opacity: 1; bottom:30px }
+    100%   { opacity: 0; bottom:60px }
+}
+
+@-o-keyframes upandfadeout {
+    0% { opacity: 0; bottom:0px }
+    50% { opacity: 1; bottom:30px }
+    100%   { opacity: 0; bottom:60px }
+}
+
+@keyframes upandfadeout {
+    0% { opacity: 0; bottom:0px }
+    50% { opacity: 1; bottom:30px }
+    100%   { opacity: 0; bottom:60px }
+}
