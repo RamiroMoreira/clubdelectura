@@ -26,6 +26,15 @@
                             <label class="nombreActividad" >Nombre de actividad:</label>
                             <input class="form-control" id="nombreActividad" value="{{nombreActividad}}">
                         </div>
+
+                        <div class="form-group">
+                            <label class="dibujo" >Dibujo:</label>
+                            <select id="selectDibujo" class="form-control" >
+                                {{#each dibujos}}
+                                    <option {{dibujoInicial}} value="{{value}}">{{displayName}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label class="fechaActividad" >Fecha inicio:</label>
                             <!--<div class='col-sm-6'>-->

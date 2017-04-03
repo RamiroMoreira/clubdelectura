@@ -5,7 +5,11 @@ var nombreActividad = new ReactiveVar("");
 var fechaInicio = new ReactiveVar("");
 var fechaFin = new ReactiveVar("");
 var texto = new ReactiveVar("");
-var actividadId = new ReactiveVar("")
+var actividadId = new ReactiveVar("");
+var dibujoInicial = new ReactiveVar("");
+
+var dibujosElejibles = [{value:"teconmedialunas", displayName:"Te con medialunas"},{value:"dragon", displayName:"Dragon"}, {value:"quiroga", displayName:"Quiroga"}]
+var dibujosRandom = ["teconmedialunas","dragon"];
 
 Template.addActivityModal.created = function(){
      if(this.data && this.data._id){
@@ -14,13 +18,18 @@ Template.addActivityModal.created = function(){
        fechaFin.set(this.data.fin);
        texto.set(this.data.texto);
        nombreActividad.set(this.data.nombre)
+       dibujoInicial.set(this.data.dibujo)
      }
      else{
+       dibujoInicial.set("")
        actividadId.set("");
        fechaInicio.set("");
        fechaFin.set("");
        texto.set("")
        nombreActividad.set("");
+       var random = _.random(0,dibujosRandom.length-1);
+       console.log(random);
+       dibujoInicial.set(dibujosRandom[random]);
      }
 }
 
@@ -51,6 +60,14 @@ Template.addActivityModal.helpers({
   },
   'textoActividad' : function(){
     return texto.get();
+  },
+  'dibujos' : function(){
+    return dibujosElejibles;
+  },
+  'dibujoInicial' : function(){
+    if(dibujoInicial.get() == this.value){
+      return "selected";
+    };
   }
 })
 
@@ -58,6 +75,9 @@ Template.addActivityModal.events({
    //https://github.com/CollectionFS/Meteor-CollectionFS
   'change #nombreActividad': function(e){
     nombreActividad.set(e.target.value);
+  },
+  'change #selectDibujo': function(e){
+    dibujoInicial.set(e.target.value);
   },
   'change #datetimepickerInicio': function(e){
     if(e.target.value){
@@ -83,6 +103,7 @@ Template.addActivityModal.events({
       fechaFin.set(nuevaDate);
     }
   },
+
   'dropped #dropzone': function(e) {
     console.log('dropped a file');
     //http://experimentsinmeteor.com/photo-blog-part-1/
@@ -118,6 +139,11 @@ Template.addActivityModal.events({
     if(actividadId.get()){
       nuevaActividad._id = actividadId.get();
     }
+
+    if(dibujoInicial.get()){
+        nuevaActividad.dibujo = dibujoInicial.get();
+    }
+    console.log(nuevaActividad.dibujo)
     if(actividadId.get()){
       Meteor.call('actividades.update', nuevaActividad, function(err, res){
         Modal.hide();

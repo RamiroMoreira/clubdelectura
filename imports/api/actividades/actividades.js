@@ -8,6 +8,7 @@ Meteor.methods({
   'actividades.insert'(actividad){
     check(actividad.nombre, String);
     check(actividad.inicio, Date);
+    check(actividad.dibujo, String);
     var user;
     if (! this.userId) {
       throw new Meteor.Error('not-authorized');
@@ -22,7 +23,8 @@ Meteor.methods({
       fin: actividad.fin,
       texto: actividad.texto,
       dateCreated: new Date(),
-      createdBy: user.username
+      createdBy: user.username,
+      dibujo: actividad.dibujo
     });
   },
   'actividades.update'(actividad){
@@ -40,7 +42,8 @@ Meteor.methods({
       nombre: actividad.nombre,
       inicio: actividad.inicio,
       fin: actividad.fin,
-      texto: actividad.texto
+      texto: actividad.texto,
+      dibujo: actividad.dibujo
     });
   },
   'actividades.remove'(actividadId){
