@@ -447,6 +447,9 @@ li.notification {
     .informacion-actividad{
         display:none !important;
     }
+    .no-height-mobil{
+        height:0 !important;
+    }
 }
 
 @media only screen and (max-device-width: 999px)  {
@@ -563,3 +566,4 @@ li.notification {
     50% { opacity: 1; bottom:30px }
     100%   { opacity: 0; bottom:60px }
 }
+
