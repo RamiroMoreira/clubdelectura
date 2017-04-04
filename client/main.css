@@ -248,6 +248,10 @@ li.notification {
     padding-top:10px;
 }
 
+.menu-expanded{
+    height:50vh;
+}
+
 .horizontal-menu-item{
     cursor:pointer;
     display: inline;
@@ -265,7 +269,17 @@ li.notification {
 .horizontal-menu-item:hover{
     background-color:black;
     color:white;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
 }
+
+.horizontal-menu-item-selected{
+    background-color: #0e131a;
+    color:white;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
 
 @media only screen and (max-device-width: 720px) {
     .horizontal-menu-item {
@@ -590,4 +604,6 @@ li.notification {
     50% { opacity: 1; bottom:30px }
     100%   { opacity: 0; bottom:60px }
 }
+
+
 

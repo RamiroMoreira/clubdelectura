@@ -4,8 +4,10 @@ import { Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
 import './actividadItem.js'
 
+var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
 var audio;
+
 Template.Home.onCreated(function(){
     satie.set(false);
     audio = false;
@@ -35,6 +37,28 @@ Template.Home.helpers({
   },
   'satie': function(){
       return satie.get() ? "satieFalse" :  "satie";
+  },
+  'expandedMenu': function(){
+      if(!expandedMenu.get()){
+          return ""
+      }
+  },
+  'expandedMenuClass': function(){
+    if(!expandedMenu.get()){
+       return ""
+    }
+    else{
+        return "menu-expanded"
+    }
+  },
+  'isSelected': function(value){
+      if(value === expandedMenu.get()){
+          return "horizontal-menu-item-selected"
+      }
+      else{
+          return "";
+      }
+
   }
 })
 
@@ -53,5 +77,16 @@ Template.Home.events({
   'click .satieFalse': function(){
       audio.pause();
       satie.set(false)
+  },
+  'click .horizontal-menu-item':function(e){
+      debugger;
+      if(expandedMenu.get() === e.target.getAttribute('data-value')){
+          expandedMenu.set(false);
+      }
+      else{
+          expandedMenu.set(e.target.getAttribute('data-value'));
+      }
+
   }
 })
+
