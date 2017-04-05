@@ -605,5 +605,70 @@ li.notification {
     100%   { opacity: 0; bottom:60px }
 }
 
+.up-and-down{
+    -webkit-animation: upanddown 10s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: upanddown 10s linear infinite; /* Firefox 5-15 */
+    -o-animation: upanddown 10s linear infinite; /* Opera 12+ */
+    animation: upanddown 10s linear infinite;
+}
 
 
+
+@-webkit-keyframes upanddown {
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
+}
+
+@-moz-keyframes upanddown {
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
+}
+
+@-o-keyframes upanddown {
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
+}
+
+@keyframes upanddown {
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
+}
+
+.right-continuos{
+    -webkit-animation: rightcontinuos 2s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: rightcontinuos 2s linear infinite; /* Firefox 5-15 */
+    -o-animation: rightcontinuos 2s linear infinite; /* Opera 12+ */
+    animation: rightcontinuos 2s linear infinite;
+}
+
+@-webkit-keyframes rightcontinuos {
+    0% { opacity: 0; left:-30px;top:-5px }
+    50% { opacity: 1; left:30px;top:0px }
+    100%   { opacity: 0; left:60px;top:5px }
+}
+
+@-moz-keyframes rightcontinuos {
+    0% { opacity: 0; left:-30px }
+    50% { opacity: 1; left:30px }
+    100%   { opacity: 0; left:60px }
+}
+
+@-o-keyframes rightcontinuos {
+    0% { opacity: 0; left:-30px }
+    50% { opacity: 1; left:30px }
+    100%   { opacity: 0; left:60px }
+}
+
+@keyframes rightcontinuos {
+    0% { opacity: 0; left:-30px;top:10px }
+    50% { opacity: 1; left:30px;top:0px }
+    100%   { opacity: 0; left:60px;top:-10px }
+}

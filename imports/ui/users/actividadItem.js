@@ -2,6 +2,7 @@ import './actividadItem.html'
 import { Template } from 'meteor/templating';
 import '/imports/ui/textualize.js';
 import '/imports/ui/users/templatesImages/teconmedialunas.js'
+import '/imports/ui/users/templatesImages/dragon.js'
 var txt = {};
 var txtdescripcion = {};
 var optionsTextualizer = {
@@ -62,6 +63,17 @@ Template.actividadItem.helpers({
     },
     'getRandomTextDescripcion': function(){
         return shuffle(this.texto);
+    },
+    'rightTexto': function(){
+        if(this.dibujo === "dragon"){
+            return true;
+        }
+        else if(this.dibujo === "teconmedialunas"){
+            return false;
+        }
+    },
+    'getDibujo': function(){
+        return this.dibujo;
     }
 })
 
