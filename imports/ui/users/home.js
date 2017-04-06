@@ -59,6 +59,12 @@ Template.Home.helpers({
           return "";
       }
 
+  },
+  'getheight': function(){
+      if(Actividades) {
+          debugger;
+          return Actividades.find().count() * 100 -150;
+      }
   }
 })
 

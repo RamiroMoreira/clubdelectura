@@ -306,6 +306,13 @@ li.notification {
     animation: myOrbit-small 10s linear infinite;
 }
 
+.rotation-very-slow2 {
+   -webkit-animation: myOrbit-small 14s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: myOrbit-small 14s linear infinite; /* Firefox 5-15 */
+    -o-animation: myOrbit-small 14s linear infinite; /* Opera 12+ */
+    animation: myOrbit-small 14s linear infinite;
+}
+
 
 
 /*
@@ -616,9 +623,9 @@ li.notification {
 }
 
 @keyframes upandfadeout {
-    0% { opacity: 0; margin-bottom:0px }
-    50% { opacity: 1; margin-bottom:30px }
-    100%   { opacity: 0; margin-bottom:60px }
+    0% { opacity: 0; bottom:0px }
+    50% { opacity: 1; bottom:30px }
+    100%   { opacity: 0; bottom:60px }
 }
 
 .up-and-down{

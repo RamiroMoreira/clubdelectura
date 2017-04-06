@@ -8,8 +8,8 @@ var texto = new ReactiveVar("");
 var actividadId = new ReactiveVar("");
 var dibujoInicial = new ReactiveVar("");
 
-var dibujosElejibles = [{value:"teconmedialunas", displayName:"Te con medialunas"},{value:"dragon", displayName:"Dragon"}, {value:"quiroga", displayName:"Quiroga"}]
-var dibujosRandom = ["teconmedialunas","dragon"];
+var dibujosElejibles = [{value:"librocasa", displayName:"Libro casa"},{value:"teconmedialunas", displayName:"Te con medialunas"},{value:"dragon", displayName:"Dragon"}, {value:"quiroga", displayName:"Quiroga"},  {value:"libroclub", displayName:"Libro Club de lectura"}]
+var dibujosRandom = ["teconmedialunas","dragon", "libroclub", "librocasa"];
 
 Template.addActivityModal.created = function(){
      if(this.data && this.data._id){

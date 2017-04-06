@@ -4,6 +4,8 @@ import '/imports/ui/textualize.js';
 import '/imports/ui/users/templatesImages/teconmedialunas.js'
 import '/imports/ui/users/templatesImages/dragon.js'
 import '/imports/ui/users/templatesImages/quiroga.js'
+import '/imports/ui/users/templatesImages/libroclub.js'
+import '/imports/ui/users/templatesImages/librocasa.js'
 
 var txt = {};
 var txtdescripcion = {};
@@ -75,6 +77,12 @@ Template.actividadItem.helpers({
         }
         else if(this.dibujo === "quiroga"){
             return false;
+        }
+        else if(this.dibujo === "libroclub"){
+            return true;
+        }
+        else if(this.dibujo === "librocasa"){
+            return true;
         }
     },
     'getDibujo': function(){
