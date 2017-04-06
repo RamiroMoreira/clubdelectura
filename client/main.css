@@ -482,9 +482,6 @@ li.notification {
 }
 
 @media only screen and (max-device-width:767px)  {
-    .informacion-actividad{
-        display:none !important;
-    }
     .no-height-mobil{
         height:0 !important;
     }
@@ -493,12 +490,12 @@ li.notification {
 @media only screen and (max-device-width: 999px)  {
     .informacion-actividad{
         margin-top:30vh;
-        width:420px;
+        width:40vw;
         height:60vh;
         display:block;
         position:relative;
         float:left;
-        margin-left:30px;
+        margin-left:30vw;
 
     }
     .template-dibujo {
@@ -518,9 +515,10 @@ li.notification {
         font-weight: bold;
         line-height: 53.9px;
         color:white;
-        position:fixed;
-        height:100%;
-        width:450px;
+        position:relative;
+        width:40vw;
+        display:block;
+        margin-bottom:50px;
 
         /*margin-right:40px;*/
     }
@@ -533,7 +531,8 @@ li.notification {
         font-weight: bold;
         line-height: 53.9px;
         color:white;
-        position:fixed;
+        position:relative;
+        display:block;
         width:450px;
     }
     #txtlzr
@@ -564,6 +563,19 @@ li.notification {
         margin-top:50px;
 
     }
+    .mobile-margin-top
+    {
+        margin-top:10vh;
+    }
+    .mobile-margin-left
+    {
+        margin-left:12vh;
+    }
+    .mobile-margin-right
+    {
+        right:7vw;
+        left:inherit !important;
+    }
 }
 
 
@@ -582,27 +594,27 @@ li.notification {
  * points.  Again, remember your vendor-specific prefixes for now!
  */
 @-webkit-keyframes upandfadeout {
-    0% { opacity: 0; bottom:0px }
-    50% { opacity: 1; bottom:30px }
-    100%   { opacity: 0; bottom:60px }
+    0% { opacity: 0; margin-bottom:0px }
+    50% { opacity: 1; margin-bottom:30px }
+    100%   { opacity: 0; margin-bottom:60px }
 }
 
 @-moz-keyframes upandfadeout {
-    0% { opacity: 0; bottom:0px }
-    50% { opacity: 1; bottom:30px }
-    100%   { opacity: 0; bottom:60px }
+    0% { opacity: 0; margin-bottom:0px }
+    50% { opacity: 1; margin-bottom:30px }
+    100%   { opacity: 0; margin-bottom:60px }
 }
 
 @-o-keyframes upandfadeout {
-    0% { opacity: 0; bottom:0px }
-    50% { opacity: 1; bottom:30px }
-    100%   { opacity: 0; bottom:60px }
+    0% { opacity: 0; margin-bottom:0px }
+    50% { opacity: 1; margin-bottom:30px }
+    100%   { opacity: 0; margin-bottom:60px }
 }
 
 @keyframes upandfadeout {
-    0% { opacity: 0; bottom:0px }
-    50% { opacity: 1; bottom:30px }
-    100%   { opacity: 0; bottom:60px }
+    0% { opacity: 0; margin-bottom:0px }
+    50% { opacity: 1; margin-bottom:30px }
+    100%   { opacity: 0; margin-bottom:60px }
 }
 
 .up-and-down{
@@ -615,31 +627,31 @@ li.notification {
 
 
 @-webkit-keyframes upanddown {
-    0% { opacity: 1; left:0px;bottom:0px }
-    35% { opacity: 1; left:0px;bottom:30px}
-    70%   { opacity: 1; left:0px;bottom:-30px}
-    100%   { opacity: 1; left:0px;bottom:0 }
+    0% { opacity: 1; left:0px;margin-bottom:0px }
+    35% { opacity: 1; left:0px;margin-bottom:30px}
+    70%   { opacity: 1; left:0px;margin-bottom:-30px}
+    100%   { opacity: 1; left:0px;margin-bottom:0 }
 }
 
 @-moz-keyframes upanddown {
-    0% { opacity: 1; left:0px;bottom:0px }
-    35% { opacity: 1; left:0px;bottom:30px}
-    70%   { opacity: 1; left:0px;bottom:-30px}
-    100%   { opacity: 1; left:0px;bottom:0 }
+    0% { opacity: 1; left:0px;margin-bottom:0px }
+    35% { opacity: 1; left:0px;margin-bottom:30px}
+    70%   { opacity: 1; left:0px;margin-bottom:-30px}
+    100%   { opacity: 1; left:0px;margin-bottom:0 }
 }
 
 @-o-keyframes upanddown {
-    0% { opacity: 1; left:0px;bottom:0px }
-    35% { opacity: 1; left:0px;bottom:30px}
-    70%   { opacity: 1; left:0px;bottom:-30px}
-    100%   { opacity: 1; left:0px;bottom:0 }
+    0% { opacity: 1; left:0px;margin-bottom:0px }
+    35% { opacity: 1; left:0px;margin-bottom:30px}
+    70%   { opacity: 1; left:0px;margin-bottom:-30px}
+    100%   { opacity: 1; left:0px;margin-bottom:0 }
 }
 
 @keyframes upanddown {
-    0% { opacity: 1; left:0px;bottom:0px }
-    35% { opacity: 1; left:0px;bottom:30px}
-    70%   { opacity: 1; left:0px;bottom:-30px}
-    100%   { opacity: 1; left:0px;bottom:0 }
+    0% { opacity: 1; left:0px;margin-bottom:0px }
+    35% { opacity: 1; left:0px;margin-bottom:30px}
+    70%   { opacity: 1; left:0px;margin-bottom:-30px}
+    100%   { opacity: 1; left:0px;margin-bottom:0 }
 }
 
 .right-continuos{
