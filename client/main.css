@@ -576,6 +576,10 @@ li.notification {
         right:7vw;
         left:inherit !important;
     }
+    .mobile-no-left
+    {
+       left:inherit !important;
+    }
 }
 
 

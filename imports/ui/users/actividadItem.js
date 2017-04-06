@@ -3,6 +3,8 @@ import { Template } from 'meteor/templating';
 import '/imports/ui/textualize.js';
 import '/imports/ui/users/templatesImages/teconmedialunas.js'
 import '/imports/ui/users/templatesImages/dragon.js'
+import '/imports/ui/users/templatesImages/quiroga.js'
+
 var txt = {};
 var txtdescripcion = {};
 var optionsTextualizer = {
@@ -69,6 +71,9 @@ Template.actividadItem.helpers({
             return true;
         }
         else if(this.dibujo === "teconmedialunas"){
+            return false;
+        }
+        else if(this.dibujo === "quiroga"){
             return false;
         }
     },
