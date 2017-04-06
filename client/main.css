@@ -624,34 +624,55 @@ li.notification {
     animation: upanddown 10s linear infinite;
 }
 
+/*remove animations on mobile*/
+@media only screen and (max-device-width:767px)  {
+    .up-and-down{
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        animation: none;
+    }
+    .up-and-fadeout{
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        animation: none;
+    }
+    .right-continuos{
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        animation: none;
+    }
+}
 
 
 @-webkit-keyframes upanddown {
-    0% { opacity: 1; left:0px;margin-bottom:0px }
-    35% { opacity: 1; left:0px;margin-bottom:30px}
-    70%   { opacity: 1; left:0px;margin-bottom:-30px}
-    100%   { opacity: 1; left:0px;margin-bottom:0 }
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
 }
 
 @-moz-keyframes upanddown {
-    0% { opacity: 1; left:0px;margin-bottom:0px }
-    35% { opacity: 1; left:0px;margin-bottom:30px}
-    70%   { opacity: 1; left:0px;margin-bottom:-30px}
-    100%   { opacity: 1; left:0px;margin-bottom:0 }
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
 }
 
 @-o-keyframes upanddown {
-    0% { opacity: 1; left:0px;margin-bottom:0px }
-    35% { opacity: 1; left:0px;margin-bottom:30px}
-    70%   { opacity: 1; left:0px;margin-bottom:-30px}
-    100%   { opacity: 1; left:0px;margin-bottom:0 }
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;mbottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
 }
 
 @keyframes upanddown {
-    0% { opacity: 1; left:0px;margin-bottom:0px }
-    35% { opacity: 1; left:0px;margin-bottom:30px}
-    70%   { opacity: 1; left:0px;margin-bottom:-30px}
-    100%   { opacity: 1; left:0px;margin-bottom:0 }
+    0% { opacity: 1; left:0px;bottom:0px }
+    35% { opacity: 1; left:0px;bottom:30px}
+    70%   { opacity: 1; left:0px;bottom:-30px}
+    100%   { opacity: 1; left:0px;bottom:0 }
 }
 
 .right-continuos{
