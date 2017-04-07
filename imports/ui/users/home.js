@@ -4,10 +4,14 @@ import { Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
 import './actividadItem.js'
 
+//http://compresspng.com/es/ compress png
+
 var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
 var audio;
 
+var base = 2500;
+var offset = 1000;
 Template.Home.onCreated(function(){
     satie.set(false);
     audio = false;
@@ -85,7 +89,6 @@ Template.Home.events({
       satie.set(false)
   },
   'click .horizontal-menu-item':function(e){
-      debugger;
       if(expandedMenu.get() === e.target.getAttribute('data-value')){
           expandedMenu.set(false);
       }
@@ -93,6 +96,34 @@ Template.Home.events({
           expandedMenu.set(e.target.getAttribute('data-value'));
       }
 
+  },
+  'click .navigation-down':function(e){
+      // window.scrollTo(0,5000)
+      var scrollY = window.scrollY;
+      if(scrollY >=0 && scrollY < base){
+          window.scrollTo(0,base)
+      }
+      else{
+          var position = Math.floor((scrollY - base)/offset);
+          window.scrollTo(0, base+((position+1)*offset));
+      }
+
+  },
+  'click .navigation-top':function(e){
+        // window.scrollTo(0,5000)
+        var scrollY = window.scrollY;
+        if(scrollY >0 && scrollY <= base){
+            window.scrollTo(0,0)
+        }
+        else if(scrollY >0 && scrollY <= base + offset ){
+            window.scrollTo(0,base)
+        }
+        else{
+            var position = Math.floor((scrollY - base)/offset);
+            window.scrollTo(0, base+((position-1)*offset));
+        }
+
   }
+
 })
 

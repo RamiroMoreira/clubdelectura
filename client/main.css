@@ -655,6 +655,24 @@ li.notification {
         -o-animation: none;
         animation: none;
     }
+    .rotation-slow{
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        animation: none;
+    }
+    .rotation-very-slow{
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        animation: none;
+    }
+    .rotation-very-slow2{
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        animation: none;
+    }
 }
 
 
@@ -715,4 +733,15 @@ li.notification {
     0% { opacity: 0; left:-30px;top:10px }
     50% { opacity: 1; left:30px;top:0px }
     100%   { opacity: 0; left:60px;top:-10px }
+}
+
+.left-navigation{
+   position:fixed;
+   left:30px;
+   top:50vh;
+    width:20px;
+}
+
+.navigation-button{
+  cursor:pointer;
 }
