@@ -744,4 +744,186 @@ li.notification {
 
 .navigation-button{
   cursor:pointer;
+    color:white;
+}
+
+.caratula{
+    height:1000px;
+    margin-bottom:-5px;
+    width:100%;
+    background-color: #2d3e54;
+    z-index:-1 !important;
+}
+
+.background-layer{
+    position: fixed;
+    background-color:#2d3e54;
+    background-position: center top;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+}
+
+.layer-0{
+    background-image: url('layer0top.png');
+    position: fixed;
+    background-position: center top;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    width: 100%;height: 1000px;
+}
+
+.layer-1{
+    margin-top:-100px;
+    background-image: url('layer1top.png');
+    position: fixed;
+    background-position: bottom center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;height: 1000px;
+}
+
+.layer-2{
+    margin-left:-10px;
+    margin-top:50px;
+    background-image: url('layer2top.png');
+    position: fixed;
+    background-position: bottom center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;height: 1000px;
+}
+
+.layer-letras-transicion{
+    margin-top:800px;
+    background-image: url('letrasTransición.png');
+    position: fixed;
+    background-position: bottom center;
+    width: 100%;
+    height:550px
+}
+
+.layer-letras-tipita2{
+    margin-top:900px;
+    background-image: url('letrasTipita2.png');
+    position: fixed;
+    background-position: bottom center;
+    width: 100%;
+    height:550px
+}
+
+.layer-letras-tipita{
+    margin-top:800px;
+    left:-130px;
+    background-image: url('letrasTipita.png');
+    position: fixed;
+    background-position: bottom left;
+    background-size: auto 1038px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+}
+
+.layer-tipita{
+    margin-top:1000px;
+    margin-left:30px;
+    background-image: url('tipita.png');
+    position: fixed;
+    background-position: bottom left;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 1000px;
+}
+
+.layer-satie{
+    margin-top:1335px;
+    margin-left:30px;
+    position: fixed;
+    background-position: bottom left;
+}
+
+.unite-a-container{
+    margin-top:-90px;
+    position: fixed;
+    width:100%
+}
+
+.fixed-w100{
+    position: fixed;
+    width:100%
+}
+
+.unite-a-clicker{
+    cursor: pointer;
+    position: fixed;
+    width: 630px;
+    height: 169px;
+    right: 35px;
+    margin-top:-97px;
+    display: block;
+}
+
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.layer-box{
+    margin-top:800px;
+    background-color:#357c8d;
+    position: fixed;
+    background-position: bottom center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;height: 400px;
+}
+
+.layer-3{
+    margin-top: 100px;
+    background-image: url('layer3top.png');
+    position: fixed;
+    background-position: bottom center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;height: 1000px;
+}
+
+.layer-logo{
+    margin-top:100px;
+    background-image: url('logo.png');
+    position: fixed;
+    background-position: center top;
+    background-size: auto 190px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+}
+
+.layer-linea-del-tiempo{
+    background-position:center top;
+    background-image:url('letras_lineadetiempo.png');
+    background-repeat: no-repeat;
+    position:fixed;width:100%;
+    min-height:100vh;
+    margin-top:0%
+}
+
+.layer-linea-del-tiempo2{
+    background-position:center top;
+    background-image:url('letras_lineadetiempo2.png');
+    background-repeat: no-repeat;
+    position:fixed;
+    width:100%;
+    min-height:100vh;
+    margin-top:0%;
+    top:0px;
+}
+
+.actividades-linea-del-tiempo{
+    z-index:6;
+    width:100%;
+    margin-top:4500px;
+    background-color:#2d3e54
 }

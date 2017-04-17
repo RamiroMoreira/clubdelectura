@@ -6,12 +6,13 @@ import './actividadItem.js'
 
 //http://compresspng.com/es/ compress png
 
+
 var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
 var audio;
-
 var base = 2500;
 var offset = 1000;
+
 Template.Home.onCreated(function(){
     satie.set(false);
     audio = false;
@@ -23,9 +24,11 @@ Template.Home.onRendered(function(){
     easing: {
       //This easing will sure drive you crazy
       wtf: Math.random,
+      mobileCheck: function() {return false},
       inverted: function(p) {
         return 1 - p;
       }
+
     }
   });
 })
@@ -66,7 +69,6 @@ Template.Home.helpers({
   },
   'getheight': function(){
       if(Actividades) {
-          debugger;
           return Actividades.find().count() * 100 -150;
       }
   }
