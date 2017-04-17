@@ -71,6 +71,9 @@ Template.Home.helpers({
       if(Actividades) {
           return Actividades.find().count() * 100 -150;
       }
+  },
+  'isDesktop':function(){
+        return !Meteor.isCordova
   }
 })
 
