@@ -20,17 +20,21 @@ Template.Home.onCreated(function(){
 })
 
 Template.Home.onRendered(function(){
-  SK = skrollr.init({
-    easing: {
-      //This easing will sure drive you crazy
-      wtf: Math.random,
-      mobileCheck: function() {return false},
-      inverted: function(p) {
-        return 1 - p;
-      }
+  if(!(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1))) {
+      SK = skrollr.init({
+          easing: {
+              //This easing will sure drive you crazy
+              wtf: Math.random,
+              mobileCheck: function () {
+                  return false
+              },
+              inverted: function (p) {
+                  return 1 - p;
+              }
 
-    }
-  });
+          }
+      });
+  }
 })
 
 Template.Home.helpers({
