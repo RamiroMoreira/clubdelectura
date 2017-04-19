@@ -749,10 +749,11 @@ li.notification {
 
 .caratula{
     height:1000px;
-    margin-bottom:-5px;
+    /*margin-bottom:-5px;*/
     width:100%;
     background-color: #2d3e54;
-    z-index:-1 !important;
+    z-index:1 !important;
+    position:absolute;
 }
 
 .background-layer{

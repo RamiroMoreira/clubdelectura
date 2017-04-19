@@ -12,73 +12,65 @@
 <template name="Home">
     <!--<a href="https://imgflip.com/i/1k24g3"><img src="https://i.imgflip.com/1k24g3.jpg" title="made at imgflip.com"/></a>-->
 
-    <div   class="no-height-mobil caratula">
+    <div  data-0="top:0px;display:block" data-700="top:0px" data-1000="top:-1000px;display:none" class="no-height-mobil caratula">
+        <div  class="background-layer"></div>
+        {{#if isDesktop}}
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -20px, 0px);"   class="layer-0"> </div>
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -40px, 0px)"  class="layer-1"> </div>
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -100px, 0px)"  class="layer-2"> </div>
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px);" class="layer-letras-transicion"> </div>
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-box"></div>
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-3"> </div>
+        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -30px, 0px)"   class="layer-logo"> </div>
+        {{else}}
+            <div    class="layer-0"> </div>
+            <div   class="layer-1"> </div>
+            <div   class="layer-2"> </div>
+            <div  class="layer-letras-transicion"> </div>
+            <div    class="layer-box"></div>
+            <div    class="layer-3"> </div>
+            <div    class="layer-logo"> </div>
+        {{/if}}
 
-        <!--<div data-0="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(214, 30%, 25%), hsl(214, 30%, 25%));"-->
-             <!--data-250 ="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(214, 0%, 25%), hsl(214, 30%, 25%));"-->
-             <!--data-251 ="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(0, 0%, 25%), hsl(214, 30%, 25%));"-->
-             <!--data-400 ="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(0, 30%, 35%), hsl(214, 0%, 25%));"-->
-             <!--data-401 ="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(0, 30%, 35%), hsl(47, 0%, 25%));"-->
-             <!--data-500="background-image: linear-gradient(0deg, hsl(0, 100%, 50%), hsl(47, 100%, 50%));"-->
-             <!--data-1000="transform: translate3d(0px, 0px, 0px);background-image: linear-gradient(0deg, hsl(47, 100%, 50%),hsl(47, 100%, 50%));"  style="position: fixed;background-position: center top;-->
-    <!--background-size: 110%;-->
-    <!--background-repeat: no-repeat;-->
-    <!--width: 100%;height: 500px;"> </div>-->
-        <div   data-0="transform: translate3d(0px, 0px, 0px);top:0%" data-251="display:block; top:0%" data-700="top:0%" data-1000="display:none;top:-100%" class="background-layer"></div>
+    </div>
 
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -20px, 0px);"  data-501="display:block; top:0%" data-850="top:0%" data-1000="display:none;top:-100%" class="layer-0"> </div>
-
-
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -40px, 0px)"  data-501="display:block; top:0%" data-850="top:0%" data-1000="display:none;top:-130%" class="layer-1"> </div>
-
-
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -100px, 0px)" data-501="display:block; top:0%" data-850="top:0%" data-1000="display:none;top:-130%" class="layer-2"> </div>
-
-        <!--facebokk-->
-
-
-        <div data-0="transform: translate3d(0px, 0px, 0px); top:0%; display:block" data-500="transform: translate3d(0px, -150px, 0px); top:0%" data-501=" top:0" data-850="top:0px"    data-1000="top:-1100px" data-3000="top:-1100px" data-3500="display:none;top:-2000px"  class="layer-letras-transicion"> </div>
-
+    <div class="tipita">
         <div data-0="transform: translate3d(0px, 0px, 0px); top:0%; display:block" data-500="transform: translate3d(0px, -150px, 0px); top:0%" data-501=" top:0" data-850="top:0px"    data-1000="top:-1000px" data-3000="top:-1000px" data-3500="display:none;top:-2000px"  class="rotation-slow layer-letras-tipita2"> </div>
-
-
         <div data-0="transform: translate3d(0px, 0px, 0px); top:0%; display:block" data-500="transform: translate3d(0px, -150px, 0px); top:0%" data-501=" top:0" data-850="top:0px"    data-1000="top:-1000px" data-3000="top:-1000px" data-3500="display:none;top:-2000px" class="rotation-very-slow layer-letras-tipita"> </div>
-
         <div data-0="transform: translate3d(0px, 0px, 0px); top:0%; display:block" data-500="transform: translate3d(0px, -150px, 0px); top:0%" data-501=" top:0" data-850="top:0px"    data-1000="top:-900px" data-3000="top:-900px" data-3500="display:none;top:-2000px" class="layer-tipita"> </div>
-
         <div data-0="transform: translate3d(0px, 0px, 0px); top:0%; display:block" data-500="transform: translate3d(0px, -150px, 0px); top:0%" data-501=" top:0" data-850="top:0px"    data-1000="top:-900px" data-3000="top:-900px" data-3500="display:none;top:-2000px" class="layer-satie">
-           <span class="{{satie}}">S</span>
+            <span class="{{satie}}">S</span>
         </div>
 
-
+        <div class="facebook">
         <div data-0="display:none" data-1000="display:block; top:0%" data-1500="display:block; top:50%" data-2000="display:block; top:50%" data-3000="display:block;top:50%" data-3500="display:none;top:-50%" class="unite-a-container">
             <h1>
 
                 {{#if isDesktop}}
-                  <span data-1000="margin-top:-900px" data-1800="margin-top:20px" data-2200="margin-top:0px" class="uniteALink" style="right:60px">A</span>
-                  <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:180px">E</span>
-                  <span data-1500="margin-top:-800px" data-2100="margin-top:5px" data-2200="margin-top:0px" class="uniteALink" style="right:250px">T</span>
-                  <span data-1500="margin-top:-1200px" data-1800="margin-top:-25px" data-2200="margin-top:0px" class="uniteALink" style="right:315px">I</span>
-                  <span data-1500="margin-top:-900px" data-1700="margin-top:-10px" data-2200="margin-top:0px" class="uniteALink" style="right:358px">N</span>
-                  <span data-1500="margin-top:-500px" data-2100="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:426px">U</span>
+                    <span data-1000="margin-top:-900px" data-1800="margin-top:20px" data-2200="margin-top:0px" class="uniteALink" style="right:60px">A</span>
+                    <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:180px">E</span>
+                    <span data-1500="margin-top:-800px" data-2100="margin-top:5px" data-2200="margin-top:0px" class="uniteALink" style="right:250px">T</span>
+                    <span data-1500="margin-top:-1200px" data-1800="margin-top:-25px" data-2200="margin-top:0px" class="uniteALink" style="right:315px">I</span>
+                    <span data-1500="margin-top:-900px" data-1700="margin-top:-10px" data-2200="margin-top:0px" class="uniteALink" style="right:358px">N</span>
+                    <span data-1500="margin-top:-500px" data-2100="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:426px">U</span>
                 {{else}}
-                  <span  class="uniteALink" style="right:40px">UNITE A</span>
+                    <span  class="uniteALink" style="right:40px">UNITE A</span>
                 {{/if}}
-    </h1>
+            </h1>
         </div>
 
         <div data-0="display:none" data-1000="display:block; top:0%" data-1500="display:block; top:50%" data-2000="display:block; top:50%" data-3000="display:block;top:50%" data-3500="display:none;top:-50%" class="fixed-w100">
             <h1>
                 {{#if isDesktop}}
-                <span data-1000="margin-top:-1000px" data-1800="margin-top:-20px" data-2200="margin-top:0px"  class="facebookLink" style="right:40px">K</span>
-                <span  data-1500="margin-top:-1000px" data-1800="margin-top:10px" data-2200="margin-top:0px" class="facebookLink" style="right:115px">O</span>
-                <span  data-500="margin-top:-1000px" data-2000="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:195px">O</span>
-                <span data-1500="margin-top:-500px" data-1800="margin-top:50px" data-2200="margin-top:0px"  class="facebookLink" style="right:275px">B</span>
-                <span data-1500="margin-top:-1000px" data-2000="margin-top:-15px" data-2200="margin-top:0px"  class="facebookLink" style="right:355px">E</span>
-                <span data-1500="margin-top:-700px" data-1800="margin-top:-100px" data-2200="margin-top:0px"  class="facebookLink" style="right:430px">C</span>
-                <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:505px">A</span>
-                <span data-1500="margin-top:-1000px" data-2100="margin-top:15px" data-2200="margin-top:0px" class="facebookLink" style="right:580px">F</span>
-                <a data-1000="margin-top:-1000px;display:none" data-1300="margin-top:-10px;display:none" data-2200="margin-top:-97px;display:block" class="facebookLink-click unite-a-clicker" href="https://www.facebook.com/groups/clubdelectura.uy" target="_blank"></a>
+                    <span data-1000="margin-top:-1000px" data-1800="margin-top:-20px" data-2200="margin-top:0px"  class="facebookLink" style="right:40px">K</span>
+                    <span  data-1500="margin-top:-1000px" data-1800="margin-top:10px" data-2200="margin-top:0px" class="facebookLink" style="right:115px">O</span>
+                    <span  data-500="margin-top:-1000px" data-2000="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:195px">O</span>
+                    <span data-1500="margin-top:-500px" data-1800="margin-top:50px" data-2200="margin-top:0px"  class="facebookLink" style="right:275px">B</span>
+                    <span data-1500="margin-top:-1000px" data-2000="margin-top:-15px" data-2200="margin-top:0px"  class="facebookLink" style="right:355px">E</span>
+                    <span data-1500="margin-top:-700px" data-1800="margin-top:-100px" data-2200="margin-top:0px"  class="facebookLink" style="right:430px">C</span>
+                    <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:505px">A</span>
+                    <span data-1500="margin-top:-1000px" data-2100="margin-top:15px" data-2200="margin-top:0px" class="facebookLink" style="right:580px">F</span>
+                    <a data-1000="margin-top:-1000px;display:none" data-1300="margin-top:-10px;display:none" data-2200="margin-top:-97px;display:block" class="facebookLink-click unite-a-clicker" href="https://www.facebook.com/groups/clubdelectura.uy" target="_blank"></a>
                 {{else}}
                     <span  class="facebookLink" style="right:40px">FACEBOOK</span>
                 {{/if}}
@@ -86,22 +78,9 @@
             <br>
 
         </div>
-        <!--<div ata-0="transform: translate3d(0px, 0px, 0px);top:95%" data-1000="transform: translate3d(0px, -150px, 0px);top:100%" data-1001="display:block;bottom:100%" data-1500="top:100%" data-2000="top:80%" data-2500="top:50%" style="text-align:right;background-color:green;position: fixed;background-position: bottom right;"><h3><span >FACEBOOK</span></h3>-->
-        <!--</div>-->
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)" data-501="display:block; top:0%" data-850="top:0%" data-1000="display:none;top:-120%"   class="layer-box"></div>
 
+        </div>
 
-
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)" data-501="display:block; top:0%" data-850="top:0%" data-1000="display:none;top:-120%"   class="layer-3"> </div>
-
-
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -30px, 0px)" data-501="display:block; top:0%" data-850="top:0%" data-1000="display:none;top:-100%"   class="layer-logo"> </div>
-        <div ></div>
-      <!--<image src= "/imports/images/layer0top.png">-->
-<!---->
-      <!--</image>-->
-
-    <!--<div data-0="margin-top:10px" data-500="margin-top:100px">WOOOT</div>-->
     </div>
 
     <div data-0="display:none;bottom:-50px" data-2000="display:block;" data-2200="bottom:0px" data-end="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
