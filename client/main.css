@@ -928,3 +928,15 @@ body, html {
     margin-top:4500px;
     background-color:#2d3e54
 }
+
+.facebook{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+}
+
+.tipita{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+}
