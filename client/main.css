@@ -418,7 +418,7 @@ li.notification {
         width:420px;
         height:60vh;
         display:block;
-        position:relative;
+        position:absolute;
         float:left;
         margin-left:30px;
 
@@ -440,7 +440,7 @@ li.notification {
         font-weight: bold;
         line-height: 53.9px;
         color:white;
-        position:fixed;
+        position:absolute;
         height:100%;
         width:450px;
 
@@ -455,7 +455,7 @@ li.notification {
         font-weight: bold;
         line-height: 53.9px;
         color:white;
-        position:fixed;
+        position:absolute;
         width:450px;
     }
     #txtlzr
@@ -522,7 +522,7 @@ li.notification {
         font-weight: bold;
         line-height: 53.9px;
         color:white;
-        position:relative;
+        position:absolute;
         width:40vw;
         display:block;
         margin-bottom:50px;
@@ -538,7 +538,7 @@ li.notification {
         font-weight: bold;
         line-height: 53.9px;
         color:white;
-        position:relative;
+        position:absolute;
         display:block;
         width:450px;
     }
@@ -704,6 +704,7 @@ li.notification {
     100%   { opacity: 1; left:0px;bottom:0 }
 }
 
+@media only screen and (min-device-width:768px)  {
 .right-continuos{
     -webkit-animation: rightcontinuos 2s linear infinite; /* Chrome, Safari 5 */
     -moz-animation: rightcontinuos 2s linear infinite; /* Firefox 5-15 */
@@ -733,6 +734,7 @@ li.notification {
     0% { opacity: 0; left:-30px;top:10px }
     50% { opacity: 1; left:30px;top:0px }
     100%   { opacity: 0; left:60px;top:-10px }
+}
 }
 
 .left-navigation{
@@ -867,8 +869,8 @@ li.notification {
 }
 
 body, html {
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
 }
 
 .layer-box{
@@ -919,13 +921,11 @@ body, html {
     width:100%;
     min-height:100vh;
     margin-top:0%;
-    top:0px;
 }
 
 .actividades-linea-del-tiempo{
     z-index:6;
     width:100%;
-    margin-top:4500px;
     background-color:#2d3e54
 }
 
@@ -939,4 +939,11 @@ body, html {
     width:100vw;
     height:100vh;
     position:absolute;
+}
+
+.background-linea-tiempo{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    z-index:1;
 }

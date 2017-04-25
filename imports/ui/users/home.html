@@ -11,7 +11,6 @@
 <!---->
 <template name="Home">
     <!--<a href="https://imgflip.com/i/1k24g3"><img src="https://i.imgflip.com/1k24g3.jpg" title="made at imgflip.com"/></a>-->
-
     <div  data-0="top:0px;display:block" data-700="top:0px" data-1000="top:-1000px;display:none" class="no-height-mobil caratula">
         <div  class="background-layer"></div>
         {{#if isDesktop}}
@@ -31,7 +30,6 @@
             <div    class="layer-3"> </div>
             <div    class="layer-logo"> </div>
         {{/if}}
-
     </div>
 
     <div data-0="top:0px; display:block" data-700="top:0px"  data-1000="top:-1000px" data-3000="top:-1000px" data-3500="display:none;top:-2000px" class="tipita">
@@ -41,15 +39,11 @@
         <div  class="layer-satie">
             <span class="{{satie}}">S</span>
         </div>
-
-
     </div>
-
 
     <div data-0="display:none" data-1000="display:block; top:0%" data-1500="display:block; top:50%" data-2000="display:block; top:50%" data-3000="display:block;top:50%" data-3500="display:none;top:-50%" class="facebook">
         <div class="unite-a-container">
             <h1>
-
                 {{#if isDesktop}}
                     <span data-1000="margin-top:-900px" data-1800="margin-top:20px" data-2200="margin-top:0px" class="uniteALink" style="right:60px">A</span>
                     <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:180px">E</span>
@@ -97,11 +91,8 @@
     </div>
 
 
-
-
-    <div id="body" style="margin-top:-5px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
-        <div data-2900="top:100%" data-3400="top:0" class="rotation-very-slow layer-linea-del-tiempo"></div>
-        <div data-2900="top:100%" data-3400="top:0" class="rotation-slow layer-linea-del-tiempo2"></div>
+   <!--<div style="position:relative;height:{{getheight}}vh;">-->
+    <div  id="body" style="overflow-y:hidden;padding-top:3800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
 
         <div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">
 
@@ -110,9 +101,15 @@
             {{/each}}
         </div>
 
-
+        <div data-2900="top:100%" data-3400="top:0" class="background-linea-tiempo">
+            <div class="rotation-very-slow layer-linea-del-tiempo"></div>
+            <div class="rotation-slow layer-linea-del-tiempo2"></div>
+        </div>
 
     </div>
+   <!--</div>-->
+
+
 
     <div class="left-navigation">
         <i class="navigation-button navigation-top fa fa-caret-up fa-2x" aria-hidden="true" ></i>

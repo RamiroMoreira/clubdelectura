@@ -10,8 +10,8 @@ import './actividadItem.js'
 var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
 var audio;
-var base = 2500;
-var offset = 1000;
+var base = 3000;
+var offset = 900;
 
 Template.Home.onCreated(function(){
     satie.set(false);
@@ -71,7 +71,7 @@ Template.Home.helpers({
   },
   'getheight': function(){
       if(Actividades) {
-          return Actividades.find().count() * 100 -150;
+          return Actividades.find().count() * 100;
       }
   },
   'isDesktop':function(){

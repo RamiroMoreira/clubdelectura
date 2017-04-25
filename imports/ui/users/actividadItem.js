@@ -16,20 +16,20 @@ var optionsTextualizer = {
     centered: false, // Centers the text relative to its container
     loop:false
 }
-
+var margintop;
 Template.actividadItem.onRendered(function(){
 
   var activity = this.data;
   var div = this.find('div.event-timeLine');
   var base = 2900;
-  var offset = 900;
-
-  div.setAttribute("data-0","display:none;top:200%")
-  div.setAttribute("data-"+(base+activity.position*offset),"display:block")
-  div.setAttribute("data-"+(base+500+activity.position*offset),"display:block;top:0%")
-  div.setAttribute("data-"+(base+1000+activity.position*offset),"top:0%") 
-  div.setAttribute("data-"+(base+1500+activity.position*offset),"display:none;top:-100%")
-  SK.refresh([div]);
+  var offset = 100;
+  margintop = activity.position*offset;
+  div.style["margin-top"] = margintop+"vh";
+  // div.setAttribute("data-"+(base+activity.position*offset),"display:block")
+  // div.setAttribute("data-"+(base+500+activity.position*offset),"display:block;top:0%")
+  // div.setAttribute("data-"+(base+1000+activity.position*offset),"top:0%")
+  // div.setAttribute("data-"+(base+1500+activity.position*offset),"display:none;top:-100%")
+  // SK.refresh([div]);
 
   var search = "." + this.data._id
   txt[this.data._id] = $(search);
@@ -62,6 +62,9 @@ var shuffle = function (texto) {
 }
 
 Template.actividadItem.helpers({
+    'margin-top': function(){
+      return   margintop;
+    },
     'getRandomText': function(){
         return shuffle(this.nombre);
     },
