@@ -33,6 +33,23 @@ Template.Home.onRendered(function(){
 
           }
       });
+    var controller = new ScrollMagic.Controller();
+    // var scene = new ScrollMagic.Scene({offset: 2000})
+    // // trigger a velocity opaticy animation
+    //     .setPin("#uniteAFacebook", {duration: 1000})
+    //     // .addIndicators() // add indicators (requires plugin)
+    //     .addTo(controller);
+    var scene2 = new ScrollMagic.Scene({offset:500,duration:1000})
+    // // trigger a velocity opaticy animation
+        .setPin("#uniteAFacebook")
+        // .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+    var scene3 = new ScrollMagic.Scene({offset:2000})
+    // // trigger a velocity opaticy animation
+        .setPin("#background-lineaDelTiempo")
+        // .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
 })
 
 Template.Home.helpers({

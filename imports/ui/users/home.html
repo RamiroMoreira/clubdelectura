@@ -11,9 +11,9 @@
 <!---->
 <template name="Home">
     <!--<a href="https://imgflip.com/i/1k24g3"><img src="https://i.imgflip.com/1k24g3.jpg" title="made at imgflip.com"/></a>-->
-    <div  data-0="top:0px;display:block" data-700="top:0px" data-1000="top:-1000px;display:none" class="no-height-mobil caratula">
+    {{#if isDesktop}}
+      <div  data-0="top:0px;display:block" data-700="top:0px" data-1000="top:-1000px;display:none" class="no-height-mobil caratula">
         <div  class="background-layer"></div>
-        {{#if isDesktop}}
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -20px, 0px);"   class="layer-0"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -40px, 0px)"  class="layer-1"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -100px, 0px)"  class="layer-2"> </div>
@@ -21,18 +21,23 @@
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-box"></div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-3"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -30px, 0px)"   class="layer-logo"> </div>
-        {{else}}
-            <div    class="layer-0"> </div>
-            <div   class="layer-1"> </div>
-            <div   class="layer-2"> </div>
-            <div  class="layer-letras-transicion"> </div>
-            <div    class="layer-box"></div>
-            <div    class="layer-3"> </div>
-            <div    class="layer-logo"> </div>
-        {{/if}}
-    </div>
 
-    <div data-0="top:0px; display:block" data-700="top:0px"  data-1000="top:-1000px" data-3000="top:-1000px" data-3500="display:none;top:-2000px" class="tipita">
+    </div>
+    {{else}}
+        <div  class="no-height-mobil caratula" style="position:absolute">
+          <div    class="layer-0" style="position:absolute"> </div>
+          <div   class="layer-1" style="position:absolute"> </div>
+          <div   class="layer-2" style="position:absolute"> </div>
+          <div  class="layer-letras-transicion" style="position:absolute"> </div>
+          <div    class="layer-box" style="position:absolute"></div>
+          <div    class="layer-3" style="position:absolute"> </div>
+          <div    class="layer-logo" style="position:absolute"> </div>
+        </div>
+    {{/if}}
+
+
+{{#if isDesktop}}
+        <div data-0="top:0px; display:block" data-700="top:0px"  data-1000="top:-1000px" data-3000="top:-1000px" data-3500="display:none;top:-2000px" class="tipita">
         <div class="rotation-slow layer-letras-tipita2"> </div>
         <div  class="rotation-very-slow layer-letras-tipita"> </div>
         <div class="layer-tipita"> </div>
@@ -40,26 +45,37 @@
             <span class="{{satie}}">S</span>
         </div>
     </div>
+{{else}}
+        <div class="tipita" style="position:absolute">
+            <div class="rotation-slow layer-letras-tipita2" style="position:absolute"> </div>
+            <div  class="rotation-very-slow layer-letras-tipita" style="position:absolute"> </div>
+            <div class="layer-tipita" style="position:absolute"> </div>
+            <div  class="layer-satie" style="position:absolute">
+                <span class="{{satie}}"  style="position:absolute">S</span>
+            </div>
+        </div>
 
-    <div data-0="display:none" data-1000="display:block; top:0%" data-1500="display:block; top:50%" data-2000="display:block; top:50%" data-3000="display:block;top:50%" data-3500="display:none;top:-50%" class="facebook">
+{{/if}}
+
+{{#if isDesktop}}
+
+        <div data-0="display:none" data-1000="display:block; top:0%" data-1500="display:block; top:50%" data-2000="display:block; top:50%" data-3000="display:block;top:50%" data-3500="display:none;top:-50%" class="facebook">
         <div class="unite-a-container">
             <h1>
-                {{#if isDesktop}}
+
                     <span data-1000="margin-top:-900px" data-1800="margin-top:20px" data-2200="margin-top:0px" class="uniteALink" style="right:60px">A</span>
                     <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:180px">E</span>
                     <span data-1500="margin-top:-800px" data-2100="margin-top:5px" data-2200="margin-top:0px" class="uniteALink" style="right:250px">T</span>
                     <span data-1500="margin-top:-1200px" data-1800="margin-top:-25px" data-2200="margin-top:0px" class="uniteALink" style="right:315px">I</span>
                     <span data-1500="margin-top:-900px" data-1700="margin-top:-10px" data-2200="margin-top:0px" class="uniteALink" style="right:358px">N</span>
                     <span data-1500="margin-top:-500px" data-2100="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:426px">U</span>
-                {{else}}
-                    <span  class="uniteALink" style="right:40px">UNITE A</span>
-                {{/if}}
+
             </h1>
         </div>
 
         <div class="fixed-w100">
             <h1>
-                {{#if isDesktop}}
+
                     <span data-1000="margin-top:-1000px" data-1800="margin-top:-20px" data-2200="margin-top:0px"  class="facebookLink" style="right:40px">K</span>
                     <span  data-1500="margin-top:-1000px" data-1800="margin-top:10px" data-2200="margin-top:0px" class="facebookLink" style="right:115px">O</span>
                     <span  data-500="margin-top:-1000px" data-2000="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:195px">O</span>
@@ -69,17 +85,31 @@
                     <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:505px">A</span>
                     <span data-1500="margin-top:-1000px" data-2100="margin-top:15px" data-2200="margin-top:0px" class="facebookLink" style="right:580px">F</span>
                     <a data-1000="margin-top:-1000px;display:none" data-1300="margin-top:-10px;display:none" data-2200="margin-top:-97px;display:block" class="facebookLink-click unite-a-clicker" href="https://www.facebook.com/groups/clubdelectura.uy" target="_blank"></a>
-                {{else}}
-                    <span  class="facebookLink" style="right:40px">FACEBOOK</span>
-                {{/if}}
+
             </h1>
             <br>
 
         </div>
 
     </div>
+{{else}}
+    <!--<div id="trigger" class="spacer s0" style="position:fixed;top:500px">C</div>-->
+    <div id="uniteAFacebook"  class="" style="position:absolute;top:1000px;right:40px">
+        <div class="">
+            <h1>
+                <span  class="" style="font-family: Tahoma, Verdana, Segoe, sans-serif;font-size: 70px;font-style: normal;font-variant: normal;font-weight: bold;line-height: 53.9px; color:white;"  >UNITE A</span>
+            </h1>
+        </div>
+        <div class="">
+            <h1>
+                <span  class="" style=" font-family: Tahoma, Verdana, Segoe, sans-serif;font-size: 110px;font-style: normal;font-variant: normal;font-weight: bold;line-height: 53.9px;color:white;">FACEBOOK</span>
+            </h1>
+            <br>
+        </div>
+    </div>
+{{/if}}
 
-    <div data-0="display:none;bottom:-50px" data-2000="display:block;" data-2200="bottom:0px" data-end="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
+    <div class="bottom-menu {{expandedMenuClass}}">
         <ul>
            <li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li>
            <li class="horizontal-menu-item {{isSelected "facebook"}}" data-value="facebook">FACEBOOK</li>
@@ -92,7 +122,9 @@
 
 
    <!--<div style="position:relative;height:{{getheight}}vh;">-->
-    <div  id="body" style="overflow-y:hidden;padding-top:3800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
+{{#if isDesktop}}
+
+        <div  id="body" style="overflow-y:hidden;padding-top:3800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
 
         <div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">
 
@@ -107,6 +139,35 @@
         </div>
 
     </div>
+
+    {{else}}
+    <div  id="body" style="overflow-y:hidden;overflow-x:hidden;padding-top:2000px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
+
+        <div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">
+
+            {{#each actividades}}
+                {{>actividadItem}}
+            {{/each}}
+        </div>
+
+        <div id="background-lineaDelTiempo" style="position:absolute;top:2000px; min-width: 100vw;" >
+            <div class="" style="background-position:center top;
+    background-image:url('letras_lineadetiempo.png');
+    background-repeat: no-repeat;
+    width:100%;
+    min-height:100vh;
+    margin-top:0%"></div>
+            <div style=" background-position:center top;
+    background-image:url('letras_lineadetiempo2.png');
+    background-repeat: no-repeat;
+    width:100%;
+    min-height:100vh;
+    margin-top:-100vh;"></div>
+        </div>
+
+    </div>
+
+{{/if}}
    <!--</div>-->
 
 
