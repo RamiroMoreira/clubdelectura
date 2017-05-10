@@ -31,20 +31,20 @@ Template.actividadItem.onRendered(function(){
   // div.setAttribute("data-"+(base+1500+activity.position*offset),"display:none;top:-100%")
   // SK.refresh([div]);
 
-  var search = "." + this.data._id
-  txt[this.data._id] = $(search);
-  if(txt[this.data._id]) {
-      var test = txt[this.data._id].textualizer(optionsTextualizer);
-      txt[this.data._id].textualizer('start', optionsTextualizer);
-      txt[this.data._id].textualizer('pause');
-  }
-  var searchDescripcion = "." + this.data._id+"texto"
-  txtdescripcion[this.data._id] = $(searchDescripcion);
-  if(txtdescripcion[this.data._id]) {
-      txtdescripcion[this.data._id].textualizer(optionsTextualizer);
-      txtdescripcion[this.data._id].textualizer('start', optionsTextualizer);
-      txtdescripcion[this.data._id].textualizer('pause');
-  }
+  // var search = "." + this.data._id
+  // txt[this.data._id] = $(search);
+  // if(txt[this.data._id]) {
+  //     var test = txt[this.data._id].textualizer(optionsTextualizer);
+      // txt[this.data._id].textualizer('start', optionsTextualizer);
+      // txt[this.data._id].textualizer('pause');
+  // }
+  // var searchDescripcion = "." + this.data._id+"texto"
+  // txtdescripcion[this.data._id] = $(searchDescripcion);
+  // if(txtdescripcion[this.data._id]) {
+  //     txtdescripcion[this.data._id].textualizer(optionsTextualizer);
+  //     txtdescripcion[this.data._id].textualizer('start', optionsTextualizer);
+  //     txtdescripcion[this.data._id].textualizer('pause');
+  // }
 
 });
 
@@ -66,10 +66,10 @@ Template.actividadItem.helpers({
       return   margintop;
     },
     'getRandomText': function(){
-        return shuffle(this.nombre);
+        return this.nombre;
     },
     'getRandomTextDescripcion': function(){
-        return shuffle(this.texto);
+        return this.texto;
     },
     'rightTexto': function(){
         if(this.dibujo === "dragon"){

@@ -655,18 +655,18 @@ li.notification {
         -o-animation: none;
         animation: none;
     }
-    .rotation-slow{
-        -webkit-animation: none;
-        -moz-animation: none;
-        -o-animation: none;
-        animation: none;
-    }
-    .rotation-very-slow{
-        -webkit-animation: none;
-        -moz-animation: none;
-        -o-animation: none;
-        animation: none;
-    }
+    /*.rotation-slow{*/
+        /*-webkit-animation: none;*/
+        /*-moz-animation: none;*/
+        /*-o-animation: none;*/
+        /*animation: none;*/
+    /*}*/
+    /*.rotation-very-slow{*/
+        /*-webkit-animation: none;*/
+        /*-moz-animation: none;*/
+        /*-o-animation: none;*/
+        /*animation: none;*/
+    /*}*/
     .rotation-very-slow2{
         -webkit-animation: none;
         -moz-animation: none;
@@ -812,7 +812,7 @@ li.notification {
     background-image: url('letrasTipita2.png');
     position: fixed;
     background-position: bottom center;
-    width: 100%;
+    width: 95%;
     height:550px
 }
 
@@ -824,7 +824,7 @@ li.notification {
     background-position: bottom left;
     background-size: auto 1038px;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 95%;
     height: 1000px;
 }
 

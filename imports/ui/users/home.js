@@ -24,9 +24,9 @@ Template.Home.onRendered(function(){
           easing: {
               //This easing will sure drive you crazy
               wtf: Math.random,
-              mobileCheck: function () {
-                  return false
-              },
+              // mobileCheck: function () {
+              //     return false
+              // },
               inverted: function (p) {
                   return 1 - p;
               }
