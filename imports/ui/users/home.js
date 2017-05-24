@@ -158,30 +158,79 @@ Template.Home.events({
   },
   'click .navigation-down':function(e){
       // window.scrollTo(0,5000)
+      debugger;
       var scrollY = window.scrollY;
       if(scrollY >=0 && scrollY < base){
           window.scrollTo(0,base)
+      }
+      else if(scrollY >= base + offset* Actividades.find().count()){
+
       }
       else{
           var position = Math.floor((scrollY - base)/offset);
           window.scrollTo(0, base+((position+1)*offset));
       }
+      $('.navigation-button-0').toggleClass('navigation-button-0-active-down')
+      $('.navigation-button-1').toggleClass('navigation-button-1-active-down')
+      $('.navigation-button-2').toggleClass('navigation-button-2-active-down')
+      $('.navigation-button-3').toggleClass('navigation-button-3-active-down')
+      $('.navigation-button-4').toggleClass('navigation-button-4-active-down')
+      $('.navigation-button-5').toggleClass('navigation-button-5-active-down')
+      Meteor.setTimeout(function(){
+          $('.navigation-button-0').toggleClass('navigation-button-0-active-down')
+          $('.navigation-button-1').toggleClass('navigation-button-1-active-down')
+          $('.navigation-button-2').toggleClass('navigation-button-2-active-down')
+          $('.navigation-button-3').toggleClass('navigation-button-3-active-down')
+          $('.navigation-button-4').toggleClass('navigation-button-4-active-down')
+          $('.navigation-button-5').toggleClass('navigation-button-5-active-down')
+      },500)
 
   },
   'click .navigation-top':function(e){
         // window.scrollTo(0,5000)
         var scrollY = window.scrollY;
         if(scrollY >0 && scrollY <= base){
-            window.scrollTo(0,0)
+            // window.scrollTo(0,0)
+            window.scroll({top: 0,behavior:'smooth'})
         }
         else if(scrollY >0 && scrollY <= base + offset ){
-            window.scrollTo(0,base)
+            // window.scrollTo(0,base)
+            window.scroll({top: base,behavior:'smooth'})
         }
         else{
-            var position = Math.floor((scrollY - base)/offset);
-            window.scrollTo(0, base+((position-1)*offset));
+           
         }
-
+      $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
+      $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
+      $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
+      $('.navigation-button-4').toggleClass('navigation-button-4-active-up')
+      $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
+      $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
+      Meteor.setTimeout(function(){
+          $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
+          $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
+          $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
+          $('.navigation-button-4').toggleClass('navigation-button-4-active-up')
+          $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
+          $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
+      },500)
+  },
+  'click .navigation-top-max':function(e){
+      window.scrollTo(0,0)
+      $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
+      $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
+      $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
+      $('.navigation-button-4').toggleClass('navigation-button-4-active-up')
+      $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
+      $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
+      Meteor.setTimeout(function(){
+          $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
+          $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
+          $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
+          $('.navigation-button-4').toggleClass('navigation-button-4-active-up')
+          $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
+          $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
+      },500)
   }
 
 })

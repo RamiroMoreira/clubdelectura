@@ -1,6 +1,6 @@
 import './actividadItem.html'
 import { Template } from 'meteor/templating';
-import '/imports/ui/textualize.js';
+// import '/imports/ui/textualize.js';
 import '/imports/ui/users/templatesImages/teconmedialunas.js'
 import '/imports/ui/users/templatesImages/dragon.js'
 import '/imports/ui/users/templatesImages/quiroga.js'
@@ -94,8 +94,8 @@ Template.actividadItem.helpers({
 })
 
 Template.actividadItem.events({
-  'mouseenter .event-timeLine': function(){
-      txt[this._id].textualizer('start',optionsTextualizer);
-      txtdescripcion[this._id].textualizer('start',optionsTextualizer);
-  }
+  // 'mouseenter .event-timeLine': function(){
+  //     txt[this._id].textualizer('start',optionsTextualizer);
+  //     txtdescripcion[this._id].textualizer('start',optionsTextualizer);
+  // }
 })

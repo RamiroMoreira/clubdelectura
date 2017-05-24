@@ -1,5 +1,35 @@
 <template name="quiroga">
-    <div class="mobile-margin-top mobile-no-left" style="z-index:-1;background-position:center left;background-image:url('quiroga1.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>
-    <div class="mobile-margin-top mobile-no-left" style="z-index:-1;background-position:center left;background-image:url('quiroga.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>
-    <div class="mobile-margin-top mobile-no-left rotation-very-slow2" style="z-index:-1;background-position:center left;background-image:url('quiroga2.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>
+    <!--<div class="mobile-margin-top mobile-no-left" style="z-index:-1;background-position:center left;background-image:url('quiroga1.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>-->
+    <!--<div class="mobile-margin-top mobile-no-left" style="z-index:-1;background-position:center left;background-image:url('quiroga.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>-->
+    {{#if esPar}}
+        <div class="mobile-margin-top mobile-no-left rotation-very-slow2" style="z-index:-1;background-position:center left;background-image:url('quiroga2.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>
+    {{else}}
+        <div class="mobile-margin-top mobile-no-left rotation-very-slow2" style="z-index:-1;transform: scaleX(-1);background-position:center left;background-image:url('quiroga2.png'); left:50px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>
+    {{/if}}
+
+    <div class="{{#if esPar}}col-md-7 par-left{{else}} col-md-5 impar-left{{/if}}" >
+        {{#if esPar}}
+            <div style="background-image:url('quiroga.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+        {{else}}
+            <div style="width:100%;height:400px">
+                <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1 class="actividad-nombre">{{nombre}}</h1></div>
+                <div style="margin-top:25px;max-height:165px;overflow-y:hidden"><h4><p class="actividad-descripcion">{{texto}}</p></h4></div>
+                <div style="height:50px;margin-top:60px;width:100%;text-align:center;color:white"><span class="btn btn-lg glyphicon glyphicon-file" aria-hidden="true"></span>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+    <div class="{{#if esPar}}col-md-5 par-right{{else}} impar-right col-md-7{{/if}}" >
+        {{#if esPar}}
+        <div style="width:100%;height:400px">
+            <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1 class="actividad-nombre">{{nombre}}</h1></div>
+            <div style="margin-top:25px;max-height:165px;overflow-y:hidden"><h4><p class="actividad-descripcion">{{texto}}</p></h4></div>
+            <div style="height:50px;margin-top:60px;width:100%;text-align:center;color:white"><span class="btn btn-lg glyphicon glyphicon-file" aria-hidden="true"></span>
+            </div>
+        </div>
+        {{else}}
+            <div style="background-image:url('quiroga.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+        {{/if}}
+    </div>
+    <div class="col-md-12 rotation-very-slow2" style="margin-top:-400px;background-image:url('plumas.png');background-size:contain;height:400px"></div>
 </template>

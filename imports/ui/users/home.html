@@ -47,7 +47,7 @@
     </div>
 {{else}}
         <div class="tipita" style="position:absolute">
-            <div class="rotation-slow layer-letras-tipita2" style="position:absolute;margin-right:5px"> </div>
+            <div class="rotation-slow layer-letras-tipita2" style="width: 95%;position:absolute;margin-right:5px"> </div>
             <div  class="rotation-very-slow layer-letras-tipita" style="position:absolute;margin-right:5px"> </div>
             <div class="layer-tipita" style="position:absolute"> </div>
             <div  class="layer-satie" style="position:absolute">
@@ -122,7 +122,10 @@
     <!--</div>-->
 {{/if}}
 
-    <div class="bottom-menu {{expandedMenuClass}}">
+{{#if isDesktop}}
+
+
+        <div data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
         <ul>
            <li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li>
            <li class="horizontal-menu-item {{isSelected "facebook"}}" data-value="facebook">FACEBOOK</li>
@@ -132,28 +135,65 @@
            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
         </ul>
     </div>
-
+{{else}}
+    <div  class="bottom-menu {{expandedMenuClass}}">
+        <ul>
+            <li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li>
+            <li class="horizontal-menu-item {{isSelected "facebook"}}" data-value="facebook">FACEBOOK</li>
+            <li class="horizontal-menu-item {{isSelected "libros"}}" data-value="libros">LIBROS LEIDOS</li>
+            <li class="horizontal-menu-item {{isSelected "reseñas"}}" data-value="reseñas">RESEÑAS</li>
+            <li class="horizontal-menu-item {{isSelected "colaboradores"}}" data-value="colaboradores">COLABORADORES</li>
+            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+        </ul>
+    </div>
+{{/if}}
 
    <!--<div style="position:relative;height:{{getheight}}vh;">-->
 {{#if isDesktop}}
 
+
         <div  id="body" style="overflow-y:hidden;padding-top:3800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
 
-        <div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">
 
-            {{#each actividades}}
-                {{>actividadItem}}
-            {{/each}}
-        </div>
+        <!--<div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">-->
 
-        <div data-2900="top:100%" data-3400="top:0" class="background-linea-tiempo">
-            <!--<div class="rotation-very-slow layer-linea-del-tiempo"></div>-->
-            <div class="rotation-slow layer-linea-del-tiempo2"></div>
-            <div class="layer-linea-del-tiempo"></div>
-            <!--<div class="layer-linea-del-tiempo2"></div>-->
-        </div>
+            <!--{{#each actividades}}-->
+                <!--{{>actividadItem}}-->
+            <!--{{/each}}-->
+        <!--</div>-->
+
+            <div style="max-width:1024px;margin:0 auto;height:{{getheight}}vh">
+                {{#each actividades}}
+                    {{>actividadItem}}
+                <!--<div class="row">-->
+                    <!--<div class="col-md-7" style="height:550px;padding:0">-->
+                    <!--<div style="background-image:url('dragon_definitivo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>-->
+                <!--</div>-->
+                    <!--<div class="col-md-5" style="background-color:mediumpurple;height:550px;padding:0">-->
+                        <!--<div style="background-color:orange;width:100%;height:400px"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                {{/each}}
+                <div data-2900="top:100%" data-3400="top:0%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >
+                    <!--<div class="rotation-very-slow layer-linea-del-tiempo"></div>-->
+                    <div class="rotation-slow layer-linea-del-tiempo2" style="max-width:1024px;background-size:contain"></div>
+                    <div class="layer-linea-del-tiempo" style="max-width:1024px;background-size:contain"></div>
+                    <!--<div class="" style="width:80vw;height:100vh;position:fixed;left:10vw;background-color:#2d3e54;z-index:1"></div>-->
+                    <!--<div class="layer-linea-del-tiempo2"></div>-->
+                </div>
+                <div data-2900="top:100%" data-3400="top:30%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >
+                    <!--<div class="rotation-very-slow layer-linea-del-tiempo"></div>-->
+                    <div class="rotation-very-slow layer-linea-del-tiempo2" style="max-width:1024px;background-size:contain"></div>
+                    <div class="layer-linea-del-tiempo" style="max-width:1024px;background-size:contain"></div>
+                    <!--<div class="" style="width:80vw;height:100vh;position:fixed;left:10vw;background-color:#2d3e54;z-index:1"></div>-->
+                    <!--<div class="layer-linea-del-tiempo2"></div>-->
+                </div>
+            </div>
+
 
     </div>
+
+
 
     {{else}}
     <div  id="body" style="overflow-y:hidden;overflow-x:hidden;padding-top:2000px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
@@ -188,8 +228,16 @@
 
 
     <div class="left-navigation">
-        <i class="navigation-button navigation-top fa fa-caret-up fa-2x" aria-hidden="true" ></i>
-        <i class="navigation-button navigation-down fa fa-caret-down fa-2x" aria-hidden="true" ></i>
+        <div style="position:relative">
+        <i class="navigation-button navigation-button-0 fa fa-circle fa-1x" aria-hidden="true" style="position:absolute;left:0;top:0;opacity:0" ></i>
+        <i class="navigation-button navigation-top-max navigation-button-1 fa fa-circle fa-1x" aria-hidden="true" style="position:absolute;left:0;top:0;opacity:0.4" ></i>
+        <i class="navigation-button navigation-top navigation-button-2 fa fa-circle fa-2x" aria-hidden="true" style="position:absolute;left:0;top:20px;opacity:0.7"></i>
+        <!--<i class="navigation-button navigation-top fa fa-circle fa-4x" aria-hidden="true" ></i>-->
+        <i class="navigation-button navigation-down  navigation-button-3 fa fa-circle fa-3x" aria-hidden="true" style="position:absolute;left:0;top:50px;"></i>
+        <i class="navigation-button navigation-button-4 navigation-down fa fa-circle" aria-hidden="true" style="font-size:2em;position:absolute;left:0;top:90px;opacity:0.7"></i>
+        <i class="navigation-button navigation-button-5 navigation-down fa fa-circle fa-1x" aria-hidden="true" style="position:absolute;left:0;top:120px;opacity:0.4"></i>
+        <i class="navigation-button navigation-button-6 fa fa-circle fa-1x" aria-hidden="true" style="position:absolute;left:0;top:150px;opacity:0"></i>
+        </div>
     </div>
     <script type="text/javascript" src="skrollr.min.js"></script>
 </template>
