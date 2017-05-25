@@ -11,7 +11,7 @@ var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
 var audio;
 var base = 3000;
-var offset = 900;
+var offset = 550;
 
 Template.Home.onCreated(function(){
     satie.set(false);
@@ -131,6 +131,18 @@ Template.Home.helpers({
   }
 })
 
+var smothScroll = function(numberMoves, time, base, end){
+    var count = 0;
+    var lamda = (end - base)/numberMoves;
+    var interval = Meteor.setInterval(function(){
+       count++;
+       window.scrollTo(0, base+(lamda*count));
+       if(count === numberMoves){
+           Meteor.clearInterval(interval);
+       }
+    }, time/numberMoves)
+}
+
 Template.Home.events({
   'click .satie': function(){
      if(!audio) {
@@ -161,14 +173,17 @@ Template.Home.events({
       debugger;
       var scrollY = window.scrollY;
       if(scrollY >=0 && scrollY < base){
-          window.scrollTo(0,base)
+          // window.scrollTo(0,base)
+          smothScroll(12, 300, scrollY,  base)
+
       }
-      else if(scrollY >= base + offset* Actividades.find().count()){
+      else if(scrollY >= base + 200+offset* Actividades.find().count()){
 
       }
       else{
-          var position = Math.floor((scrollY - base)/offset);
-          window.scrollTo(0, base+((position+1)*offset));
+          var position = Math.floor((scrollY - base+200)/offset);
+          smothScroll(12, 300, scrollY,  base+200+((position+1)*offset));
+
       }
       $('.navigation-button-0').toggleClass('navigation-button-0-active-down')
       $('.navigation-button-1').toggleClass('navigation-button-1-active-down')
@@ -191,14 +206,24 @@ Template.Home.events({
         var scrollY = window.scrollY;
         if(scrollY >0 && scrollY <= base){
             // window.scrollTo(0,0)
-            window.scroll({top: 0,behavior:'smooth'})
+            smothScroll(12, 300, scrollY, 0)
+            // window.scroll({top: 0,behavior:'smooth'})
         }
         else if(scrollY >0 && scrollY <= base + offset ){
+            smothScroll(12, 300, scrollY, base)
             // window.scrollTo(0,base)
-            window.scroll({top: base,behavior:'smooth'})
+            // window.scroll({top: base,behavior:'smooth'})
         }
         else{
-           
+            var position = Math.floor((scrollY - base+200)/offset);
+            if(position > 1) {
+                smothScroll(12, 300, scrollY, base + 200 + ((position - 1) * offset))
+            }
+            else{
+                smothScroll(12, 300, scrollY, base + ((position - 1) * offset))
+
+            }
+            // window.scrollTo(0, base+((position-1)*offset));
         }
       $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
       $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
@@ -216,7 +241,9 @@ Template.Home.events({
       },500)
   },
   'click .navigation-top-max':function(e){
-      window.scrollTo(0,0)
+      // window.scrollTo(0,0)
+      smothScroll(12, 300, scrollY,  0)
+
       $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
       $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
       $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
@@ -231,7 +258,26 @@ Template.Home.events({
           $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
           $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
       },500)
-  }
+  },
+    'click .navigation-down-max':function(e){
+        // window.scrollTo(0,0)
+        smothScroll(12, 300, scrollY,  base + 200 + ((Actividades.find().count())) * offset)
+
+        $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
+        $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
+        $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
+        $('.navigation-button-4').toggleClass('navigation-button-4-active-up')
+        $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
+        $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
+        Meteor.setTimeout(function(){
+            $('.navigation-button-1').toggleClass('navigation-button-1-active-up')
+            $('.navigation-button-2').toggleClass('navigation-button-2-active-up')
+            $('.navigation-button-3').toggleClass('navigation-button-3-active-up')
+            $('.navigation-button-4').toggleClass('navigation-button-4-active-up')
+            $('.navigation-button-5').toggleClass('navigation-button-5-active-up')
+            $('.navigation-button-6').toggleClass('navigation-button-6-active-up')
+        },500)
+    }
 
 })
 
