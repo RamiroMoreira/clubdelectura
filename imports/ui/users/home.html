@@ -18,14 +18,14 @@
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -40px, 0px)"  class="layer-1"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -100px, 0px)"  class="layer-2"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px);" class="layer-letras-transicion"> </div>
-        <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-box"></div>
+        <!--<div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-box"></div>-->
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -150px, 0px)"   class="layer-3"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -30px, 0px)"   class="layer-logo"> </div>
 
     </div>
     {{else}}
         <div  class="no-height-mobil caratula" style="position:absolute">
-          <div    class="layer-0" style="position:absolute"> </div>
+          <div    class="layer-0" style="position:absolute;width:100%;background-position-x: -100px"> </div>
           <div   class="layer-1" style="position:absolute"> </div>
           <div   class="layer-2" style="position:absolute"> </div>
           <div  class="layer-letras-transicion" style="position:absolute"> </div>
@@ -153,15 +153,6 @@
 
 
         <div  id="body" style="overflow-y:hidden;padding-top:3800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
-
-
-        <!--<div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">-->
-
-            <!--{{#each actividades}}-->
-                <!--{{>actividadItem}}-->
-            <!--{{/each}}-->
-        <!--</div>-->
-
             <div style="max-width:1024px;margin:0 auto;height:auto">
                 {{#each actividades}}
                     {{>actividadItem}}
@@ -191,30 +182,31 @@
     {{else}}
     <div  id="body" style="overflow-y:hidden;overflow-x:hidden;padding-top:2000px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
 
-        <div class="actividades-linea-del-tiempo" style="height:{{getheight}}vh;">
+        <div style="max-width:1024px;margin:0 auto;height:auto;">
 
             {{#each actividades}}
                 {{>actividadItem}}
+
             {{/each}}
         </div>
 
-        <div id="background-lineaDelTiempo" style="position:absolute;top:2000px;min-width: 100vw;" >
-            <div class="" style="background-position:center top;
-    background-image:url('letras_lineadetiempo.png');
-    background-repeat: no-repeat;
-    width:100%;
-    min-height:100vh;
-    margin-top:0%"></div>
-            <div style=" background-position:center top;
-    background-image:url('letras_lineadetiempo2.png');
-    background-repeat: no-repeat;
-    width:100%;
-    min-height:100vh;
-    margin-top:-100vh;"></div>
-        </div>
+        <!--<div id="background-lineaDelTiempo" style="position:absolute;top:2000px;min-width: 100vw;" >-->
+            <!--<div class="" style="background-position:center top;-->
+    <!--background-image:url('letras_lineadetiempo.png');-->
+    <!--background-repeat: no-repeat;-->
+    <!--width:100%;-->
+    <!--min-height:100vh;-->
+    <!--margin-top:0%"></div>-->
+            <!--<div style=" background-position:center top;-->
+    <!--background-image:url('letras_lineadetiempo2.png');-->
+    <!--background-repeat: no-repeat;-->
+    <!--width:100%;-->
+    <!--min-height:100vh;-->
+    <!--margin-top:-100vh;"></div>-->
+        <!--</div>-->
 
     </div>
-
+<!---->
 {{/if}}
    <!--</div>-->
 

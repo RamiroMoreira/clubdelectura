@@ -1,7 +1,9 @@
 <template name="teconmedialunas">
     <!--<div class="mobile-margin-top mobile-margin-right" style="z-index:-1;background-position:center left;background-image:url('teconmedialunas1.png'); left:20px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>-->
     <!--<div class="up-and-fadeout mobile-margin-top mobile-margin-right" style="z-index:-1;background-position:center left;background-image:url('teconmedialunas2.png'); left:0;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>-->
-    <div class="{{#if esPar}}col-md-7 par-left{{else}} col-md-5 impar-left{{/if}}" >
+    {{#if isDesktop}}
+
+        <div class="{{#if esPar}}col-md-7 par-left{{else}} col-md-5 impar-left{{/if}}" >
     {{#if esPar}}
         <div style="background-image:url('teconmedialunas1.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
     {{else}}
@@ -25,4 +27,19 @@
             <div style="background-image:url('teconmedialunas1.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
         {{/if}}
     </div>
+    {{else}}
+
+        <div class="col-sm-8 col-sm-offset-2" style="margin-top:400px">
+            <div style="width:100%;padding-right:60px">
+                <div style="width:100%;max-height:180px">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1 class="actividad-nombre">{{nombre}}</h1></div>
+                <!--<div style="margin-top:25px;max-height:165px;overflow-y:hidden"><h4><p class="actividad-descripcion">{{texto}}</p></h4></div>-->
+                <!--<div style="height:50px;margin-top:60px;width:100%;text-align:center;color:white"><span class="btn btn-lg glyphicon glyphicon-file" aria-hidden="true"></span>-->
+            </div>
+
+        </div>
+        <div class="col-sm-10 col-sm-offset-1" style="height:650px;padding:0;padding-top:50px;" >
+            <div style="background-image:url('teconmedialunas1.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+
+        </div>
+    {{/if}}
 </template>
