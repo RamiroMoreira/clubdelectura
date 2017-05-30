@@ -136,13 +136,12 @@
         </ul>
     </div>
 {{else}}
-    <div  class="bottom-menu {{expandedMenuClass}}">
+    <div  class="bottom-menu {{expandedMenuClass}}" style="z-index:5">
         <ul>
-            <li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li>
-            <li class="horizontal-menu-item {{isSelected "facebook"}}" data-value="facebook">FACEBOOK</li>
-            <li class="horizontal-menu-item {{isSelected "libros"}}" data-value="libros">LIBROS LEIDOS</li>
-            <li class="horizontal-menu-item {{isSelected "reseñas"}}" data-value="reseñas">RESEÑAS</li>
-            <li class="horizontal-menu-item {{isSelected "colaboradores"}}" data-value="colaboradores">COLABORADORES</li>
+            <li class="horizontal-menu-item {{isSelected "nosotros"}}" style="font-size:30px" data-value="nosotros">NOSOTROS</li>
+            <li class="horizontal-menu-item {{isSelected "libros"}}" style="font-size:30px" data-value="libros">LIBROS LEIDOS</li>
+            <li class="horizontal-menu-item {{isSelected "reseñas"}}" style="font-size:30px" data-value="reseñas">RESEÑAS</li>
+            <li class="horizontal-menu-item {{isSelected "colaboradores"}}" style="font-size:30px" data-value="colaboradores">COLABORADORES</li>
             <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
         </ul>
     </div>
@@ -211,7 +210,7 @@
    <!--</div>-->
 
 
-
+{{#if isDesktop}}
     <div class="left-navigation">
         <div style="position:relative">
         <i class="navigation-button navigation-button-0 fa fa-circle fa-1x" aria-hidden="true" style="position:absolute;left:0;top:0;opacity:0" ></i>
@@ -224,6 +223,9 @@
         <i class="navigation-button navigation-button-6 fa fa-circle fa-1x" aria-hidden="true" style="position:absolute;left:0;top:150px;opacity:0"></i>
         </div>
     </div>
+{{else}}
+    <span class=" navigation-top-max btn btn-lg btn-default" style="position:fixed;bottom:100px;right:15px"><i class="glyphicon glyphicon-arrow-up"></i> </span>
+{{/if}}
     <script type="text/javascript" src="skrollr.min.js"></script>
 </template>
 
