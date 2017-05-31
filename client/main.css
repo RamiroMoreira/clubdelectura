@@ -832,12 +832,12 @@ li.notification {
 }
 
 .layer-tipita{
-    margin-top:1000px;
-    margin-left:30px;
+    margin-top:800px;
+    margin-left:-30px;
     background-image: url('tipita.png');
     position: fixed;
     background-position: bottom center;
-    background-size: 100%;
+    background-size: auto;
     background-repeat: no-repeat;
     width: 50%;
     height: 1000px;
