@@ -837,7 +837,7 @@ li.notification {
     background-image: url('tipita.png');
     position: fixed;
     background-position: bottom center;
-    background-size: auto;
+    background-size: 100%;
     background-repeat: no-repeat;
     width: 50%;
     height: 1000px;
