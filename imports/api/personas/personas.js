@@ -36,13 +36,29 @@ Meteor.methods({
     }
     Personas.update({_id: persona._id},{$set: {
       nombre: persona.nombre,
-      texto: persona.texto
+      texto: persona.texto,
+
       }
     });
   },
   'personas.remove'(personaId){
     check(personaId, String);
+      if(!this.userId){
+          throw new Meteor.Error('not-authorized');
+      }
     Personas.remove(personaId);
+  },
+  'personas.addFoto'(personaId, urlFoto){
+      check(personaId, String);
+      check(urlFoto, String);
+      if(!this.userId){
+          throw new Meteor.Error('not-authorized');
+      }
+      Personas.update({_id: personaId}, {
+          $set: {
+              urlFoto:urlFoto
+          }
+      })
   }
 })
 

@@ -24,7 +24,18 @@
                             <div class="panel-body">
                             <textarea type="text" class="form-control" id="textoPresentacion" rows="8" value="{{presentacion}}"></textarea>
                             </div>
-
+                            {{#if presentacionFoto}}
+                                <img style="max-width: 200px" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">
+                            {{/if}}
+                            <div class="upload-area">
+                                <form id="upload">
+                                    <p class="alert alert-success text-center">
+                                        <span>Clickear o Arrastrar acá para agregar foto</span>
+                                        <br>
+                                        <input class="general-foto" type="file">
+                                    </p>
+                                </form>
+                            </div>
                         </div>
                         {{#if personas}}
 
@@ -43,6 +54,18 @@
                                     <div class="form-group">
                                         <h5 class="textoActividad">Descripcion:</h5>
                                         <textarea type="text" class="form-control descripcion-persona"  rows="8" value="{{texto}}"></textarea>
+                                    </div>
+                                    {{#if urlFoto}}
+                                        <img style="max-width: 100px" src="{{urlFoto}}" alt="{{urlFoto}}">
+                                    {{/if}}
+                                    <div class="upload-area">
+                                        <form id="upload">
+                                            <p class="alert alert-success text-center">
+                                                <span>Clickear o Arrastrar acá para agregar foto</span>
+                                                <br>
+                                                <input class="persona-foto" type="file">
+                                            </p>
+                                        </form>
                                     </div>
                                 </div>
                                 <button class="btn btn-default btn-remove-person margin-left-15 ">

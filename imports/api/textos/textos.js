@@ -32,6 +32,12 @@ Meteor.methods({
       });
     }
 
+  },
+  'textos.addFoto'(textoId, fotoUrl){
+      if (! this.userId) {
+          throw new Meteor.Error('not-authorized');
+      }
+      Textos.update({_id:textoId},{$set:{fotoUrl:fotoUrl}});
   }
 })
 

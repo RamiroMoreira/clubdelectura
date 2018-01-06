@@ -23,6 +23,10 @@ Template.quienesSomosAdmin.helpers({
       return false;
     }
     return Personas.find();
+  },
+  'presentacionFoto': function(){
+      var texto = Textos.findOne({codigo:"presentacion"});
+      return texto && texto.fotoUrl
   }
 })
 
@@ -83,6 +87,22 @@ Template.quienesSomosAdmin.events({
       toUpdate.texto = e.target.value;
       personsToUpdate.push(toUpdate);
     }
+  },
+  'change .persona-foto' ( event, template ) {
+    var self = this;
+      utils.uploadToAmazonS3( { event: event, template: template } ).then(function(res, err){
+          Meteor.call("personas.addFoto", self._id, res, function(err, res){
+
+          });
+      });
+  },
+  'change .general-foto' ( event, template ) {
+      var texto = Textos.findOne({codigo:"presentacion"});
+      utils.uploadToAmazonS3( { event: event, template: template } ).then(function(res, err){
+            Meteor.call("textos.addFoto", texto._id, res, function(err, res){
+
+            });
+        });
   }
 })
 

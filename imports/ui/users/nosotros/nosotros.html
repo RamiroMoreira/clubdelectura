@@ -1,7 +1,35 @@
-<template name="Nosotros">
-    <div style="background-color:#2d3e54;width:100wh;height:100vh">
-        <div>
-
+<template name="nosotros">
+    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh">
+        {{#if presentacionFoto}}
+            <img style="width:100wh" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">
+        {{/if}}
+        <div class="titulo" style="padding:25px">
+            <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
+                Quienes somos
+            </span>
+        </div>
+        <div class="presentacion" style="margin-left:65px;margin-right:65px">
+            <p style="text-align:right;font-family: 'Open Sans', sans-serif;color:white;font-size:26px">
+                {{presentacion}}
+            </p>
+        </div>
+        <div class="list-personas" style="margin-top:25px">
+            <div class="titulo" style="padding:25px">
+                <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
+                    Coordinadoras
+                </span>
+            </div>
+        {{#each personas}}
+        <div class="persona" style="margin-left:65px;margin-right:65px">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-2"><img src="{{urlFoto}}" style="max-width:100px;border-radius: 100%"></div>
+                <div class="col-md-8" style="min-height:200px">
+                    <h4 style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:18px">{{nombre}}</h4>
+                    <p style="text-align:right;font-family: 'Open Sans', sans-serif;color:white;font-size:14px">{{texto}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
         </div>
     </div>
 </template>
