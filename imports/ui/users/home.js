@@ -34,57 +34,13 @@ Template.Home.onRendered(function(){
           }
       });
     var controller = new ScrollMagic.Controller();
-    // // var scene = new ScrollMagic.Scene({offset: 2000})
-    // // // trigger a velocity opaticy animation
-    // //     .setPin("#uniteAFacebook", {duration: 1000})
-    // //     // .addIndicators() // add indicators (requires plugin)
-    // //     .addTo(controller);
-    // var scene2 = new ScrollMagic.Scene({offset:0,duration:500})
-    // // trigger a velocity opaticy animation
-    //     .setPin("#uniteAFacebook")
-        // .addIndicators() // add indicators (requires plugin)
-        // .addTo(controller);
+
     var scene3 = new ScrollMagic.Scene({offset:2000})
     // trigger a velocity opaticy animation
         .setPin("#background-lineaDelTiempo")
         // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-    //
-    // var myScroll = new IScroll('#example-wrapper',
-    //     {
-    //         // don't scroll horizontal
-    //         scrollX: false,
-    //         // but do scroll vertical
-    //         scrollY: true,
-    //         // show scrollbars
-    //         scrollbars: true,
-    //         hasVerticalScroll:true,
-    //         // deactivating -webkit-transform because pin wouldn't work because of a webkit bug: https://code.google.com/p/chromium/issues/detail?id=20574
-    //         // if you dont use pinning, keep "useTransform" set to true, as it is far better in terms of performance.
-    //         useTransform: false,
-    //         // deativate css-transition to force requestAnimationFrame (implicit with probeType 3)
-    //         useTransition: false,
-    //         // set to highest probing level to get scroll events even during momentum and bounce
-    //         // requires inclusion of iscroll-probe.js
-    //         probeType: 3,
-    //         // pass through clicks inside scroll container
-    //         click: true
-    //     }
-    // );
-    //
-    // // overwrite scroll position calculation to use child's offset instead of container's scrollTop();
-    // controller.scrollPos(function () {
-    //     return -myScroll.y;
-    // });
-    // console.log(myScroll);
-    // // thanks to iScroll 5 we now have a real onScroll event (with some performance drawbacks)
-    // myScroll.on("scroll", function () {
-    //     console.log("scroll")
-    //     controller.update();
-    // });
-    //
-    // // add indicators to scrollcontent so they will be moved with it.
-    // scene2.addIndicators({parent: ".scrollContent"});
+
 })
 
 Template.Home.helpers({
@@ -159,15 +115,15 @@ Template.Home.events({
       audio.pause();
       satie.set(false)
   },
-  'click .horizontal-menu-item':function(e){
-      if(expandedMenu.get() === e.target.getAttribute('data-value')){
-          expandedMenu.set(false);
-      }
-      else{
-          expandedMenu.set(e.target.getAttribute('data-value'));
-      }
-
-  },
+  // 'click .horizontal-menu-item':function(e){
+  //     if(expandedMenu.get() === e.target.getAttribute('data-value')){
+  //         expandedMenu.set(false);
+  //     }
+  //     else{
+  //         expandedMenu.set(e.target.getAttribute('data-value'));
+  //     }
+  //
+  // },
   'click .navigation-down':function(e){
       // window.scrollTo(0,5000)
       debugger;
