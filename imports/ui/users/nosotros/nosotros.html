@@ -1,7 +1,7 @@
 <template name="nosotros">
     <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh">
         {{#if presentacionFoto}}
-            <img style="width:100%" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">
+            <img style="width:100%;position:relative;z-index:2" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">
         {{/if}}
         <div class="titulo" style="padding:25px">
             <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
@@ -30,6 +30,19 @@
             </div>
         </div>
         {{/each}}
+            <div style="height:60px;width:100%">
+
+            </div>
         </div>
+    </div>
+    <div data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+        <ul>
+            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
+            <li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li>
+            <li class="horizontal-menu-item" data-value="libros">LIBROS LEIDOS</li>
+            <li class="horizontal-menu-item" data-value="reseñas">RESEÑAS</li>
+            <li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li>
+            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+        </ul>
     </div>
 </template>
