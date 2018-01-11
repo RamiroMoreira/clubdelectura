@@ -165,7 +165,7 @@
 {{#if isDesktop}}
 
 
-        <div data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
         <ul>
            <a href="/nosotros"><li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li></a>
            <a href="https://www.facebook.com/groups/clubdelectura.uy/"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
@@ -176,7 +176,7 @@
         </ul>
     </div>
 {{else}}
-    <div  class="bottom-menu {{expandedMenuClass}}" style="z-index:5">
+    <div id="nav" class="bottom-menu {{expandedMenuClass}}" style="z-index:5">
         <ul>
             <li href="/nosotros" class="horizontal-menu-item {{isSelected "nosotros"}}" style="font-size:30px" data-value="nosotros">NOSOTROS</li>
             <li class="horizontal-menu-item {{isSelected "libros"}}" style="font-size:30px" data-value="libros">LIBROS LEIDOS</li>
