@@ -1,0 +1,42 @@
+<template name="colaboradores">
+    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh">
+        <div class="titulo" style="padding:25px">
+            <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
+                Colaboradores
+            </span>
+        </div>
+        <!--<div class="presentacion" style="margin-left:65px;margin-right:65px">-->
+            <!--<p style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:26px">-->
+                <!--{{presentacion}}-->
+            <!--</p>-->
+        <!--</div>-->
+        <div class="list-personas" style="margin-top:25px">
+                <div class="persona" style="margin-left:65px;margin-right:65px">
+                    <div class="row">
+                    {{#each colaboradores}}
+                        <a href="{{url}}"><div class="col-md-4">
+                            <div style="height:100px">
+                            <img src="{{urlFoto}}" style="width:100%;max-height:100px">
+                            </div>
+                            <!--<span style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;text-align: center"> {{nombre}}</span>-->
+                        </div></a>
+                    {{/each}}
+                    </div>
+                </div>
+            <div style="height:60px;width:100%">
+<!---->
+            </div>
+        </div>
+    </div>
+    <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+        <ul>
+            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
+            <a href="/nosotros"><li class="horizontal-menu-item" data-value="colaboradores">NOSOTROS</li></a>
+            <a href="https://www.facebook.com/groups/clubdelectura.uy/"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+            <li class="horizontal-menu-item" data-value="libros">LIBROS LEIDOS</li>
+            <li class="horizontal-menu-item" data-value="reseñas">RESEÑAS</li>
+
+            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+        </ul>
+    </div>
+</template>

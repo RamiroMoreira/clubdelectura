@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
 export const Actividades = new Mongo.Collection('actividades');
+if (Meteor.isServer) {
 
 Meteor.methods({
   'actividades.insert'(actividad){
@@ -53,7 +54,6 @@ Meteor.methods({
 })
 
 
-if (Meteor.isServer) {
   // This code only runs on the server
   Meteor.publish('actividades', function actividadesPublication() {
     return Actividades.find();

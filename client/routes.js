@@ -1,10 +1,12 @@
 import '/imports/ui/admin/adminHome.html';
 import '/imports/ui/users/home.js';
 import '/imports/ui/users/nosotros/nosotros.js';
+import '/imports/ui/users/colaboradores/colaboradores.js';
 import '/imports/ui/admin/login/login.js';
 import '/imports/ui/admin/navbar.js'
 import '/imports/ui/admin/actividades/actividades.js';
 import '/imports/ui/admin/quienesSomos/quienesSomosAdmin.js';
+import '/imports/ui/admin/aliados/aliados.js';
 import '/imports/ui/libraryOrganizer/libraryOrganizer.js';
 
 var OnBeforeActions = {
@@ -37,6 +39,10 @@ Router.route('/', function () {
 Router.route('/nosotros', function(){
   this.render('Nosotros')
 })
+
+Router.route('/colaboradores', function(){
+    this.render('Colaboradores')
+})
 //
 Router.route('/admin', function () {
   this.redirect("/admin/actividades")
@@ -66,8 +72,10 @@ Router.route('/admin/quienesSomos', function () {
 
 });
 
+
+
 Router.route('/admin/aliados', function () {
-  // this.render('AdminHome');
+  this.render('aliadosAdmin');
   this.layout('mainNav');
 
 });

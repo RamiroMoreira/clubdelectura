@@ -18,6 +18,7 @@ var _setPlaceholderText = function(string, template){
 
 var _uploadFileToAmazon = ( file, template, resolve, reject ) => {
     const uploader = new Slingshot.Upload( "uploadToAmazonS3" );
+    console.log("file",file);
     uploader.send( file, ( error, url ) => {
         if ( error ) {
             _setPlaceholderText( "Error, "+error, template);
