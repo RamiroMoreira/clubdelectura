@@ -16,7 +16,6 @@ Meteor.methods({
     }
     else{
       user = Meteor.users.findOne(this.userId);
-
     }
     Actividades.insert({
       nombre: actividad.nombre,
@@ -25,7 +24,8 @@ Meteor.methods({
       texto: actividad.texto,
       dateCreated: new Date(),
       createdBy: user.username,
-      dibujo: actividad.dibujo
+      dibujo: actividad.dibujo,
+      colaboradores: actividad.colaboradores
     });
   },
   'actividades.update'(actividad){
@@ -44,7 +44,8 @@ Meteor.methods({
       inicio: actividad.inicio,
       fin: actividad.fin,
       texto: actividad.texto,
-      dibujo: actividad.dibujo
+      dibujo: actividad.dibujo,
+      colaboradores: actividad.colaboradores
     });
   },
   'actividades.remove'(actividadId){

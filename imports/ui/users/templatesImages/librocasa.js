@@ -1,4 +1,5 @@
 import '/imports/ui/users/templatesImages/librocasa.html'
+import './textActivity.js'
 
 Template.librocasa.helpers({
     esPar: function(){

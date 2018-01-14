@@ -1,4 +1,5 @@
 import '/imports/ui/users/templatesImages/teconmedialunas.html'
+import './textActivity.js'
 
 
 

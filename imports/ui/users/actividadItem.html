@@ -1,82 +1,11 @@
 <template name="actividadItem">
-    <!--<script src="http://code.jquery.com/jquery.min.js"></script>-->
-    <!--<script src="textualizer.js"></script>-->
 
-    <!--<div id="itemEvent" class="event-timeLine" style="display:block;position:absolute;width:100vw;height:100vh;padding:0;z-index:2">-->
-        <!--&lt;!&ndash;only desktop&ndash;&gt;-->
-        <!--<div style="margin-left:auto;margin-right:auto;width:1000px;">-->
-        <!--<div class="informacion-actividad desktopOnly" style="{{#if rightTexto}}margin-left:570px;{{else}}{{/if}}">-->
-           <!--<span class="actividad-nombre">-->
-               <!--<div id="container">-->
-                  <!--<div id="txtlzr" class="{{_id}}" >-->
-                     <!--<p class="actividad-nombre">-->
-                       <!--{{getRandomText}}-->
-                     <!--</p>-->
-                     <!--<p class="actividad-nombre">-->
-                       <!--{{nombre}}-->
-                     <!--</p>-->
-                  <!--</div>-->
-               <!--</div>-->
-           <!--</span>-->
-            <!--<span class="actividad-descripcion">-->
-               <!--<div id="container">-->
-                  <!--<div id="txtlzr-descripcion" class="{{_id}}texto">-->
-                     <!--<p class="actividad-descripcion">-->
-                         <!--{{getRandomTextDescripcion}}-->
-                     <!--</p>-->
-                     <!--<p class="actividad-descripcion">-->
-                         <!--{{texto}}-->
-                     <!--</p>-->
-                  <!--</div>-->
-               <!--</div>-->
-           <!--</span>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash;mobile only&ndash;&gt;-->
-        <!--<div class="informacion-actividad mobileOnly">-->
-           <!--<span class="actividad-nombre">-->
-               <!--<div id="container">-->
-                     <!--<p class="actividad-nombre">-->
-                         <!--{{nombre}}-->
-                     <!--</p>-->
-               <!--</div>-->
-           <!--</span>-->
-            <!--<span class="actividad-descripcion">-->
-               <!--<div id="container">-->
-                     <!--<p class="actividad-descripcion">-->
-                         <!--{{texto}}-->
-                     <!--</p>-->
-               <!--</div>-->
-           <!--</span>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash;<div class="" style="">&ndash;&gt;-->
-            <!--{{> Template.dynamic template=getDibujo}}-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row" style="margin:0">-->
-        <!--<div class="col-md-7" style="height:400px;padding:0;margin-top:150px">-->
-            <!--<div style="background-image:url('dragon_definitivo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>-->
-        <!--</div>-->
-        <!--<div class="col-md-5" style="background-color:mediumpurple;height:350px;margin-top:150px;padding:0;margin-top:150px;padding-top:50px">-->
-            <!--<div style="background-color:orange;width:100%;height:400px">-->
-                <!--<div style="width:100%;background-color:yellow"><h3 class="actividad-subtitle">subtitulo</h3><h1 class="actividad-nombre">{{nombre}}</h1></div>-->
-                <!--<div style="margin-top:25px;max-height:165px;overflow-y:hidden"><h4><p class="actividad-descripcion">{{texto}}</p></h4></div>-->
-                <!--<div style="background-color:darkgrey;height:50px;margin-top:60px;width:100%;text-align:center"><span class="btn btn-lg glyphicon glyphicon-file" aria-hidden="true"></span>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-12" style="margin-top:-400px;background-image:url('plumas.png');background-size:contain;height:400px"></div>-->
-    <!--</div>-->
     <div class="row" style="margin:0;z-index:1">
         {{> Template.dynamic template=getDibujo}}
         <!--{{> dragon}}-->
         {{#if isDesktop}}
         {{else}}
         <div class="" style="width:100%;height:50vh;margin-top:30vh" >
-            <!--<div class="" style="min-height:inherit;z-index:-1;height:0%;position:inherit;max-width:1024px;background-size:contain"></div>-->
-            <!--<div class="layer-linea-del-tiempo" style="min-height:inherit;position:inherit;z-index:-1;position:inherit;max-width:1024px;background-size:contain;margin-top:-100vh"></div>-->
             <div style=" background-position:center top;
     background-image:url('letras_lineadetiempo2.png');
     background-repeat: no-repeat;background-size:contain;

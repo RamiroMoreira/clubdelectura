@@ -1,4 +1,5 @@
 import '/imports/ui/users/templatesImages/quiroga.html'
+import './textActivity.js'
 
 Template.quiroga.helpers({
     esPar: function(){

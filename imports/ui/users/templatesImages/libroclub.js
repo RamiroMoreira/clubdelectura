@@ -1,4 +1,5 @@
 import '/imports/ui/users/templatesImages/libroclub.html'
+import './textActivity.js'
 
 Template.libroclub.helpers({
     esPar: function(){

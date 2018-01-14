@@ -33,6 +33,7 @@ Template.Home.onRendered(function(){
 
           }
       });
+      SK.refresh();
     var controller = new ScrollMagic.Controller();
 
     var scene3 = new ScrollMagic.Scene({offset:2000})

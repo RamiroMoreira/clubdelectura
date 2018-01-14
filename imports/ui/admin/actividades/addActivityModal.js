@@ -1,5 +1,6 @@
 import './addActivityModal.html';
 import { Template } from 'meteor/templating'
+import { Colaboradores} from '/imports/api/colaboradores/colaboradores.js';
 
 var nombreActividad = new ReactiveVar("");
 var fechaInicio = new ReactiveVar("");
@@ -10,15 +11,27 @@ var dibujoInicial = new ReactiveVar("");
 
 var dibujosElejibles = [{value:"librocasa", displayName:"Libro casa"},{value:"teconmedialunas", displayName:"Te con medialunas"},{value:"dragon", displayName:"Dragon"}, {value:"quiroga", displayName:"Quiroga"},  {value:"libroclub", displayName:"Libro Club de lectura"}]
 var dibujosRandom = ["teconmedialunas","dragon", "libroclub", "librocasa"];
+var colaboradoresActividad = [];
+var colaboradoresActividadDepend = new Tracker.Dependency;
+
+
 
 Template.addActivityModal.created = function(){
-     if(this.data && this.data._id){
+    Meteor.subscribe('colaboradores');
+    if(this.data && this.data._id){
        actividadId.set(this.data._id);
        fechaInicio.set(this.data.inicio);
        fechaFin.set(this.data.fin);
        texto.set(this.data.texto);
        nombreActividad.set(this.data.nombre)
        dibujoInicial.set(this.data.dibujo)
+       if(this.data.colaboradores){
+           colaboradoresActividad = this.data.colaboradores
+       }
+       else{
+         colaboradoresActividad = [];
+       }
+       colaboradoresActividadDepend.changed();
      }
      else{
        dibujoInicial.set("")
@@ -30,7 +43,9 @@ Template.addActivityModal.created = function(){
        var random = _.random(0,dibujosRandom.length-1);
        console.log(random);
        dibujoInicial.set(dibujosRandom[random]);
-     }
+       colaboradoresActividad = [];
+       colaboradoresActividadDepend.changed();
+    }
 }
 
 
@@ -68,11 +83,30 @@ Template.addActivityModal.helpers({
     if(dibujoInicial.get() == this.value){
       return "selected";
     };
+  },
+  'colaborador' : function(){
+    colaboradoresActividadDepend.depend();
+    var arrayId = [];
+    _.each(colaboradoresActividad, function(col){
+        arrayId.push(col._id);
+    })
+    if(Colaboradores.find({_id:{$nin:arrayId}}).count() == 0){
+      return false;
+    }
+    else{
+      return Colaboradores.find({_id:{$nin:arrayId}});
+    }
+  },
+  'colaboradoresActividad': function(){
+      colaboradoresActividadDepend.depend();
+      if(colaboradoresActividad === []){
+        return false;
+      }
+      return colaboradoresActividad;
   }
 })
 
 Template.addActivityModal.events({
-   //https://github.com/CollectionFS/Meteor-CollectionFS
   'change #nombreActividad': function(e){
     nombreActividad.set(e.target.value);
   },
@@ -102,11 +136,6 @@ Template.addActivityModal.events({
       nuevaDate.setHours(hour);
       fechaFin.set(nuevaDate);
     }
-  },
-
-  'dropped #dropzone': function(e) {
-    console.log('dropped a file');
-    //http://experimentsinmeteor.com/photo-blog-part-1/
   },
   'change #textoActividad': function(e){
     texto.set(e.target.value);
@@ -143,6 +172,9 @@ Template.addActivityModal.events({
     if(dibujoInicial.get()){
         nuevaActividad.dibujo = dibujoInicial.get();
     }
+
+    nuevaActividad.colaboradores = colaboradoresActividad;
+
     console.log(nuevaActividad.dibujo)
     if(actividadId.get()){
       Meteor.call('actividades.update', nuevaActividad, function(err, res){
@@ -154,7 +186,22 @@ Template.addActivityModal.events({
         Modal.hide();
       })  
     }
-    
-    
+  },
+  'click .add-colaborador':function(){
+    var colaboradorId = $("#selectColaborador").val();
+    var colaborador = Colaboradores.findOne({_id:colaboradorId});
+    colaboradoresActividad.push(colaborador);
+    colaboradoresActividadDepend.changed();
+  },
+  'click .remove-colaborador': function(){
+    var newArray = [];
+    var self = this;
+    _.each(colaboradoresActividad, function(col){
+        if(col._id != self._id){
+            newArray.push(col)
+        }
+    })
+    colaboradoresActividad = newArray;
+    colaboradoresActividadDepend.changed();
   }
 })

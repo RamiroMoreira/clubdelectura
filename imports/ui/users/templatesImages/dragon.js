@@ -1,4 +1,5 @@
 import '/imports/ui/users/templatesImages/dragon.html'
+import './textActivity.js'
 
 Template.dragon.helpers({
   esPar: function(){
