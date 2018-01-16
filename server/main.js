@@ -6,7 +6,7 @@ import '/imports/api/colaboradores/colaboradores.js'
 import '/imports/api/markers/markers.js'
 
 Meteor.startup(() => {
-    Meteor.users.remove({});
+    // Meteor.users.remove({});
     if(!Meteor.users.findOne()){
         var userId = Accounts.createUser({username:Meteor.settings.AdminName, email:Meteor.settings.AdminEmail, password:Meteor.settings.AdminPass});
         var user = Meteor.users.findOne({_id:userId});
