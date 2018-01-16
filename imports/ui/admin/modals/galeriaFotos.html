@@ -1,21 +1,15 @@
 <template name="galeriaFotos">
     <div class="modal fade" >
-        <div class="modal-dialog" >
-            <div class="modal-content" style="background-color:#2d3e54">
-                <div class="" style="margin-bottom:10px;margin-top:25px;text-align: center;">
-                    <span style="width:100%; font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
-                        {{getTitle}}
-                    </span>
-                </div>
-
-                <div class="modal-body" style="margin:15px">
+        <div class="modal-dialog" style="width:100%" >
+            <div class="modal-content" style="background-color:black">
+                <div class="modal-body" style="padding:0px">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
-                        <ol class="carousel-indicators" style="bottom:-35px">
-                            {{#each fotos}}
-                                <li data-target="#myCarousel" data-slide-to="{{count}}" class="{{#if active}}active{{/if}}"></li>
-                            {{/each}}
-                        </ol>
+                        <!--<ol class="carousel-indicators" style="bottom:-35px">-->
+                            <!--{{#each fotos}}-->
+                                <!--<li data-target="#myCarousel" data-slide-to="{{count}}" class="{{#if active}}active{{/if}}"></li>-->
+                            <!--{{/each}}-->
+                        <!--</ol>-->
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
@@ -47,7 +41,7 @@
 </template>
 
 <template name="carouselItem">
-    <div class="item {{#if active}}active{{/if}}" style="">
-        <img style="" src="{{foto}}" alt="{{foto}}">
+    <div class="item {{#if active}}active{{/if}}" style="width:997px;height:558px">
+        <img style="max-height:100%;max-width:100%;margin:auto" src="{{foto}}" alt="{{foto}}">
     </div>
 </template>
