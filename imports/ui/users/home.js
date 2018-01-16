@@ -47,7 +47,7 @@ Template.Home.onRendered(function(){
 Template.Home.helpers({
   'actividades': function(){
      var iterator = -1;
-     var extendedActivities = _.map(Actividades.find().fetch(), function(act){
+     var extendedActivities = _.map(Actividades.find({},{sort:{inicio:-1}}).fetch(), function(act){
        iterator++;
        return _.extend(act, {position:iterator})
      })

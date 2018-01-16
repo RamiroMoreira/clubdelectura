@@ -59,6 +59,6 @@ Meteor.methods({
 
   // This code only runs on the server
   Meteor.publish('actividades', function actividadesPublication() {
-    return Actividades.find();
+    return Actividades.find({});
   });
 }

@@ -59,7 +59,13 @@ Template.fechasDisplay.helpers({
     },
     'fechaFin': function(){
         if(this.fin) {
-            return moment(this.fin).format('DD/MM/YYYY h:mm A');
+            if(moment(this.fin).format('DD/MM/YYYY') === moment(this.inicio).format('DD/MM/YYYY')){
+                return moment(this.fin).format('h:mm A');
+            }
+            else{
+                return moment(this.fin).format('DD/MM/YYYY h:mm A');
+            }
+
         }
         else{
             return false;
