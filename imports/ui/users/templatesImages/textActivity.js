@@ -16,7 +16,7 @@ Template.colaboradoresDisplay.helpers({
 
 Template.textPar.helpers({
     'tieneFoto': function(){
-        if(this.fotos != []){
+        if(this.fotos && this.fotos.length>0){
             return true;
         }
         else{
@@ -27,7 +27,7 @@ Template.textPar.helpers({
 
 Template.textImpar.helpers({
     'tieneFoto': function(){
-        if(this.fotos != []){
+        if(this.fotos && this.fotos.length>0){
             return true;
         }
         else{
