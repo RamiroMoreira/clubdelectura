@@ -7,10 +7,10 @@ import '/imports/api/markers/markers.js'
 
 Meteor.startup(() => {
     Meteor.users.remove({});
- if(!Meteor.users.findOne()){
-   var userId = Accounts.createUser({username:Meteor.settings.AdminName, email:Meteor.settings.AdminEmail, password:Meteor.settings.AdminPass});
-   console.log(userId);
-   // Meteor.users.update({_id:userId},{$set:{'emails.$.verified':true}});
-
- }
+    if(!Meteor.users.findOne()){
+        var userId = Accounts.createUser({username:Meteor.settings.AdminName, email:Meteor.settings.AdminEmail, password:Meteor.settings.AdminPass});
+        var user = Meteor.users.findOne({_id:userId});
+        user.emails[0].verified = true;
+        Meteor.users.update({_id: userId},user);
+    }
 });
