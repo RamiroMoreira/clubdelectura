@@ -14,6 +14,8 @@ var dibujosRandom = ["teconmedialunas","dragon", "libroclub", "librocasa"];
 var colaboradoresActividad = [];
 var colaboradoresActividadDepend = new Tracker.Dependency;
 
+var fotosActividad = [];
+var fotosActividadDepend = new Tracker.Dependency;
 
 
 Template.addActivityModal.created = function(){
@@ -32,7 +34,15 @@ Template.addActivityModal.created = function(){
          colaboradoresActividad = [];
        }
        colaboradoresActividadDepend.changed();
-     }
+       if(this.data.fotos){
+           fotosActividad = this.data.fotos
+       }
+       else{
+           fotosActividad = [];
+       }
+       fotosActividadDepend.changed();
+
+    }
      else{
        dibujoInicial.set("")
        actividadId.set("");
@@ -45,6 +55,8 @@ Template.addActivityModal.created = function(){
        dibujoInicial.set(dibujosRandom[random]);
        colaboradoresActividad = [];
        colaboradoresActividadDepend.changed();
+       fotosActividad = [];
+       fotosActividadDepend.changed();
     }
 }
 
@@ -103,6 +115,13 @@ Template.addActivityModal.helpers({
         return false;
       }
       return colaboradoresActividad;
+  },
+  'fotosActividad': function(){
+      fotosActividadDepend.depend();
+      if(fotosActividad === []){
+          return false;
+      }
+      return fotosActividad;
   }
 })
 
@@ -174,6 +193,7 @@ Template.addActivityModal.events({
     }
 
     nuevaActividad.colaboradores = colaboradoresActividad;
+    nuevaActividad.fotos = fotosActividad;
 
     console.log(nuevaActividad.dibujo)
     if(actividadId.get()){
@@ -203,5 +223,25 @@ Template.addActivityModal.events({
     })
     colaboradoresActividad = newArray;
     colaboradoresActividadDepend.changed();
+  },
+  'change .actividad-foto' ( event, template ) {
+     var self = this;
+     utils.uploadToAmazonS3( { event: event, template: template } ).then(function(res, err){
+        if(res){
+            fotosActividad.push(res);
+            fotosActividadDepend.changed();
+        }
+     });
+  },
+  'click .remove-foto': function(){
+      var newArray = [];
+      var self = this;
+      _.each(fotosActividad, function(fotoUrl){
+          if(fotoUrl != self){
+              newArray.push(fotoUrl)
+          }
+      })
+      fotosActividad = newArray;
+      fotosActividadDepend.changed();
   }
 })

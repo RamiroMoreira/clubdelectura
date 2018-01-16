@@ -25,7 +25,8 @@ Meteor.methods({
       dateCreated: new Date(),
       createdBy: user.username,
       dibujo: actividad.dibujo,
-      colaboradores: actividad.colaboradores
+      colaboradores: actividad.colaboradores,
+      fotos: actividad.fotos
     });
   },
   'actividades.update'(actividad){
@@ -45,7 +46,8 @@ Meteor.methods({
       fin: actividad.fin,
       texto: actividad.texto,
       dibujo: actividad.dibujo,
-      colaboradores: actividad.colaboradores
+      colaboradores: actividad.colaboradores,
+      fotos: actividad.fotos
     });
   },
   'actividades.remove'(actividadId){
