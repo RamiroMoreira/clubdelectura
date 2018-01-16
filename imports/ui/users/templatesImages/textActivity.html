@@ -2,10 +2,7 @@
     <div style="width:100%;height:400px;padding-left:60px">
         <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1
                 class="actividad-nombre">{{nombre}}</h1></div>
-        <!--<div style="margin-top:10px;max-height:165px;overflow-y:hidden">-->
-            <!--<span style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;">Colaboran: </span>-->
-            <!---->
-        <!--</div>-->
+        {{>fechasDisplay}}
         <div style="margin-top:25px;max-height:165px;overflow-y:hidden">
             <h4><p class="actividad-descripcion">{{texto}}</p></h4>
         </div>
@@ -23,6 +20,7 @@
     <div style="width:100%;height:400px;padding-right:60px">
         <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1
                 class="actividad-nombre">{{nombre}}</h1></div>
+        {{>fechasDisplay}}
         <div style="margin-top:25px;max-height:165px;overflow-y:hidden">
             <h4><p class="actividad-descripcion">{{texto}}</p></h4>
         </div>
@@ -44,6 +42,18 @@
                 <a href="{{url}}"
                    style="margin-left:5px; font-family: 'Open Sans', sans-serif;color:white;">{{nombre}}</a>
             {{/each}}
+        </div>
+    {{/if}}
+</template>
+
+<template name="fechasDisplay">
+    {{#if fechaInicio}}
+        <div style="margin-top:5px;max-height:165px;overflow-y:hidden">
+            <span style="font-family:'Montserrat';font-weight: 700;font-size: 16px;line-height:30px;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
+            <!--{{#each colaboradores}}-->
+                <!--<a href="{{url}}"-->
+                   <!--style="margin-left:5px; font-family: 'Open Sans', sans-serif;color:white;">{{nombre}}</a>-->
+            <!--{{/each}}-->
         </div>
     {{/if}}
 </template>

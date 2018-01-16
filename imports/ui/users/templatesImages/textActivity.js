@@ -47,3 +47,22 @@ Template.textImpar.events({
        Modal.show("galeriaFotos",this);
    }
 })
+
+Template.fechasDisplay.helpers({
+    'fechaInicio': function(){
+        if(this.inicio) {
+            return moment(this.inicio).format('DD/MM/YYYY h:mm A');
+        }
+        else{
+            return false;
+        }
+    },
+    'fechaFin': function(){
+        if(this.fin) {
+            return moment(this.fin).format('DD/MM/YYYY h:mm A');
+        }
+        else{
+            return false;
+        }
+    }
+})
