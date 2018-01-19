@@ -1,0 +1,37 @@
+<template name="monstruo">
+    <!--<div class="mobile-margin-top right-continuos mobile-margin-left" style="z-index:-1;background-position:center left;background-image:url('dragon2.png'); left:0;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>-->
+    <!--<div class="mobile-margin-top mobile-margin-left" style="z-index:-1;background-position:center left;background-image:url('dragon.png'); left:-80px;max-width:2100px;background-repeat: no-repeat;position:absolute;background-size: 100%;width:150vw;height:100%"></div>-->
+    {{#if isDesktop}}
+        <div class="{{#if esPar}}col-md-7 par-left{{else}} col-md-5 impar-left{{/if}}" >
+            {{#if esPar}}
+                <div style="background-image:url('monstruo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+            {{else}}
+                {{>textImpar}}
+            {{/if}}
+        </div>
+        <div class="{{#if esPar}}col-md-5 par-right{{else}} impar-right col-md-7{{/if}}" >
+            {{#if esPar}}
+                {{>textPar}}
+            {{else}}
+                <div style="background-image:url('monstruo.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+            {{/if}}
+        </div>
+    {{else}}
+
+        <div class="col-sm-8 col-sm-offset-2" style="margin-top:400px">
+            <div style="width:100%;padding-right:60px">
+                <div style="width:100%;max-height:180px">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1 class="actividad-nombre">{{nombre}}</h1></div>
+                <!--<div style="margin-top:25px;max-height:165px;overflow-y:hidden"><h4><p class="actividad-descripcion">{{texto}}</p></h4></div>-->
+                <!--<div style="height:50px;margin-top:60px;width:100%;text-align:center;color:white"><span class="btn btn-lg glyphicon glyphicon-file" aria-hidden="true"></span>-->
+            </div>
+
+        </div>
+        <div class="col-sm-10 col-sm-offset-1" style="height:650px;padding:0;padding-top:50px;" >
+            <div style="background-image:url('monstruo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+
+        </div>
+    {{/if}}
+
+    <!--<div class="col-md-12" style="margin-top:-400px;background-image:url('plumas.png');background-size:contain;height:400px"></div>-->
+    <!--<div class="col-md-12" style="margin-top:-400px;background-image:url('plumas.png');background-size:contain;height:400px"></div>-->
+</template>

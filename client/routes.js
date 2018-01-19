@@ -9,6 +9,7 @@ import '/imports/ui/admin/quienesSomos/quienesSomosAdmin.js';
 import '/imports/ui/admin/aliados/aliados.js';
 import '/imports/ui/libraryOrganizer/libraryOrganizer.js';
 
+
 var OnBeforeActions = {
   loginRequired: function() {
     if (!Meteor.userId() && !Meteor.loggingIn()) {
@@ -69,6 +70,12 @@ Router.route('/admin/review', function () {
 Router.route('/admin/quienesSomos', function () {
   this.render('quienesSomosAdmin');
   this.layout('mainNav');
+
+});
+
+Router.route('/admin/libros', function () {
+    this.render('librosAdmin');
+    this.layout('mainNav');
 
 });
 

@@ -9,8 +9,26 @@ var texto = new ReactiveVar("");
 var actividadId = new ReactiveVar("");
 var dibujoInicial = new ReactiveVar("");
 
-var dibujosElejibles = [{value:"librocasa", displayName:"Libro casa"},{value:"teconmedialunas", displayName:"Te con medialunas"},{value:"dragon", displayName:"Dragon"}, {value:"quiroga", displayName:"Quiroga"},  {value:"libroclub", displayName:"Libro Club de lectura"}]
-var dibujosRandom = ["teconmedialunas","dragon", "libroclub", "librocasa"];
+var dibujosElejibles = [{value: "librocasa", displayName: "Libro casa"},
+                        {value: "teconmedialunas", displayName: "Te con medialunas"},
+                        {value: "dragon", displayName: "Dragon"},
+                        {value: "quiroga", displayName: "Quiroga"},
+                        {value: "libroclub", displayName: "Libro Club de lectura"},
+                        {value: "niñoLeyendo", displayName: "Niño leyendo"},
+                        {value:"musculoso", displayName:"Musculoso"},
+                        {value:"pareja", displayName:"Pareja"},
+                        {value:"tipitaalsol", displayName:"Tipita al sol"},
+                        {value:"monstruo", displayName:"Monstruo"}]
+var dibujosRandom = ["teconmedialunas",
+                     "dragon",
+                     "libroclub",
+                     "librocasa",
+                     "niñoLeyendo",
+                     "musculoso",
+                     "monstruo",
+                     "tipitaalsol",
+                     "pareja"];
+
 var colaboradoresActividad = [];
 var colaboradoresActividadDepend = new Tracker.Dependency;
 

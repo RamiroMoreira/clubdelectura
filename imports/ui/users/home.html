@@ -37,30 +37,30 @@
 
 
 {{#if isDesktop}}
-        <div data-0="top:0px; display:block" data-700="top:0px"  data-1000="top:-1000px" data-3000="top:-1000px" data-3500="display:none;top:-2000px" class="tipita">
-        <div class="rotation-slow layer-letras-tipita2"> </div>
-        <div  class="rotation-very-slow layer-letras-tipita"> </div>
-        <div class="layer-tipita"> </div>
-        <div  class="layer-satie">
+    <div data-0="top:0px; display:block" data-700="top:0px" data-1000="top:-1200px" data-3000="top:-1200px"
+         data-3500="display:none;top:-2200px" class="tipita">
+        <div class="rotation-slow layer-letras-tipita2"></div>
+        <div class="rotation-very-slow layer-letras-tipita"></div>
+        <div class="layer-tipita"></div>
+        <div class="layer-satie">
             <span class="{{satie}}">S</span>
         </div>
 
-            <div style="position:fixed; width:65%;margin-top:200vh;
+        <div style="position:fixed; width:65%;margin-top:1520px;
 ;margin-left:40px;margin-right:40px;right:0px">
-                <p style="text-align:right;font-family: 'Open Sans', sans-serif;
-        color:white;font-size:26px">
-                    Formá parte del #Clubdelectura.uy, un grupo variopinto de lectores que se reúne mensualmente en Casa INJU a compartir su entusiasmo por la lectura. Comentan libros, conocen nuevos autores y promueven actividades que difundan el hábito de leer. ¡Unite!        </p>
-            </div>
-
-            <div style="position:fixed;margin-top:240vh;right:40px">
-                <span style="font-family: 'Open Sans', sans-serif;
-        color:white;font-size:26px">#Clubdelectura.uy</span>
-                <button class="btn " style="background-color: white;width: 70px;height: 70px;border-radius: 20%;">
-                  <i class="fa fa-facebook" style="font-size: 76px;color: #2d3e54;font-weight:bold"></i>
-                </button>
-            </div>
-
+            <p style="text-align:right;font-family: 'Open Sans', sans-serif;
+        color:white;font-size:20px">
+                Formá parte del #Clubdelectura.uy, un grupo variopinto de lectores que se reúne mensualmente en Casa
+                INJU a compartir su entusiasmo por la lectura. Comentan libros, conocen nuevos autores y promueven
+                actividades que difundan el hábito de leer. ¡Unite! </p>
         </div>
+        <div style="position:fixed; width:100%;margin-top:1700px;
+;margin-left:0px;margin-right:0px;right:0px;height:130px">
+            <div style="position:relative; width:95%;margin:auto;height:130px;background-color:#1d2e39">
+
+            </div>
+        </div>
+    </div>
 {{else}}
         <div class="tipita" style="position:absolute">
             <div class="rotation-slow layer-letras-tipita2" style="width: 95%;position:absolute;margin-right:5px"> </div>
@@ -168,7 +168,7 @@
         <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
         <ul>
            <a href="/nosotros"><li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li></a>
-           <a href="https://www.facebook.com/groups/clubdelectura.uy/"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+           <a href="https://www.facebook.com/groups/clubdelectura.uy/" target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
            <li class="horizontal-menu-item {{isSelected "libros"}}" data-value="libros">LIBROS LEIDOS</li>
            <li class="horizontal-menu-item {{isSelected "reseñas"}}" data-value="reseñas">RESEÑAS</li>
            <a href="/colaboradores"><li class="horizontal-menu-item {{isSelected "colaboradores"}}" data-value="colaboradores">COLABORADORES</li></a>
@@ -197,13 +197,13 @@
                     {{>actividadItem}}
 
                 {{/each}}
-                <div data-2900="top:100%" data-3400="top:0%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >
-                    <!--<div class="rotation-very-slow layer-linea-del-tiempo"></div>-->
-                    <div class="rotation-slow layer-linea-del-tiempo2" style="max-width:1024px;background-size:contain"></div>
-                    <div class="layer-linea-del-tiempo" style="max-width:1024px;background-size:contain"></div>
-                    <!--<div class="" style="width:80vw;height:100vh;position:fixed;left:10vw;background-color:#2d3e54;z-index:1"></div>-->
-                    <!--<div class="layer-linea-del-tiempo2"></div>-->
-                </div>
+                <!--<div data-2900="top:100%" data-3400="top:0%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >-->
+                    <!--&lt;!&ndash;<div class="rotation-very-slow layer-linea-del-tiempo"></div>&ndash;&gt;-->
+                    <!--<div class="rotation-slow layer-linea-del-tiempo2" style="max-width:1024px;background-size:contain"></div>-->
+                    <!--<div class="layer-linea-del-tiempo" style="max-width:1024px;background-size:contain"></div>-->
+                    <!--&lt;!&ndash;<div class="" style="width:80vw;height:100vh;position:fixed;left:10vw;background-color:#2d3e54;z-index:1"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="layer-linea-del-tiempo2"></div>&ndash;&gt;-->
+                <!--</div>-->
                 <div data-2900="top:100%" data-3400="top:30%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >
                     <!--<div class="rotation-very-slow layer-linea-del-tiempo"></div>-->
                     <div class="rotation-very-slow layer-linea-del-tiempo2" style="max-width:1024px;background-size:contain"></div>

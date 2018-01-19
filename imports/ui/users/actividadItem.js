@@ -3,6 +3,11 @@ import { Template } from 'meteor/templating';
 // import '/imports/ui/textualize.js';
 import '/imports/ui/users/templatesImages/teconmedialunas.js'
 import '/imports/ui/users/templatesImages/dragon.js'
+import '/imports/ui/users/templatesImages/tipitaalsol.js'
+import '/imports/ui/users/templatesImages/pareja.js'
+import '/imports/ui/users/templatesImages/monstruo.js'
+import '/imports/ui/users/templatesImages/musculoso.js'
+import '/imports/ui/users/templatesImages/niñoLeyendo.js'
 import '/imports/ui/users/templatesImages/quiroga.js'
 import '/imports/ui/users/templatesImages/libroclub.js'
 import '/imports/ui/users/templatesImages/librocasa.js'
@@ -71,23 +76,26 @@ Template.actividadItem.helpers({
     'getRandomTextDescripcion': function(){
         return this.texto;
     },
-    'rightTexto': function(){
-        if(this.dibujo === "dragon"){
-            return true;
-        }
-        else if(this.dibujo === "teconmedialunas"){
-            return false;
-        }
-        else if(this.dibujo === "quiroga"){
-            return false;
-        }
-        else if(this.dibujo === "libroclub"){
-            return true;
-        }
-        else if(this.dibujo === "librocasa"){
-            return true;
-        }
-    },
+    // 'rightTexto': function(){
+    //     if(this.dibujo === "dragon"){
+    //         return true;
+    //     }
+    //     else if(this.dibujo === "teconmedialunas"){
+    //         return false;
+    //     }
+    //     else if(this.dibujo === "quiroga"){
+    //         return false;
+    //     }
+    //     else if(this.dibujo === "libroclub"){
+    //         return true;
+    //     }
+    //     else if(this.dibujo === "librocasa"){
+    //         return true;
+    //     }
+    //     else if(this.dibujo === "niñoLeyendo"){
+    //         return false;
+    //     }
+    // },
     'getDibujo': function(){
         return this.dibujo;
     },

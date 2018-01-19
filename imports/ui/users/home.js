@@ -53,6 +53,9 @@ Template.Home.helpers({
      })
      return extendedActivities;
   },
+  'actividadesFuturas': function(){
+      return Actividades.find({},{sort:{inicio:-1}})
+  },
   'satie': function(){
       return satie.get() ? "satieFalse" :  "satie";
   },
