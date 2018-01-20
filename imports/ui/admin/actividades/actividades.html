@@ -5,6 +5,9 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
+                    <span style="color:white"><strong>Total actividades: </strong>{{totalActivities}}</span>
+                </li>
+                <li class="sidebar-brand">
                     <a class="addActivity pointer-click"><button type="button" class="btn btn-success btn-circle btn-lg margin-right-10"><span class="fa fa-plus"></span></button>Agregar actividad</a>
                 </li>
 
@@ -34,6 +37,10 @@
                                         <!--<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>-->
                                     <!--</div>-->
                                 <!--</div>-->
+                                <div style="margin-bottom:10px">
+                                    <span class="search pointer-click"><button type="button" class="btn btn-primary btn-circle btn-lg margin-right-10"><span class="fa fa-search"></span></button>Filtrar: <input class="input-search form-control" style="display:inherit;margin-left:5px;width:300px"></span>
+                                    <span style="margin-left:10px">{{#if prev}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-left"></i></a>{{/if}}<strong>Pagina </strong>{{currentPage}}<strong> de </strong>{{totalPage}}{{#if next}}<a class="next-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-right"></i></a>{{/if}}</span>
+                                </div>
                                 <div class="table-container">
                                     <table class="table table-filter  table-striped ">
                                         <tbody>
@@ -54,7 +61,7 @@
                                                         <h2><i class="fa fa-calendar" style="color:darkgreen"></i></h2>
                                                     </a>
                                                     <div class="media-body">
-                                                        <span class="media-meta pull-right">{{getDate inicio}}{{#if fin}} <strong>To:</strong> {{getDate fin}} {{/if}}</span>
+                                                        <span class="media-meta pull-right" style="{{#if isNewActivity}}color:blue{{/if}}">{{getDate inicio}}{{#if fin}} <strong>To:</strong> {{getDate fin}} {{/if}}</span>
                                                         <h4 class="title">
                                                             <strong>{{nombre}}</strong>
 

@@ -18,6 +18,7 @@ var dibujosElejibles = [{value: "librocasa", displayName: "Libro casa"},
                         {value:"musculoso", displayName:"Musculoso"},
                         {value:"pareja", displayName:"Pareja"},
                         {value:"tipitaalsol", displayName:"Tipita al sol"},
+                        {value:"gato", displayName:"Gato"},
                         {value:"monstruo", displayName:"Monstruo"}]
 var dibujosRandom = ["teconmedialunas",
                      "dragon",
@@ -27,6 +28,7 @@ var dibujosRandom = ["teconmedialunas",
                      "musculoso",
                      "monstruo",
                      "tipitaalsol",
+                     "gato",
                      "pareja"];
 
 var colaboradoresActividad = [];

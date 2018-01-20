@@ -11,6 +11,7 @@ import '/imports/ui/users/templatesImages/niñoLeyendo.js'
 import '/imports/ui/users/templatesImages/quiroga.js'
 import '/imports/ui/users/templatesImages/libroclub.js'
 import '/imports/ui/users/templatesImages/librocasa.js'
+import '/imports/ui/users/templatesImages/gato.js'
 
 var txt = {};
 var txtdescripcion = {};

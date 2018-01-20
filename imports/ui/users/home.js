@@ -10,13 +10,20 @@ import './actividadItem.js'
 var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
 var audio;
-var base = 3000;
+var base = 2000;
 var offset = 550;
-
+var actividadesFuturas = [];
+var actividadesFuturasReactive = new Tracker.Dependency;
 Template.Home.onCreated(function(){
     satie.set(false);
     audio = false;
-  Meteor.subscribe('actividades');
+  Meteor.subscribe('actividades', {soloAnteriores: true, limit:20, sort:{inicio:-1}});
+  Meteor.call('getActividadesFuturas', function(err, res){
+      if(res){
+          actividadesFuturas = res;
+          actividadesFuturasReactive.changed();
+      }
+  })
 })
 
 Template.Home.onRendered(function(){
@@ -53,8 +60,46 @@ Template.Home.helpers({
      })
      return extendedActivities;
   },
+  'fechaInicio': function(){
+        if(this.inicio) {
+            return moment(this.inicio).format('DD/MM/YYYY h:mm A');
+        }
+        else{
+            return false;
+        }
+  },
+  'getFirstFoto': function(){
+      if(this.fotos) {
+          return this.fotos[0];
+      }
+      else{
+          return false;
+      }
+  },
+  'fechaFin': function(){
+        if(this.fin) {
+            if(moment(this.fin).format('DD/MM/YYYY') === moment(this.inicio).format('DD/MM/YYYY')){
+                return moment(this.fin).format('h:mm A');
+            }
+            else{
+                return moment(this.fin).format('DD/MM/YYYY h:mm A');
+            }
+
+        }
+        else{
+            return false;
+        }
+  },
   'actividadesFuturas': function(){
-      return Actividades.find({},{sort:{inicio:-1}})
+
+      actividadesFuturasReactive.depend();
+      if(actividadesFuturas.length>0) {
+          actividadesFuturas[0].active = true;
+          return actividadesFuturas;
+      }
+      else{
+          return false;
+      }
   },
   'satie': function(){
       return satie.get() ? "satieFalse" :  "satie";
@@ -88,6 +133,9 @@ Template.Home.helpers({
   },
   'isDesktop':function(){
         return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
+  },
+  'getDibujoString':function(){
+      return ""+this.dibujo + ".png"
   }
 })
 
@@ -130,19 +178,18 @@ Template.Home.events({
   // },
   'click .navigation-down':function(e){
       // window.scrollTo(0,5000)
-      debugger;
       var scrollY = window.scrollY;
       if(scrollY >=0 && scrollY < base){
           // window.scrollTo(0,base)
           smothScroll(12, 300, scrollY,  base)
 
       }
-      else if(scrollY >= base + 200+offset* Actividades.find().count()){
+      else if(scrollY >= base + 300+offset* Actividades.find().count()){
 
       }
       else{
-          var position = Math.floor((scrollY - base+200)/offset);
-          smothScroll(12, 300, scrollY,  base+200+((position+1)*offset));
+          var position = Math.floor((scrollY - base+300)/offset);
+          smothScroll(12, 300, scrollY,  base+300+((position+1)*offset));
 
       }
       $('.navigation-button-0').toggleClass('navigation-button-0-active-down')
@@ -177,7 +224,7 @@ Template.Home.events({
         else{
             var position = Math.floor((scrollY - base+200)/offset);
             if(position > 1) {
-                smothScroll(12, 300, scrollY, base + 200 + ((position - 1) * offset))
+                smothScroll(12, 300, scrollY, base + 300 + ((position - 1) * offset))
             }
             else{
                 smothScroll(12, 300, scrollY, base + ((position - 1) * offset))

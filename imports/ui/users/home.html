@@ -12,7 +12,7 @@
 <template name="Home">
     <!--<a href="https://imgflip.com/i/1k24g3"><img src="https://i.imgflip.com/1k24g3.jpg" title="made at imgflip.com"/></a>-->
     {{#if isDesktop}}
-      <div  data-0="top:0px;display:block" data-700="top:0px" data-1000="top:-1000px;display:none" class="no-height-mobil caratula">
+      <div  data-0="top:0px;display:block" data-700="top:0px" data-1000="top:-1200px;" data-1500="top:-1500px;display:none" class="no-height-mobil caratula">
         <div  class="background-layer"></div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -20px, 0px);"   class="layer-0"> </div>
         <div data-0="transform: translate3d(0px, 0px, 0px);" data-500="transform: translate3d(0px, -40px, 0px)"  class="layer-1"> </div>
@@ -37,8 +37,8 @@
 
 
 {{#if isDesktop}}
-    <div data-0="top:0px; display:block" data-700="top:0px" data-1000="top:-1200px" data-3000="top:-1200px"
-         data-3500="display:none;top:-2200px" class="tipita">
+    <div data-0="top:0px; display:block" data-700="top:0px" data-1000="top:-1200px" data-2200="top:-1200px"
+         data-3000="display:none;top:-2000px" class="tipita">
         <div class="rotation-slow layer-letras-tipita2"></div>
         <div class="rotation-very-slow layer-letras-tipita"></div>
         <div class="layer-tipita"></div>
@@ -46,20 +46,53 @@
             <span class="{{satie}}">S</span>
         </div>
 
-        <div style="position:fixed; width:65%;margin-top:1520px;
-;margin-left:40px;margin-right:40px;right:0px">
-            <p style="text-align:right;font-family: 'Open Sans', sans-serif;
-        color:white;font-size:20px">
+        <div style="position:fixed; width:60%;margin-top:1520px;margin-left:50px;margin-right:70px;right:0px">
+            <p style="text-align:right;font-family: 'Open Sans', sans-serif;color:white;font-size:20px">
                 Formá parte del #Clubdelectura.uy, un grupo variopinto de lectores que se reúne mensualmente en Casa
                 INJU a compartir su entusiasmo por la lectura. Comentan libros, conocen nuevos autores y promueven
-                actividades que difundan el hábito de leer. ¡Unite! </p>
+                actividades que difundan el hábito de leer. ¡Unite!
+            </p>
         </div>
-        <div style="position:fixed; width:100%;margin-top:1700px;
-;margin-left:0px;margin-right:0px;right:0px;height:130px">
-            <div style="position:relative; width:95%;margin:auto;height:130px;background-color:#1d2e39">
+        {{#if actividadesFuturas}}
+        <div data-1500="opacity:0" data-1900="opacity:1"
+                data-2200="opacity:1"
+             data-2600="opacity:0" >
+        <div style="position:fixed; width:100%;margin-top:1700px;margin-left:0px;margin-right:0px;right:0px;height:120px;padding-right:70px;padding-left: 70px">
+            <div style="position:relative; width:100%;height:120px;background-color:#1d2e39">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:120px">
+                    <div class="carousel-inner">
+                        {{#each actividadesFuturas}}
+                            <div class="item {{#if active}}active{{/if}}" style="margin-top:15px;padding-left:110px;padding-right:110px" >
+                                <div class="row">
+                                    {{#if fotos}}
+                                    <div class="col-md-3" style="background-size:contain;background-repeat:no-repeat;height:95px;">
+                                        <img style="margin:auto;display:block;max-height:100%;max-width:100%" src="{{getFirstFoto}}">
+                                    </div>
+                                        {{/if}}
+                                    <div class="col-md-9" style="height:100px">
+                                        <h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3>
+                                        <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
+                                        <span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
 
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
+        </div>
+        {{/if}}
     </div>
 {{else}}
         <div class="tipita" style="position:absolute">
@@ -75,16 +108,16 @@
 
 {{#if isDesktop}}
 
-        <div data-0="display:none" data-1000="display:block; top:0%" data-1500="display:block; top:35%" data-2000="display:block; top:35%" data-3000="display:block;top:35%" data-3500="display:none;top:-50%" class="facebook">
+        <div data-0="display:none" data-500="display:block; top:0px" data-1000="display:block; top:230px" data-2000="display:block; top:230px" data-2200="display:block;top:230px" data-3200="display:none;top:-770px" class="facebook">
         <div class="unite-a-container">
             <h1>
 
-                    <span data-1000="margin-top:-900px" data-1800="margin-top:20px" data-2200="margin-top:0px" class="uniteALink" style="right:60px">A</span>
-                    <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:180px">E</span>
-                    <span data-1500="margin-top:-800px" data-2100="margin-top:5px" data-2200="margin-top:0px" class="uniteALink" style="right:250px">T</span>
-                    <span data-1500="margin-top:-1200px" data-1800="margin-top:-25px" data-2200="margin-top:0px" class="uniteALink" style="right:315px">I</span>
-                    <span data-1500="margin-top:-900px" data-1700="margin-top:-10px" data-2200="margin-top:0px" class="uniteALink" style="right:358px">N</span>
-                    <span data-1500="margin-top:-500px" data-2100="margin-top:0px" data-2200="margin-top:0px" class="uniteALink" style="right:426px">U</span>
+                    <span data-500="margin-top:-900px" data-1300="margin-top:20px" data-1700="margin-top:0px" class="uniteALink" style="right:70px">A</span>
+                    <span data-1000="margin-top:-1000px" data-1300="margin-top:0px" data-1700="margin-top:0px" class="uniteALink" style="right:200px">E</span>
+                    <span data-1000="margin-top:-800px" data-1600="margin-top:5px" data-1700="margin-top:0px" class="uniteALink" style="right:255px">T</span>
+                    <span data-1000="margin-top:-1200px" data-1300="margin-top:-25px" data-1700="margin-top:0px" class="uniteALink" style="right:315px">I</span>
+                    <span data-1000="margin-top:-900px" data-1200="margin-top:-10px" data-1700="margin-top:0px" class="uniteALink" style="right:358px">N</span>
+                    <span data-1000="margin-top:-500px" data-1600="margin-top:0px" data-1700="margin-top:0px" class="uniteALink" style="right:426px">U</span>
 
             </h1>
         </div>
@@ -92,15 +125,15 @@
         <div class="fixed-w100">
             <h1>
 
-                    <span data-1000="margin-top:-1000px" data-1800="margin-top:-20px" data-2200="margin-top:0px"  class="facebookLink" style="right:40px">K</span>
-                    <span  data-1500="margin-top:-1000px" data-1800="margin-top:10px" data-2200="margin-top:0px" class="facebookLink" style="right:115px">O</span>
-                    <span  data-500="margin-top:-1000px" data-2000="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:195px">O</span>
-                    <span data-1500="margin-top:-500px" data-1800="margin-top:50px" data-2200="margin-top:0px"  class="facebookLink" style="right:275px">B</span>
-                    <span data-1500="margin-top:-1000px" data-2000="margin-top:-15px" data-2200="margin-top:0px"  class="facebookLink" style="right:355px">E</span>
-                    <span data-1500="margin-top:-700px" data-1800="margin-top:-100px" data-2200="margin-top:0px"  class="facebookLink" style="right:430px">C</span>
-                    <span data-1500="margin-top:-1000px" data-1800="margin-top:0px" data-2200="margin-top:0px"  class="facebookLink" style="right:505px">A</span>
-                    <span data-1500="margin-top:-1000px" data-2100="margin-top:15px" data-2200="margin-top:0px" class="facebookLink" style="right:580px">F</span>
-                    <a data-1000="margin-top:-1000px;display:none" data-1300="margin-top:-10px;display:none" data-2200="margin-top:-97px;display:block" class="facebookLink-click unite-a-clicker" href="https://www.facebook.com/groups/clubdelectura.uy" target="_blank"></a>
+                    <span data-500="margin-top:-1000px" data-1300="margin-top:-20px" data-1700="margin-top:0px"  class="facebookLink" style="right:68px">K</span>
+                    <span  data-1000="margin-top:-1000px" data-1300="margin-top:10px" data-1700="margin-top:0px" class="facebookLink" style="right:142px">O</span>
+                    <span  data-0="margin-top:-1000px" data-1500="margin-top:0px" data-1700="margin-top:0px"  class="facebookLink" style="right:229px">O</span>
+                    <span data-1000="margin-top:-500px" data-1300="margin-top:50px" data-1700="margin-top:0px"  class="facebookLink" style="right:315px">B</span>
+                    <span data-1000="margin-top:-1000px" data-1500="margin-top:-15px" data-1700="margin-top:0px"  class="facebookLink" style="right:394px">E</span>
+                    <span data-1000="margin-top:-700px" data-1300="margin-top:-100px" data-1700="margin-top:0px"  class="facebookLink" style="right:465px">C</span>
+                    <span data-1000="margin-top:-1000px" data-1300="margin-top:0px" data-1700="margin-top:0px"  class="facebookLink" style="right:537px">A</span>
+                    <span data-1000="margin-top:-1000px" data-1600="margin-top:15px" data-1700="margin-top:0px" class="facebookLink" style="right:616px">F</span>
+                    <a data-500="margin-top:-1000px;display:none" data-1300="margin-top:-10px;display:none" data-1700="margin-top:-97px;display:block" class="facebookLink-click unite-a-clicker" href="https://www.facebook.com/groups/clubdelectura.uy" target="_blank"></a>
 
             </h1>
             <br>
@@ -165,7 +198,7 @@
 {{#if isDesktop}}
 
 
-        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
+        <div id="nav" data-2200="bottom:-100px" data-2300="bottom:0px" class="bottom-menu {{expandedMenuClass}}">
         <ul>
            <a href="/nosotros"><li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li></a>
            <a href="https://www.facebook.com/groups/clubdelectura.uy/" target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
@@ -191,7 +224,7 @@
 {{#if isDesktop}}
 
 
-        <div  id="body" style="overflow-y:hidden;padding-top:3800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
+        <div  id="body" style="overflow-y:hidden;padding-top:2800px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
             <div style="max-width:1024px;margin:0 auto;height:auto">
                 {{#each actividades}}
                     {{>actividadItem}}
@@ -204,7 +237,7 @@
                     <!--&lt;!&ndash;<div class="" style="width:80vw;height:100vh;position:fixed;left:10vw;background-color:#2d3e54;z-index:1"></div>&ndash;&gt;-->
                     <!--&lt;!&ndash;<div class="layer-linea-del-tiempo2"></div>&ndash;&gt;-->
                 <!--</div>-->
-                <div data-2900="top:100%" data-3400="top:30%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >
+                <div data-2200="top:100%" data-2700="top:30%" class="background-linea-tiempo" style="z-index:-1;width:1024px;" >
                     <!--<div class="rotation-very-slow layer-linea-del-tiempo"></div>-->
                     <div class="rotation-very-slow layer-linea-del-tiempo2" style="max-width:1024px;background-size:contain"></div>
                     <div class="layer-linea-del-tiempo" style="max-width:1024px;background-size:contain"></div>

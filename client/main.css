@@ -832,7 +832,7 @@ li.notification {
 }
 
 .layer-tipita{
-    margin-top:108vh;
+    margin-top:710px;
     margin-left:-30px;
     background-image: url('tipita.png');
     position: fixed;
@@ -844,8 +844,8 @@ li.notification {
 }
 
 .layer-satie{
-    margin-top:187vh;
-    margin-left:126px;
+    margin-top:1245px;
+    margin-left:15%;
     position: fixed;
     background-position: bottom;
 }

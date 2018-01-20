@@ -53,12 +53,46 @@ Meteor.methods({
   'actividades.remove'(actividadId){
      check(actividadId, String);
      Actividades.remove(actividadId);
+  },
+  getActividadesFuturas(){
+    var dateNow = new Date();
+    return Actividades.find({inicio:{$gte:dateNow}}).fetch()
+  },
+  'getTotalActivities': function(searchString){
+    var query = {};
+    if(searchString){
+        query.$or = [{nombre:{ $regex: ".*"+searchString+".*", $options: 'i' }},{texto:{ $regex: ".*"+searchString+".*", $options: 'i' }}]
+
+    }
+    return Actividades.find(query).count()
   }
 })
 
 
   // This code only runs on the server
-  Meteor.publish('actividades', function actividadesPublication() {
-    return Actividades.find({});
+  Meteor.publish('actividades', function actividadesPublication(params) {
+    console.log("params", params);
+    var query = {};
+    var agregations = {};
+    if(params.soloAnteriores){
+      query.inicio = {$lte:new Date()}
+    }
+    if(params.limit){
+        agregations.limit = params.limit;
+    }
+    if(params.skip){
+        agregations.skip = params.skip;
+    }
+    if(params.sort){
+        agregations.sort = params.sort;
+    }
+    if(params.search){
+      query.$or = [{nombre:{ $regex: ".*"+params.search+".*", $options: 'i' }},{texto:{ $regex: ".*"+params.search+".*", $options: 'i' }}]
+
+    }
+    return Actividades.find(query,agregations);
+
   });
+
+
 }
