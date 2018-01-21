@@ -8,7 +8,7 @@ var currentPage = new ReactiveVar();
 var totalPages = new ReactiveVar();
 var totalActivities = new ReactiveVar();
 var searchString = new ReactiveVar();
-var largoDePagina = 2;
+var largoDePagina = 20;
 Template.actividades.onCreated(function(){
   // this.state = new ReactiveDict();
   currentPage.set(1);

@@ -1,7 +1,7 @@
 <template name="actividadesArchivo">
-    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh">
-        <div class="titulo" style="padding:25px">
-            <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
+    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh;padding:10px">
+        <div class="titulo" style="width:974px;margin:auto;padding:25px;background-color:#1d2e39;text-align:center">
+            <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
                 Archivo de actividades
             </span>
         </div>
@@ -23,9 +23,26 @@
                 <!--</div>-->
             <!--{{/each}}-->
             <!--<div style="height:60px;width:100%">-->
-
             <!--</div>-->
         <!--</div>-->
+        <div style="width:900px;margin:auto">
+            <div style="margin-top:20px;padding:10px;height:55px;width:100%;background-color:#1d2e39;">
+                <input class="form-control" style="width:30%;height:35px;display:inline" placeholder="Buscar">
+                <button class="btn btn-primary" style="margin-left:5px;height:35px;padding:4px 12px;background-color:#313a77;border-color:#313a77"><i class="glyphicon glyphicon-search" style="margin-right:3px"></i>Buscar</button>
+                <span class="" style="margin-top:10px;float:right;font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:15px;font-style: normal; color:white;">{{#if prev}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-left" style="color:#da3434"></i></a>{{/if}}Pagina: {{currentPage}} de {{totalPages}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-right" style="color:#da3434"></i></a></span>
+            </div>
+
+                {{#each actividades}}
+                <div style="margin-top:20px;padding:20px;height:100px;width:100%;background-color:#1d2e39;">
+                    <h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3>
+                    <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
+                    <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <div style="height:60px;width:100%">
+
     </div>
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
         <ul>
