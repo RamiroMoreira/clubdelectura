@@ -5,10 +5,10 @@ var currentPage = new ReactiveVar();
 var totalPages = new ReactiveVar();
 var totalActivities = new ReactiveVar();
 var searchString = new ReactiveVar();
-var largoDePagina = 20;
+var largoDePagina = 2;
 Template.actividadesArchivo.onCreated(function(){
+    currentPage.set(1);
     this.autorun(function(){
-        currentPage.set(1);
         Meteor.subscribe('actividades',{sort:{inicio:-1}, skip:(currentPage.get()-1)*largoDePagina,limit:largoDePagina, search: searchString.get()});
         Meteor.call('getTotalActivities', searchString.get(), function(err, res){
             if(res){
@@ -51,7 +51,23 @@ Template.actividadesArchivo.helpers({
     'currentPage': function(){
         return currentPage.get();
     },
+    'next': function(){
+        return currentPage.get()<totalPages.get();
+    },
     'prev': function(){
-        return true;
+        return currentPage.get()>1
+    }
+})
+
+Template.actividadesArchivo.events({
+    'click .next-page': function(){
+        currentPage.set(currentPage.get()+1);
+    },
+    'click .prev-page': function(){
+        currentPage.set(currentPage.get()-1);
+    },
+    'change .search-actividad': function(event, ctx){
+        searchString.set(event.currentTarget.value);
+        currentPage.set(1);
     }
 })
