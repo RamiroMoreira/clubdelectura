@@ -284,6 +284,24 @@ li.notification {
     border-bottom-right-radius: 1em;
 }
 
+.horizontal-menu-item-2{
+    cursor:pointer;
+    display: inline;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    color:lightgray;
+    height:100%;
+    margin-left:2%;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:10px;
+    padding-bottom:30px;
+
+}
+
+.horizontal-menu-item-2:hover{
+    background-color:black;
+    color:white;
+}
 
 @media only screen and (max-device-width: 720px) {
     .horizontal-menu-item {

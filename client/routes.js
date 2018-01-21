@@ -1,5 +1,6 @@
 import '/imports/ui/admin/adminHome.html';
 import '/imports/ui/users/home.js';
+import '/imports/ui/users/archivo/actividadesArchivo.js';
 import '/imports/ui/users/nosotros/nosotros.js';
 import '/imports/ui/users/colaboradores/colaboradores.js';
 import '/imports/ui/admin/login/login.js';
@@ -39,6 +40,10 @@ Router.route('/', function () {
 
 Router.route('/nosotros', function(){
   this.render('Nosotros')
+})
+
+Router.route('/archivo/actividades', function(){
+    this.render('actividadesArchivo')
 })
 
 Router.route('/colaboradores', function(){

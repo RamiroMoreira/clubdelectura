@@ -37,8 +37,8 @@
 
 
 {{#if isDesktop}}
-    <div data-0="top:0px; display:block" data-700="top:0px" data-1000="top:-1200px" data-2200="top:-1200px"
-         data-3000="display:none;top:-2000px" class="tipita">
+    <div data-0="top:0px; display:block" data-700="top:0px" data-1000="top:-1200px" data-2200="top:-1200px;opacity:1"
+         data-3000="display:none;top:-2000px;opacity:0" class="tipita">
         <div class="rotation-slow layer-letras-tipita2"></div>
         <div class="rotation-very-slow layer-letras-tipita"></div>
         <div class="layer-tipita"></div>
@@ -55,7 +55,7 @@
         </div>
         {{#if actividadesFuturas}}
         <div  >
-        <div data-1500="opacity:0" data-1900="opacity:1" data-2200="opacity:1" data-2600="opacity:0" style="position:fixed; width:100%;margin-top:1700px;margin-left:0px;margin-right:0px;right:0px;height:120px;padding-right:70px;padding-left: 70px">
+        <div style="position:fixed; width:100%;margin-top:1700px;margin-left:0px;margin-right:0px;right:0px;height:120px;padding-right:70px;padding-left: 70px">
             <div style="position:relative; width:100%;height:120px;background-color:#1d2e39">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:120px">
                     <div class="carousel-inner">
@@ -200,10 +200,22 @@
         <ul>
            <a href="/nosotros"><li class="horizontal-menu-item {{isSelected "nosotros"}}" data-value="nosotros">NOSOTROS</li></a>
            <a href="https://www.facebook.com/groups/clubdelectura.uy/" target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
-           <li class="horizontal-menu-item {{isSelected "libros"}}" data-value="libros">LIBROS LEIDOS</li>
            <li class="horizontal-menu-item {{isSelected "reseñas"}}" data-value="reseñas">RESEÑAS</li>
            <a href="/colaboradores"><li class="horizontal-menu-item {{isSelected "colaboradores"}}" data-value="colaboradores">COLABORADORES</li></a>
-           <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+            <!--<li class="horizontal-menu-item {{isSelected "libros"}}" data-value="libros">LIBROS LEIDOS</li>-->
+            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item {{isSelected "libros"}}" data-value="libros">
+                <!--<div class="dropdown dropup">-->
+                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
+                    ARCHIVO
+                </div>
+                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Libros leidos</a>
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Prensa</a>
+                    <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                </div>
+            </li>
+            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
         </ul>
     </div>
 {{else}}
