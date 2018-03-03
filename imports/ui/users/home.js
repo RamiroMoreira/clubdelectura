@@ -188,15 +188,13 @@ Template.Home.events({
       if(scrollY >=0 && scrollY < base){
           // window.scrollTo(0,base)
           smothScroll(12, 300, scrollY,  base)
-
       }
       else if(scrollY >= base + 300+offset* Actividades.find().count()){
 
       }
       else{
           var position = Math.floor((scrollY - base+300)/offset);
-          smothScroll(12, 300, scrollY,  base+300+((position+1)*offset));
-
+          smothScroll(12, 300, scrollY,  base+300+((position)*offset));
       }
       $('.navigation-button-0').toggleClass('navigation-button-0-active-down')
       $('.navigation-button-1').toggleClass('navigation-button-1-active-down')
@@ -212,7 +210,6 @@ Template.Home.events({
           $('.navigation-button-4').toggleClass('navigation-button-4-active-down')
           $('.navigation-button-5').toggleClass('navigation-button-5-active-down')
       },500)
-
   },
   'click .navigation-top':function(e){
         // window.scrollTo(0,5000)
