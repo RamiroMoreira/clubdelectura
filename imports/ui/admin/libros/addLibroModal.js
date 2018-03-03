@@ -1,23 +1,42 @@
 import './addLibroModal.html';
 import { Actividades} from '/imports/api/actividades/actividades.js';
 
-var nombreLibro = new ReactiveVar("");
-var autorLibro = new ReactiveVar("");
-var searchString = new ReactiveVar("");
-var selectedActivity = new ReactiveVar("");
-var caratula = new ReactiveVar("")
-var libroId = new ReactiveVar("");
+var nombreLibro;
+var autorLibro;
+var searchString;
+var selectedActivity;
+var caratula;
+var libroId;
 Template.addLibroModal.onCreated(function(){
-    this.autorun(function(){
-        Meteor.subscribe('actividades',{sort:{inicio:-1},limit:2, search: searchString.get()});
+    nombreLibro = new ReactiveVar("");
+    autorLibro = new ReactiveVar("");
+    searchString = new ReactiveVar("");
+    selectedActivity = new ReactiveVar("");
+    caratula = new ReactiveVar("")
+    libroId = new ReactiveVar("");
+    if(this.data) {
+        nombreLibro.set(this.data.nombre);
+        autorLibro.set(this.data.autor);
+        caratula.set(this.data.caratula);
+        selectedActivity.set(this.data.actividadId);
+        libroId.set(this.data._id);
+    }
+    this.autorun(function () {
+       Meteor.subscribe('actividades', {sort: {inicio: -1}, limit: 10, search: searchString.get()});
     })
+
 })
 
 Template.addLibroModal.onRendered(function(){
-    // $('.selectpicker').selectpicker();
-    Meteor.setTimeout(function(){
-        $('.selectpicker')[0].value = ""
-    },100)
+    this.autorun(function () {
+        Meteor.setTimeout(function () {
+            if (_.isString(selectedActivity.get())) {
+                $('.selectpicker')[0].value = selectedActivity.get();
+                $('.selectpicker').selectpicker('refresh');
+            }
+        }, 100)
+    })
+
 })
 Template.addLibroModal.helpers({
     'nombreLibro': function () {
@@ -32,6 +51,12 @@ Template.addLibroModal.helpers({
 
         },100)
         return Actividades.find({},{sort:{inicio:-1}})
+    },
+    'caratula': function (){
+        return caratula.get();
+    },
+    'isSelected': function(){
+        return selectedActivity.get() === this._id;
     }
 });
 
@@ -61,9 +86,6 @@ Template.addLibroModal.events({
         });
     },
     'click .save-btn': function(e) {
-
-        debugger;
-
         var nuevoLibro = {}
         if (nombreLibro.get()) {
             nuevoLibro.nombre = nombreLibro.get();

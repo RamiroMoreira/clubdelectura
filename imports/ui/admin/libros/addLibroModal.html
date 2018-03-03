@@ -23,10 +23,15 @@
                             <select class="selectpicker" data-live-search="true" noneSelectedText="Ninguna seleccionada" data-max-options="1" multiple>
                                 <!--<option value="">Ninguna</option>-->
                                 {{#each actividades}}
-                                    <option value="{{_id}}">{{nombre}}</option>
+                                    <option value="{{_id}}" >{{nombre}}</option>
                                 {{/each}}
                             </select>
                         </div>
+                        {{#if caratula}}
+                            <div>
+                                <img style="max-width: 150px" src="{{caratula}}">
+                            </div>
+                        {{/if}}
                         <div class="form-group">
                             <label>Caratula: </label>
                             <div class="upload-area">

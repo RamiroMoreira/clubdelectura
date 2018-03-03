@@ -107,10 +107,9 @@ if (Meteor.isServer) {
         // if(params.sort){
         //     agregations.sort = params.sort;
         // }
-        // if(params.search){
-        //     query.$or = [{nombre:{ $regex: ".*"+params.search+".*", $options: 'i' }},{texto:{ $regex: ".*"+params.search+".*", $options: 'i' }}]
-        //
-        // }
+        if(params.search){
+            query.$or = [{nombre:{ $regex: ".*"+params.search+".*", $options: 'i' }},{autor:{ $regex: ".*"+params.search+".*", $options: 'i' }}]
+        }
         return Libros.find(query,agregations);
 
     });
