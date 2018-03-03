@@ -5,7 +5,7 @@ var currentPage = new ReactiveVar();
 var totalPages = new ReactiveVar();
 var totalActivities = new ReactiveVar();
 var searchString = new ReactiveVar();
-var largoDePagina = 2;
+var largoDePagina = 15;
 Template.actividadesArchivo.onCreated(function(){
     currentPage.set(1);
     this.autorun(function(){

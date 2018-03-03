@@ -21,7 +21,6 @@ Template.actividades.onCreated(function(){
         }
       })
   })
-
 })
 
 Template.actividades.events({

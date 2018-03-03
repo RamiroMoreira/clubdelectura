@@ -1,0 +1,133 @@
+<template name="addLibroModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Agregar Libro</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="">
+                        <div class="form-group">
+                            <label class="nombreLibro" >Titulo:</label>
+                            <input class="form-control" id="nombreLibro" value="{{nombreLibro}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="autorLibro" >Autor:</label>
+                            <input class="form-control" id="autorLibro" value="{{autorLibro}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="autorLibro" >Reunion:</label>
+                            <br>
+                            <select class="selectpicker" data-live-search="true" noneSelectedText="Ninguna seleccionada" data-max-options="1" multiple>
+                                <!--<option value="">Ninguna</option>-->
+                                {{#each actividades}}
+                                    <option value="{{_id}}">{{nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Caratula: </label>
+                            <div class="upload-area">
+                                <form id="upload">
+                                    <p class="alert alert-success text-center">
+                                        <span>Clickear o arrastrar acá para agregar la foto</span>
+                                        <br>
+                                        <input class="libro-caratula" type="file">
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label class="dibujo" >Dibujo:</label>-->
+                            <!--<select id="selectDibujo" class="form-control" >-->
+                                <!--{{#each dibujos}}-->
+                                    <!--<option {{dibujoInicial}} value="{{value}}">{{displayName}}</option>-->
+                                <!--{{/each}}-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="fechaActividad" >Fecha inicio:</label>-->
+                            <!--&lt;!&ndash;<div class='col-sm-6'>&ndash;&gt;-->
+                            <!--<input type='text' class="form-control" id='datetimepickerInicio' />-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="fechaActividad" >Fecha fin:</label>-->
+                            <!--&lt;!&ndash;<div class='col-sm-6'>&ndash;&gt;-->
+                            <!--<input type='text' class="form-control" id='datetimepickerFin' />-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="textoActividad">Texto:</label>-->
+                            <!--<textarea type="text" class="form-control" id="textoActividad" rows="8" value="{{textoActividad}}"></textarea>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="textoActividad">Colaboradores:</label>-->
+                            <!--{{#if colaborador}}-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-10">-->
+                                        <!--<select id="selectColaborador" class="form-control" >-->
+                                            <!--{{#each colaborador}}-->
+                                                <!--<option value="{{_id}}">{{nombre}}</option>-->
+                                            <!--{{/each}}-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-md-2">-->
+                                        <!--<span class="add-colaborador btn glyphicon glyphicon-plus" style="color:green" aria-hidden="true"></span>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+                            <!--{{/if}}-->
+                            <!--{{#if colaboradoresActividad}}-->
+                                <!--<div>-->
+                                    <!--<ul>-->
+                                        <!--{{#each colaboradoresActividad}}-->
+                                            <!--<li>{{nombre}} <span class="remove-colaborador btn glyphicon glyphicon-minus" style="color:red" aria-hidden="true"></span></li>-->
+                                        <!--{{/each}}-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--{{else}}-->
+                                <!--<div class="alert alert-info">-->
+                                    <!--No hay colaboradores agregados.-->
+                                <!--</div>-->
+                            <!--{{/if}}-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="textoActividad">Fotos:</label>-->
+                            <!--<div class="upload-area">-->
+                                <!--<form id="upload">-->
+                                    <!--<p class="alert alert-success text-center">-->
+                                        <!--<span>Clickear o Arrastrar acá para agregar foto</span>-->
+                                        <!--<br>-->
+                                        <!--<input class="actividad-foto" type="file">-->
+                                    <!--</p>-->
+                                <!--</form>-->
+                            <!--</div>-->
+                            <!--{{#if fotosActividad}}-->
+                                <!--<div>-->
+                                    <!--<ul>-->
+                                        <!--{{#each fotosActividad}}-->
+                                            <!--<li><a href="{{this}}">{{this}}</a> <span class="remove-foto btn glyphicon glyphicon-minus" style="color:red" aria-hidden="true"></span></li>-->
+                                        <!--{{/each}}-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--{{else}}-->
+                                <!--<div class="alert alert-info">-->
+                                    <!--No hay fotos agregadas.-->
+                                <!--</div>-->
+                            <!--{{/if}}-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default cancel-btn" data-dismiss="modal">Cancelar</button>
+                    <a type="button" class="btn btn-success save-btn">Guardar</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

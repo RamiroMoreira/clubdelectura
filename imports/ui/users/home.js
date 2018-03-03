@@ -14,16 +14,22 @@ var base = 2000;
 var offset = 550;
 var actividadesFuturas = [];
 var actividadesFuturasReactive = new Tracker.Dependency;
+var actividadesHandler;
 Template.Home.onCreated(function(){
     satie.set(false);
     audio = false;
-  Meteor.subscribe('actividades', {soloAnteriores: true, limit:20, sort:{inicio:-1}});
+    actividadesHandler = Meteor.subscribe('actividades', {soloAnteriores: true, limit:20, sort:{inicio:-1}});
   Meteor.call('getActividadesFuturas', function(err, res){
       if(res){
           actividadesFuturas = res;
           actividadesFuturasReactive.changed();
       }
   })
+})
+
+Template.Home.onDestroyed(function(){
+    actividadesHandler.stop();
+
 })
 
 Template.Home.onRendered(function(){

@@ -1,4 +1,5 @@
 import '/imports/ui/admin/adminHome.html';
+import '/imports/ui/admin/libros/librosAdmin.js';
 import '/imports/ui/users/home.js';
 import '/imports/ui/users/archivo/actividadesArchivo.js';
 import '/imports/ui/users/nosotros/nosotros.js';
@@ -53,7 +54,11 @@ Router.route('/colaboradores', function(){
 Router.route('/admin', function () {
   this.redirect("/admin/actividades")
   this.layout('mainNav');
+});
 
+Router.route('/admin/librosAdmin', function () {
+    this.redirect("/admin/librosAdmin")
+    this.layout('mainNav');
 });
 
 Router.route('/login', function () {

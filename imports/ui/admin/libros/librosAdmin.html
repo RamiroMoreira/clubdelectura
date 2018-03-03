@@ -1,10 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<template name="librosAdmin">
+    <div id="wrapper" class="no-padding">
 
-</body>
-</html>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <span style="color:white"><strong>Total libros: </strong>{{totalLibros}}</span>
+                </li>
+                <li class="sidebar-brand">
+                    <a class="addLibro pointer-click"><button type="button" class="btn btn-success btn-circle btn-lg margin-right-10"><span class="fa fa-plus"></span></button>Agregar libro</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div style="margin-bottom:10px">
+                                    <span class="search pointer-click"><button type="button" class="btn btn-primary btn-circle btn-lg margin-right-10"><span class="fa fa-search"></span></button>Filtrar: <input class="input-search form-control" style="display:inherit;margin-left:5px;width:300px"></span>
+                                    <span style="margin-left:10px">{{#if prev}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-left"></i></a>{{/if}}<strong>Pagina </strong>{{currentPage}}<strong> de </strong>{{totalPage}}{{#if next}}<a class="next-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-right"></i></a>{{/if}}</span>
+                                </div>
+                                <div class="table-container">
+                                    <table class="table table-filter  table-striped ">
+                                        <tbody>
+                                        {{#each libros}}
+                                            <tr data-status="pagado">
+                                                <td>
+                                                    <div class="ckbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <!--<a href="javascript:;" class="star">-->
+                                                    <!--<i class="glyphicon glyphicon-star"></i>-->
+                                                    <!--</a>-->
+                                                </td>
+                                                <td>
+                                                    <div class="media">
+                                                        <div href="#" class="pull-left" style="width:50px">
+                                                            <img class="" src="{{caratula}}" style="max-width:100%;max-height:100%">
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <!--<span class="media-meta pull-right" style="{{#if isNewActivity}}color:blue{{/if}}">{{autor}}</span>-->
+                                                            <h4 class="title">
+                                                                <strong>{{nombre}}</strong>
+
+                                                            </h4>
+                                                            <span>{{autor}}</span>
+                                                            <div class="btn-group btn-group-sm margin-left-15 pull-right">
+                                                                <button class="btn btn-default btn-remove">
+                                                                    <i class="fa fa-trash fa-fw"></i>
+                                                                </button>
+                                                                <button class="btn btn-default" id="edit-actividad">
+                                                                    <i class="fa fa-pencil fa-fw"></i>
+                                                                </button>
+                                                            </div>
+                                                            <!--<p class="summary">{{texto}}</p>-->
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {{/each}}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</template>
