@@ -21,7 +21,10 @@
                     <div style="background-color:#1d2e39;height:405px;">
                         <img src="{{caratula}}" style="max-width:80%;margin-left:10%;margin-top:10%">
                         <h3 class="actividad-nombre" style="margin-left:10%;margin-right:10%;line-height:22px;font-size:18px;margin-top:5px;">{{nombre}}</h3>
-                        <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;margin-left:10%;font-style: normal; color:white;">{{autor}}</span>
+                        <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;margin-left:10%;font-style: normal; color:white;">{{autor}}</span><br>
+                        {{#if actividadId}}
+                        <a href="/actividadInfo/{{actividadId}}" style="text-decoration: none;margin-top:5px;margin-left:10%;font-align:center;"><i class="fa-arrow-right" style="color:white;font-size:20px"></i></a>
+                        {{/if}}
                     </div>
                     <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
                 </div>
