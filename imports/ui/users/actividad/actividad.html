@@ -1,0 +1,50 @@
+<template name="actividadInfo">
+    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh;padding:10px">
+        <div style="width:900px;margin:auto">
+            {{#with actividad}}
+            <div class="row" style="background-color:#1d2e39;height:500px;margin-top:10px">
+                <div class="col-md-8">
+                    <h3 class="actividad-nombre" style="margin:25px;margin-top:35px;margin-bottom:15px">{{nombre}}</h3>
+                    <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;margin-left:25px;display:block;margin-right:25px;margin-bottom:25px;font-style: normal; color:white;">
+                        {{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}
+                    </span>
+                    <p style="margin-left:25px;margin-right:25px;text-align:left; font-family: 'Open Sans', sans-serif; color:white; font-size:20px">{{texto}}</p>
+
+                    {{#if libro}}
+                        {{#with libro}}
+                        <span  style="font-family:'Montserrat';font-weight: 700;font-size: 12px;line-height:15px;margin-left:25px;display:block;margin-right:25px;margin-bottom:25px;font-style: normal; color:white;">
+                            Libro: {{nombre}} - {{autor}}
+                        </span>
+                        {{/with}}
+                    {{/if}}
+                    {{#if caratula}}
+                        <div style="height:50px;margin-top:60px;width:100%;text-align:center;color:white"><span class="galeriaFotos btn btn-lg" style="background-image:url('../icono_galeria.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></span></div>
+                    {{/if}}
+
+                    </div>
+                <div class="col-md-4" style="height:500px;padding:0px;{{#if caratula}}background-color: #171f2a{{/if}}">
+                    {{#if caratula}}
+                        <!--<img style="max-height:100%;max-width:100%;margin:auto" src="{{caratula}}" alt="{{caratula}}">-->
+                        <div style="background-position:center;background-image:url({{caratula}}); background-size:contain; background-repeat:no-repeat; width:100%; height:100%"></div>
+                    {{else}}
+                        <div style="background-position:center;background-image:url('../{{dibujo}}.png'); background-size:150%; background-repeat:no-repeat; width:100%; height:100%"></div>                    {{/if}}
+                </div>
+
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    <div style="height:60px;width:100%">
+
+    </div>
+    <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+        <ul>
+            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
+            <a href="https://www.facebook.com/groups/clubdelectura.uy/"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+            <li class="horizontal-menu-item" data-value="libros">LIBROS LEIDOS</li>
+            <li class="horizontal-menu-item" data-value="reseñas">RESEÑAS</li>
+            <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
+            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+        </ul>
+    </div>
+</template>

@@ -94,5 +94,8 @@ Meteor.methods({
 
   });
 
+  Meteor.publish("singleActivity", function actividadInfoPublication(id){
+    return Actividades.find({_id:id});
+  })
 
 }

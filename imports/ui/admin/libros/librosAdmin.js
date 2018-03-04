@@ -52,7 +52,7 @@ Template.librosAdmin.events({
 
 Template.librosAdmin.helpers({
     'libros': function(){
-        return Libros.find();
+        return Libros.find({},{sort:{actividadInicio:-1}});
     },
     // 'getDate': function(date){
     //     return moment(date).format('DD/MM/YYYY h:mm A');

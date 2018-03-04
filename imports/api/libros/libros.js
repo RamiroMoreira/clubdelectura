@@ -115,4 +115,7 @@ if (Meteor.isServer) {
     });
 
 
+    Meteor.publish("libroActividad", function libroActividadPublication(id){
+        return Libros.find({actividadId:id});
+    })
 }

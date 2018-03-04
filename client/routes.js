@@ -2,6 +2,8 @@ import '/imports/ui/admin/adminHome.html';
 import '/imports/ui/admin/libros/librosAdmin.js';
 import '/imports/ui/users/home.js';
 import '/imports/ui/users/archivo/actividadesArchivo.js';
+import '/imports/ui/users/actividad/actividad.js';
+import '/imports/ui/users/archivo/librosArchivo.js';
 import '/imports/ui/users/nosotros/nosotros.js';
 import '/imports/ui/users/colaboradores/colaboradores.js';
 import '/imports/ui/admin/login/login.js';
@@ -17,10 +19,6 @@ var OnBeforeActions = {
     if (!Meteor.userId() && !Meteor.loggingIn()) {
       this.redirect('/login')
     }else{
-      // userInfo = Utils.getUserInformation(Meteor.userId());
-      // if(userInfo) {
-      //   TAPi18n.setLanguage(userInfo.language);
-      // }
       this.next();
     }
   }
@@ -47,8 +45,18 @@ Router.route('/archivo/actividades', function(){
     this.render('actividadesArchivo')
 })
 
+Router.route('/archivo/libros', function(){
+    this.render('librosArchivo')
+})
+
+
 Router.route('/colaboradores', function(){
     this.render('Colaboradores')
+})
+
+Router.route('/actividadInfo/:_id', {controller: 'ActividadController'},function(){
+
+    this.render('actividadInfo')
 })
 //
 Router.route('/admin', function () {
