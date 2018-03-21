@@ -4,11 +4,13 @@ import '/imports/ui/users/home.js';
 import '/imports/ui/users/archivo/actividadesArchivo.js';
 import '/imports/ui/users/actividad/actividad.js';
 import '/imports/ui/users/archivo/librosArchivo.js';
+import '/imports/ui/users/archivo/prensaArchivo.js';
 import '/imports/ui/users/nosotros/nosotros.js';
 import '/imports/ui/users/colaboradores/colaboradores.js';
 import '/imports/ui/admin/login/login.js';
 import '/imports/ui/admin/navbar.js'
 import '/imports/ui/admin/actividades/actividades.js';
+import '/imports/ui/admin/prensa/prensaAdmin.js';
 import '/imports/ui/admin/quienesSomos/quienesSomosAdmin.js';
 import '/imports/ui/admin/aliados/aliados.js';
 import '/imports/ui/libraryOrganizer/libraryOrganizer.js';
@@ -49,6 +51,10 @@ Router.route('/archivo/libros', function(){
     this.render('librosArchivo')
 })
 
+Router.route('/archivo/prensa', function(){
+    this.render('prensaArchivo')
+})
+
 
 Router.route('/colaboradores', function(){
     this.render('Colaboradores')
@@ -77,6 +83,11 @@ Router.route('/admin/actividades', function () {
   this.render('actividades');
   this.layout('mainNav');
 
+});
+
+Router.route('/admin/prensa', function () {
+    this.render('prensaAdmin');
+    this.layout('mainNav');
 });
 
 Router.route('/admin/review', function () {

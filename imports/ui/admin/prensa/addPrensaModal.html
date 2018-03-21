@@ -1,0 +1,107 @@
+<template name="addPrensaModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Agregar prensa</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="form-group">
+                            <label class="tituloPrensa" >Titulo:</label>
+                            <input class="form-control" id="tituloPrensa" value="{{tituloPrensa}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="resumenPrensa" >Resumen:</label>
+                            <textarea type="text" class="form-control" id="resumenPrensa" rows="8" value="{{resumenPrensa}}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="fechaActividad" >Fecha:</label>
+                            <input type='text' class="form-control datetimepickerFecha" id='datetimepickerFecha' />
+                        </div>
+                        <div class="form-group">
+                            <label class="linkPrensa" >Link:</label>
+                            <br>
+                            <input class="form-control" id="linkPrensa" value="{{linkPrensa}}">
+                        </div>
+                        {{#if caratula}}
+                            <div>
+                                <img style="max-width: 150px" src="{{caratula}}">
+                            </div>
+                        {{/if}}
+                        <div class="form-group">
+                            <label>Caratula: </label>
+                            <div class="upload-area">
+                                <form id="upload">
+                                    <p class="alert alert-success text-center">
+                                        <span>Clickear o arrastrar acá para agregar la caratula</span>
+                                        <br>
+                                        <input class="prensa-caratula" type="file">
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="textoActividad">Galería:</label>
+                            <div class="upload-area">
+                                <form id="upload">
+                                    <p class="alert alert-success text-center">
+                                        <span>Clickear o Arrastrar acá para agregar foto</span>
+                                        <br>
+                                        <input class="prensa-foto" type="file">
+                                    </p>
+                                </form>
+                            </div>
+                            {{#if fotosPrensa}}
+                                <div>
+                                    <ul>
+                                        {{#each fotosPrensa}}
+                                            <li><a href="{{this}}">{{this}}</a> <span class="remove-foto btn glyphicon glyphicon-minus" style="color:red" aria-hidden="true"></span></li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            {{else}}
+                                <div class="alert alert-info">
+                                    No hay fotos agregadas.
+                                </div>
+                            {{/if}}
+                        </div>
+                        {{#if audio}}
+                            <div>
+                                <!--<img style="max-width: 150px" src="{{audio}}">-->
+                                AUDIO! {{audio}}
+                            </div>
+                        {{/if}}
+                        <div class="form-group">
+                            <label>Audio: </label>
+                            <div class="upload-area">
+                                <form id="upload">
+                                    <p class="alert alert-success text-center">
+                                        <span>Clickear o arrastrar acá para agregar grabación</span>
+                                        <br>
+                                        <input class="prensa-audio" type="file">
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="linkPrensa" >Youtube:</label>
+                            <br>
+                            <input class="form-control" id="videoPrensa" value="{{videoPrensa}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    {{#if error}}
+                        <div class="alert-danger" style="text-align: left;padding:10px;margin-bottom:10px">
+                            {{error}}
+                        </div>
+                    {{/if}}
+                    <button type="button" class="btn btn-default cancel-btn" data-dismiss="modal">Cancelar</button>
+                    <a type="button" class="btn btn-success save-btn">Guardar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

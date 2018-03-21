@@ -1,0 +1,108 @@
+<template name="prensaArchivo">
+    <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+        <div class="titulo" style="width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
+            <div style="width:100%;height:270px;background-image: url('../portada_prensa.png');background-size:cover; background-repeat:no-repeat;">
+
+            </div>
+            <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
+                PRENSA
+            </span>
+        </div>
+        <div style="width:900px;margin:auto">
+            <div style="margin-top:20px;padding:10px;height:55px;width:100%;background-color:#1d2e39;">
+                <input class="search-prensa form-control" style="width:30%;height:35px;display:inline" placeholder="Buscar">
+                <button class="btn btn-primary" style="margin-left:5px;height:35px;padding:4px 12px;background-color:#313a77;border-color:#313a77"><i class="glyphicon glyphicon-search" style="margin-right:3px"></i>Buscar</button>
+                <span class="" style="{{#unless next}}margin-right:33px;{{/unless}}margin-left:10px;margin-top:10px;float:right;font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:15px;font-style: normal; color:white;">
+                    {{#if prev}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-left" style="margin-right:10px;color:#da3434"></i></a>{{/if}}
+                    Página: {{currentPage}} de {{totalPages}}
+                    {{#if next}}<a class="next-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-right" style="margin-right:10px;color:#da3434"></i></a>{{/if}}
+                </span>
+            </div>
+            <div class="row" style="margin-right:0px;margin-left:0px">
+                {{#each prensa}}
+                    <div class="col-md-12" style="margin-top:20px;margin-bottom:40px;padding:0px;background-color:#1d2e39;height:300px">
+                        <div class="col-md-6" style="padding:0px;height:300px;position:relative">
+                            {{#if esPar}}
+                                <div style="background-position:center;background-image: url('{{caratula}}'); background-size:cover; background-repeat:no-repeat; width:100%; height:100%"></div>
+                            {{else}}
+                                <div style="padding-top:10px;padding-left:20px;padding-right:20px">
+                                    <h3 class="actividad-nombre" style="font-size:18px;">Praesent ullamcorper ornare tortor</h3>
+                                    <p style="margin-top:10px;text-align:left; font-family: 'Open Sans', sans-serif; color:white; font-size:18px">{{resumen}}</p>
+                                    <div style="position:absolute;height:50px;bottom:10px;width:100%;text-align:center;color:white">
+                                        {{#if tieneFotos}}
+                                            <span class="galeriaFotos btn btn-lg" style="background-image:url('../icono_galeria.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></span>
+                                        {{/if}}
+                                        {{#if audio}}
+                                            <a href="{{audio}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_audio.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></a>
+                                        {{/if}}
+                                        {{#if youtube}}
+                                            <a href="{{youtube}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_video.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></a>
+                                        {{/if}}
+                                        {{#if link}}
+                                            <a href="{{link}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></a>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </div>
+                        <div class="col-md-6" style="padding:0px;height:300px;position:relative">
+                            {{#if esPar}}
+                                <div style="padding-top:10px;padding-left:20px;padding-right:20px">
+                                    <h3 class="actividad-nombre" style="font-size:18px;">Praesent ullamcorper ornare tortor</h3>
+                                    <p style="margin-top:10px;text-align:left; font-family: 'Open Sans', sans-serif; color:white; font-size:18px">{{resumen}}</p>
+                                    <div style="position:absolute;height:50px;bottom:10px;width:100%;text-align:center;color:white">
+                                        {{#if tieneFotos}}
+                                            <span class="galeriaFotos btn btn-lg" style="background-image:url('../icono_galeria.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></span>
+                                        {{/if}}
+                                        {{#if audio}}
+                                            <a href="{{audio}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_audio.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></a>
+                                        {{/if}}
+                                        {{#if youtube}}
+                                            <a href="{{youtube}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_video.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></a>
+                                        {{/if}}
+                                        {{#if link}}
+                                            <a href="{{link}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:80px;height:80px" ></a>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            {{else}}
+                                <div style="background-position:center;background-image: url('{{caratula}}'); background-size:cover; background-repeat:no-repeat; width:100%; height:100%"></div>
+                            {{/if}}
+
+                        </div>
+                        <!--<div style="background-color:#1d2e39;height:405px;">-->
+
+                        <!--</div>-->
+                        <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
+                    </div>
+                {{/each}}
+                <div style="background-color:#2d3e54;position: fixed;width:100%;top:0px;left:0px;z-index:-1;padding-top:100px" >
+                    <div style="background-image:url('../letras_lineadetiempo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                    <div class="rotation-very-slow " style="background-image:url('../letras_lineadetiempo2.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height:60px;width:100%">
+
+    </div>
+    <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+        <ul>
+            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
+            <a href="/nosotros"><li class="horizontal-menu-item" data-value="prensa">NOSOTROS</li></a>
+            <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+            <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
+            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
+                <!--<div class="dropdown dropup">-->
+                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
+                    MAS
+                </div>
+                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/libros">Libros leidos</a>
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</template>

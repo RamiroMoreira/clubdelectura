@@ -1,31 +1,17 @@
 <template name="actividadesArchivo">
-    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh;padding:10px">
-        <div class="titulo" style="width:974px;margin:auto;padding:25px;background-color:#1d2e39;text-align:center">
+    <!--<div class="layer-linea-del-tiempo2" style="z-index:1;max-width:1024px;background-size:contain"></div>-->
+    <!--<div class="layer-linea-del-tiempo" style="z-index:1max-width:1024px;background-size:contain"></div>-->
+    <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+        <div class="titulo" style="width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
+            <div style="width:100%;height:270px;background-image: url('../portada_actividades.png');background-size:cover; background-repeat:no-repeat;">
+
+            </div>
             <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
                 ARCHIVO DE ACTIVIDADES
             </span>
         </div>
-        <!--<div class="list-personas" style="margin-top:25px">-->
-            <!--<div class="titulo" style="padding:25px">-->
-                <!--<span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">-->
-                    <!--Coordinadoras-->
-                <!--</span>-->
-            <!--</div>-->
-            <!--{{#each personas}}-->
-                <!--<div class="persona" style="margin-left:65px;margin-right:65px">-->
-                    <!--<div class="row">-->
-                        <!--<div class="col-md-offset-2 col-md-2"><img src="{{urlFoto}}" style="max-width:150px;border-radius: 100%"></div>-->
-                        <!--<div class="col-md-8" style="min-height:200px">-->
-                            <!--<h4 style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;">{{nombre}}</h4>-->
-                            <!--<p style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:14px">{{texto}}</p>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--{{/each}}-->
-            <!--<div style="height:60px;width:100%">-->
-            <!--</div>-->
-        <!--</div>-->
         <div style="width:900px;margin:auto">
+
             <div style="margin-top:20px;padding:10px;height:55px;width:100%;background-color:#1d2e39;">
                 <input class="search-actividad form-control" style="width:30%;height:35px;display:inline" placeholder="Buscar">
                 <button class="btn btn-primary" style="margin-left:5px;height:35px;padding:4px 12px;background-color:#313a77;border-color:#313a77"><i class="glyphicon glyphicon-search" style="margin-right:3px"></i>Buscar</button>
@@ -47,13 +33,20 @@
                        </div>
                        <div class="col-md-1" style="padding-left:0px;">
                            <div style="margin-top:20px;padding-top:20px;height:100px;background-color:#1d2e39;">
-                                <a href="/actividadInfo/{{_id}}" style="text-decoration: none"><i class="fa-arrow-right" style="color:white;font-size:30px"></i></a>
+                               <a  href="/actividadInfo/{{_id}}" class="btn btn-lg" style="background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:60px;height:60px" ></a>
+
                            </div>
                        </div>
                    </div>
 
             {{/each}}
+
+            <div style="background-color:#2d3e54;position: fixed;width:100%;top:0px;left:0px;z-index:-1;padding-top:100px" >
+                <div style="background-image:url('../letras_lineadetiempo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                <div class="rotation-very-slow " style="background-image:url('../letras_lineadetiempo2.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+            </div>
         </div>
+
     </div>
     <div style="height:60px;width:100%">
 
@@ -61,11 +54,22 @@
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
         <ul>
             <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
-            <a href="https://www.facebook.com/groups/clubdelectura.uy/"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
-            <li class="horizontal-menu-item" data-value="libros">LIBROS LEIDOS</li>
-            <li class="horizontal-menu-item" data-value="reseñas">RESEÑAS</li>
+            <a href="/nosotros"><li class="horizontal-menu-item" data-value="prensa">NOSOTROS</li></a>
+            <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+            <a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="colaboradores">PRENSA</li></a>
             <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
-            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
+                <!--<div class="dropdown dropup">-->
+                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
+                    MAS
+                </div>
+                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/libros">Libros leidos</a>
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
+                </div>
+            </li>
         </ul>
     </div>
+
+
 </template>

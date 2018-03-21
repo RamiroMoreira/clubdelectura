@@ -15,7 +15,6 @@ Template.map.rendered = function() {
     doubleClickZoom: false
   }).setView([45, - 93.2], 12);
 
-  debugger;
 
   L.tileLayer.provider('MapQuestOpen.OSM').addTo(map);
 
@@ -121,6 +120,5 @@ $(function() {
 
 Template.libraryOrganizer.events({
   'click .leaflet-clickable': function(){
-    debugger;
   }
 })

@@ -71,6 +71,7 @@ Template.actividadInfo.helpers({
         if(activity.get())
           return activity.get().dibujo;
     }
+
 })
 
 Template.actividadInfo.events({

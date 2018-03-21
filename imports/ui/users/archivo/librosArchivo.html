@@ -1,6 +1,9 @@
 <template name="librosArchivo">
-    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh;padding:10px">
-        <div class="titulo" style="width:974px;margin:auto;padding:25px;background-color:#1d2e39;text-align:center">
+    <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+        <div class="titulo" style="width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
+            <div style="width:100%;height:270px;background-image: url('../portada_leidos.png');background-size:cover; background-repeat:no-repeat;">
+
+            </div>
             <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
                 LIBROS LEIDOS
             </span>
@@ -17,18 +20,22 @@
             </div>
             <div class="row">
             {{#each libros}}
-                <div class="col-md-3" style="margin-top:20px;padding:10px;">
+                <div class="col-md-3" style="margin-top:20px;padding:10px;position:relative">
                     <div style="background-color:#1d2e39;height:405px;">
                         <img src="{{caratula}}" style="max-width:80%;margin-left:10%;margin-top:10%">
                         <h3 class="actividad-nombre" style="margin-left:10%;margin-right:10%;line-height:22px;font-size:18px;margin-top:5px;">{{nombre}}</h3>
                         <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;margin-left:10%;font-style: normal; color:white;">{{autor}}</span><br>
                         {{#if actividadId}}
-                        <a href="/actividadInfo/{{actividadId}}" style="text-decoration: none;margin-top:5px;margin-left:10%;font-align:center;"><i class="fa-arrow-right" style="color:white;font-size:20px"></i></a>
+                            <a  href="/actividadInfo/{{actividadId}}" class="btn btn-lg" style="float:right;background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:60px;height:60px;position:absolute;bottom:5px;right:10px" ></a>
                         {{/if}}
                     </div>
                     <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
                 </div>
             {{/each}}
+                <div style="background-color:#2d3e54;position: fixed;width:100%;top:0px;left:0px;z-index:-1;padding-top:100px" >
+                    <div style="background-image:url('../letras_lineadetiempo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                    <div class="rotation-very-slow " style="background-image:url('../letras_lineadetiempo2.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -38,11 +45,20 @@
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
         <ul>
             <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
-            <a href="https://www.facebook.com/groups/clubdelectura.uy/"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
-            <li class="horizontal-menu-item" data-value="libros">LIBROS LEIDOS</li>
-            <li class="horizontal-menu-item" data-value="reseñas">RESEÑAS</li>
+            <a href="/nosotros"><li class="horizontal-menu-item" data-value="prensa">NOSOTROS</li></a>
+            <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+            <a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="colaboradores">PRENSA</li></a>
             <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
-            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
+            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
+                <!--<div class="dropdown dropup">-->
+                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
+                    MAS
+                </div>
+                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
+                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
+                </div>
+            </li>
         </ul>
     </div>
 </template>

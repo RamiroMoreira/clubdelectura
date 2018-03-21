@@ -6,7 +6,12 @@ var fotosDepend = new Tracker.Dependency;
 
 
 Template.galeriaFotos.onCreated(function(){
-    titulo.set(this.data.nombre)
+    if(this.data.nombre){
+        titulo.set(this.data.nombre)
+    }
+    else if(this.data.titulo){
+        titulo.set(this.data.titulo)
+    }
     fotos = this.data.fotos
     fotosDepend.changed()
 })
