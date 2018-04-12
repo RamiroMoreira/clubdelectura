@@ -303,6 +303,12 @@ li.notification {
     color:white;
 }
 
+.horizontal-menu-item-2-selected{
+    background-color:black;
+    color:white;
+}
+
+
 @media only screen and (max-device-width: 720px) {
     .horizontal-menu-item {
         margin-left:0%;
