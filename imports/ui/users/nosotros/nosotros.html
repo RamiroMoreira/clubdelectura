@@ -1,58 +1,124 @@
+<!--<template name="nosotros">-->
+    <!--<div style="background-color:#2d3e54;min-width:100wh;min-height:100vh">-->
+        <!--{{#if presentacionFoto}}-->
+            <!--<img style="width:100%;position:relative;z-index:2" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">-->
+        <!--{{/if}}-->
+        <!--<div class="titulo" style="padding:25px">-->
+            <!--<span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">-->
+                <!--Quienes somos-->
+            <!--</span>-->
+        <!--</div>-->
+        <!--<div class="presentacion" style="margin-left:65px;margin-right:65px">-->
+            <!--<p style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:26px">-->
+                <!--{{presentacion}}-->
+            <!--</p>-->
+        <!--</div>-->
+        <!--<div class="list-personas" style="margin-top:25px">-->
+            <!--<div class="titulo" style="padding:25px">-->
+                <!--<span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">-->
+                    <!--Coordinadoras-->
+                <!--</span>-->
+            <!--</div>-->
+        <!--{{#each personas}}-->
+        <!--<div class="persona" style="margin-left:65px;margin-right:65px">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-offset-2 col-md-2"><img src="{{urlFoto}}" style="max-width:150px;border-radius: 100%"></div>-->
+                <!--<div class="col-md-8" style="min-height:200px">-->
+                    <!--<h4 style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;">{{nombre}}</h4>-->
+                    <!--<p style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:14px">{{texto}}</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--{{/each}}-->
+            <!--<div style="height:60px;width:100%">-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">-->
+        <!--<ul>-->
+            <!--<a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>-->
+            <!--<li class="horizontal-menu-item horizontal-menu-item-selected" data-value="home">NOSOTROS</li>-->
+            <!--<a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>-->
+            <!--<a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="prensa">PRENSA</li></a>-->
+            <!--<a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>-->
+            <!--<li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">-->
+                <!--&lt;!&ndash;<div class="dropdown dropup">&ndash;&gt;-->
+                <!--<div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">-->
+                    <!--MAS-->
+                <!--</div>-->
+                <!--<div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">-->
+                    <!--<a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/libros">Libros leidos</a>-->
+                    <!--<a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>-->
+                    <!--<a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</template>-->
 <template name="nosotros">
-    <div style="background-color:#2d3e54;min-width:100wh;min-height:100vh">
-        {{#if presentacionFoto}}
-            <img style="width:100%;position:relative;z-index:2" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">
-        {{/if}}
-        <div class="titulo" style="padding:25px">
-            <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
-                Quienes somos
+<div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+    <div class="titulo" style="width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
+        <div style="width:100%;margin-bottom:10px;height:270px;background-image: url({{presentacionFoto}});background-size:cover; background-repeat:no-repeat;">
+
+        </div>
+        <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
+                NOSOTROS
+            </span>
+    </div>
+    <div style="width:900px;margin:auto">
+
+        <div style="margin-top:20px;padding:10px;width:100%;background-color:#1d2e39;">
+            <span class="" style="text-align:right; font-family: 'Open Sans', sans-serif; color:white; font-size:20px">
+                {{presentacion}}
             </span>
         </div>
-        <div class="presentacion" style="margin-left:65px;margin-right:65px">
-            <p style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:26px">
-                {{presentacion}}
-            </p>
-        </div>
-        <div class="list-personas" style="margin-top:25px">
-            <div class="titulo" style="padding:25px">
-                <span style=" font-family:'Montserrat';font-weight: 700;font-size: 24px;line-height:30px;font-style: normal; color:white;">
-                    Coordinadoras
-                </span>
-            </div>
-        {{#each personas}}
-        <div class="persona" style="margin-left:65px;margin-right:65px">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-2"><img src="{{urlFoto}}" style="max-width:150px;border-radius: 100%"></div>
-                <div class="col-md-8" style="min-height:200px">
-                    <h4 style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;">{{nombre}}</h4>
-                    <p style="text-align:left;font-family: 'Open Sans', sans-serif;color:white;font-size:14px">{{texto}}</p>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-            <div style="height:60px;width:100%">
 
+        {{#each personas}}
+            <div class="row" style="background-color:#1d2e39;padding-bottom:10px;margin-left:0px;margin-right:0px;margin-top:20px;padding-bottom:20px">
+                <div class="col-md-8" style="padding-right:0px">
+                    <div style="padding:20px;">
+                        <h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3>
+                        <span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding-left:0px;">
+                    <div style="float:right;padding-top:20px;background-color:#1d2e39;">
+                        <img src="{{urlFoto}}" style="max-width:150px;border-radius: 100%">
+                    </div>
+                </div>
             </div>
+
+        {{/each}}
+
+        <div class="letritas-container" >
+            <div style="background-image:url('../letras_lineadetiempo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+            <div class="rotation-very-slow " style="background-image:url('../letras_lineadetiempo2.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
         </div>
     </div>
-    <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
-        <ul>
-            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
-            <li class="horizontal-menu-item horizontal-menu-item-selected" data-value="home">NOSOTROS</li>
-            <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
-            <a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="prensa">PRENSA</li></a>
-            <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
-            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
-                <!--<div class="dropdown dropup">-->
-                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
-                    MAS
-                </div>
-                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/libros">Libros leidos</a>
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+
+</div>
+<div style="height:60px;width:100%">
+
+</div>
+<div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+    <ul>
+        <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
+        <a href="/nosotros"><li class="horizontal-menu-item horizontal-menu-item-selected" data-value="prensa">NOSOTROS</li></a>
+        <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
+        <a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="colaboradores">PRENSA</li></a>
+        <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
+        <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
+            <!--<div class="dropdown dropup">-->
+            <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
+                MAS
+            </div>
+            <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
+                <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
+                <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/libros">Libros leidos</a>
+                <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
+            </div>
+        </li>
+    </ul>
+</div>
 </template>
