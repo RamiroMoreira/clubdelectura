@@ -2,7 +2,9 @@
     {{#if isDesktop}}
         <div class="{{#if esPar}}col-md-7 par-left{{else}} col-md-5 impar-left{{/if}}" >
             {{#if esPar}}
-                <div style="background-image:url('nino_leyendo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+                <div style="text-align:center;background-image:url('nino_leyendo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%">
+                    <span style="margin-left: 180px;color: #faecd7;cursor:pointer">·</span>
+                </div>
             {{else}}
                 {{>textImpar}}
             {{/if}}
@@ -11,7 +13,8 @@
             {{#if esPar}}
                 {{>textPar}}
             {{else}}
-                <div style="background-image:url('nino_leyendo.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+                <div style="background-image:url('nino_leyendo.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%">
+                </div>
 
             {{/if}}
         </div>
