@@ -1,7 +1,9 @@
 import '/imports/ui/users/templatesImages/niñoLeyendo.html'
 import './textActivity.js'
-var audio;
+// var audio;
 var evilMorty = new ReactiveVar(false)
+morty = new ReactiveVar(false);
+
 Template.niñoLeyendo.helpers({
     esPar: function(){
         if(this.position % 2 === 0){
@@ -24,14 +26,14 @@ Template.niñoLeyendo.helpers({
 
 Template.niñoLeyendo.events({
     'click .morty': function(){
-        debugger;
-        if(!audio) {
             audio = new Audio('morty.mp3');
             audio.loop = false;
             audio.play()
-        }
+            morty = new ReactiveVar(false);
+
         Meteor.setTimeout(function(){
             evilMorty.set(true);
-        },37000)
+            morty.set(true);
+        },27500)
     }
 })

@@ -9,7 +9,7 @@ import './actividadItem.js'
 
 var expandedMenu = new ReactiveVar(false)
 var satie = new ReactiveVar(false)
-var audio;
+audio = undefined;
 var base = 2000;
 var offset = 550;
 var actividadesFuturas = [];
@@ -164,6 +164,7 @@ Template.Home.events({
          audio.loop = true;
      }
      if(!satie.get()) {
+         audio.stop();
          audio.play();
          satie.set(true);
      }
