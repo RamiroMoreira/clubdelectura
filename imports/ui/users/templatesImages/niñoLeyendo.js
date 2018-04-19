@@ -34,6 +34,10 @@ Template.niñoLeyendo.events({
         Meteor.setTimeout(function(){
             evilMorty.set(true);
             morty.set(true);
-        },27500)
+        },27750)
+        Meteor.setTimeout(function(){
+            evilMorty.set(false);
+            morty.set(false);
+        },52000)
     }
 })
