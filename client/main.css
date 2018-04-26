@@ -466,7 +466,6 @@ li.notification {
         font-size: 36px;
         line-height:30px;
         font-style: normal;
-        text-transform: uppercase;
         margin:0px;
         color:white;
         /*margin-right:40px;*/
@@ -548,7 +547,6 @@ li.notification {
         font-size: 72px;
         line-height:69px;
         font-style: normal;
-        text-transform: uppercase;
         margin:0px;
         color:white;
         text-align:center;/*margin-right:40px;*/
@@ -932,14 +930,15 @@ body, html {
 }
 
 .layer-linea-del-tiempo{
-    background-position:center top;
+    background-position:center bottom;
     background-image:url('letras_lineadetiempo.png');
     background-repeat: no-repeat;
     position:fixed;width:100%;
     min-height:100vh;
     margin-top:0%;
     /*background-size: 100% 100%;*/
-    z-index: 1;
+    z-index: -1;
+    bottom:0px;
 }
 
 .layer-linea-del-tiempo2{

@@ -26,13 +26,13 @@
 
     </div>
     {{else}}
-        <div  class="no-height-mobil caratula" style="position:absolute">
+        <div  class="no-height-mobil caratula" style="height:100vh;position:absolute">
           <div    class="layer-0" style="position:absolute;width:100%;background-position-x: -100px"> </div>
-          <div   class="layer-1" style="position:absolute"> </div>
-          <div   class="layer-2" style="position:absolute"> </div>
-          <div  class="layer-letras-transicion" style="position:absolute"> </div>
-          <div    class="layer-box" style="position:absolute"></div>
-          <div    class="layer-3" style="position:absolute"> </div>
+          <div   class="layer-1" style="height:100vh;background-size:cover;background-position:bottom left;margin-top:0;position:absolute"> </div>
+          <div   class="layer-2" style="height:100vh;background-size:cover;background-position:bottom left;margin-top:35vh;position:absolute"> </div>
+          <!--<div  class="layer-letras-transicion" style="position:absolute"> </div>-->
+          <!--<div    class="layer-box" style="height:100vh;position:absolute"></div>-->
+          <div    class="layer-3" style="background-size:cover;margin-top:60vh;position:absolute"> </div>
           <div    class="layer-logo" style="position:absolute"> </div>
         </div>
     {{/if}}
@@ -267,12 +267,13 @@
     {{else}}
     <div  id="body" style="overflow-y:hidden;overflow-x:hidden;padding-top:3000px;padding-bottom:200px;position:absolute;z-index:-1;width:100%; height:auto;background-color:#2d3e54">
 
-        <div style="max-width:1024px;margin:0 auto;height:auto;">
+        <div style="max-width:1024px;margin:0 auto;height:auto;position:relative">
 
             {{#each actividades}}
                 {{>actividadItem}}
 
             {{/each}}
+            <div class="layer-linea-del-tiempo" style="max-width:1024px;background-size:contain"></div>
         </div>
 
         <!--<div id="background-lineaDelTiempo" style="position:absolute;top:2000px;min-width: 100vw;" >-->
