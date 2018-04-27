@@ -52,7 +52,7 @@ Template.Home.onRendered(function(){
         .setPin("#background-lineaDelTiempo")
         // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-   
+
 
 })
 
