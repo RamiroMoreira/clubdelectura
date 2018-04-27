@@ -1,7 +1,7 @@
 import './nosotros.html'
 import { Textos} from '/imports/api/textos/textos.js';
 import { Personas} from '/imports/api/personas/personas.js';
-
+import '../barraHorizontal.js'
 Template.nosotros.created = function(){
     Meteor.subscribe('textos');
     Meteor.subscribe('personas');

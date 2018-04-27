@@ -6,10 +6,11 @@ var totalPages = new ReactiveVar();
 var totalActivities = new ReactiveVar();
 var searchString = new ReactiveVar();
 var largoDePagina = 15;
+var actividadesHandler;
 Template.actividadesArchivo.onCreated(function(){
     currentPage.set(1);
     this.autorun(function(){
-        Meteor.subscribe('actividades',{sort:{inicio:-1}, skip:(currentPage.get()-1)*largoDePagina,limit:largoDePagina, search: searchString.get()});
+        actividadesHandler = Meteor.subscribe('actividades',{sort:{inicio:-1}, skip:(currentPage.get()-1)*largoDePagina,limit:largoDePagina, search: searchString.get()});
         Meteor.call('getTotalActivities', searchString.get(), function(err, res){
             if(res){
                 totalPages.set(Math.ceil(res/largoDePagina));
@@ -70,4 +71,8 @@ Template.actividadesArchivo.events({
         searchString.set(event.currentTarget.value);
         currentPage.set(1);
     }
+})
+
+Template.actividadesArchivo.onDestroyed(function(){
+    actividadesHandler.stop();
 })

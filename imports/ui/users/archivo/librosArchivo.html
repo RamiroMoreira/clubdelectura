@@ -43,23 +43,6 @@
 
     </div>
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
-        <ul>
-            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
-            <a href="/nosotros"><li class="horizontal-menu-item" data-value="prensa">NOSOTROS</li></a>
-            <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
-            <a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="colaboradores">PRENSA</li></a>
-            <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
-            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
-                <!--<div class="dropdown dropup">-->
-                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
-                    MAS
-                </div>
-                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
-                    <a class="horizontal-menu-item-2 dropdown-item horizontal-menu-item-2-selected"  href="/archivo/libros">Libros leidos</a>
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
-                </div>
-            </li>
-        </ul>
+        {{>barraHorizontal active="libros"}}
     </div>
 </template>

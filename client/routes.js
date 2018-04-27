@@ -56,8 +56,8 @@ Router.route('/archivo/prensa', function(){
 })
 
 
-Router.route('/colaboradores', function(){
-    this.render('Colaboradores')
+Router.route('/aliados', function(){
+    this.render('colaboradores')
 })
 
 Router.route('/actividadInfo/:_id', {controller: 'ActividadController'},function(){
@@ -125,7 +125,14 @@ Router.route('/admin/contacto', function () {
 Router.route('/libraryOrganizer', function(){
   this.render('libraryOrganizer')
 })
+//
+Deps.autorun(function () {
+    var current = Router.current();
 
-
+    Deps.afterFlush(function () {
+        $('.content-inner').scrollTop(0);
+        $(window).scrollTop(0);
+    });
+});
 // Router.setTemplateNameConverter(_.identity);
 // AccountsTemplates.configureRoute('signIn');

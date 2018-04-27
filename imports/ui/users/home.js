@@ -4,7 +4,6 @@ import { Actividades} from '/imports/api/actividades/actividades.js';
 import './home.html'
 import './actividadItem.js'
 
-//http://compresspng.com/es/ compress png
 
 
 var expandedMenu = new ReactiveVar(false)
@@ -19,17 +18,16 @@ Template.Home.onCreated(function(){
     satie.set(false);
     audio = false;
     actividadesHandler = Meteor.subscribe('actividades', {soloAnteriores: true, limit:20, sort:{inicio:-1}});
-  Meteor.call('getActividadesFuturas', function(err, res){
+    Meteor.call('getActividadesFuturas', function(err, res){
       if(res){
           actividadesFuturas = res;
           actividadesFuturasReactive.changed();
       }
-  })
+    })
 })
 
 Template.Home.onDestroyed(function(){
     actividadesHandler.stop();
-
 })
 
 Template.Home.onRendered(function(){
@@ -54,6 +52,7 @@ Template.Home.onRendered(function(){
         .setPin("#background-lineaDelTiempo")
         // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
+   
 
 })
 
