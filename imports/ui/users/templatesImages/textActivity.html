@@ -1,7 +1,8 @@
 <template name="textImpar">
     <div style="width:100%;height:400px;padding-left:60px">
-        <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1
-                class="actividad-nombre">{{nombre}}</h1></div>
+        <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}
+            <a href="actividadInfo/{{_id}}" style="text-decoration: none"><h1
+                    class="actividad-nombre">{{nombre}}</h1></a></div>
         {{>fechasDisplay}}
         <div style="margin-top:25px;max-height:165px;overflow-y:hidden">
             <h4><p class="actividad-descripcion">{{texto}}</p></h4>
@@ -17,8 +18,8 @@
 
 <template name="textPar">
     <div style="width:100%;height:400px;padding-right:60px">
-        <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<h1
-                class="actividad-nombre">{{nombre}}</h1></div>
+        <div style="width:100%;">{{#if subtitulo}}<h3 class="actividad-subtitle">subtitulo</h3>{{/if}}<a href="actividadInfo/{{_id}}" style="text-decoration: none"><h1
+                class="actividad-nombre">{{nombre}}</h1></a></div>
         {{>fechasDisplay}}
         <div style="margin-top:25px;max-height:165px;overflow-y:hidden">
             <h4><p class="actividad-descripcion">{{texto}}</p></h4>
