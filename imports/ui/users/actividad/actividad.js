@@ -61,7 +61,7 @@ Template.actividadInfo.helpers({
     },
     'caratula': function(){
         if(activity.get() && activity.get().fotos.length>0) {
-            return activity.get().fotos[0].replace(" ", "%20");
+            return activity.get().fotos[0].replace("/ /g", "%20");
         }
         else{
             return false;
