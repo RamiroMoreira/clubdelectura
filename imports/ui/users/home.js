@@ -52,14 +52,8 @@ Template.Home.onRendered(function(){
         .setPin("#background-lineaDelTiempo")
         // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-    Meteor.setInterval(function(){
-        if(window.innerHeight < window.innerWidth){
-            $('.turnDeviceNotification').css('display', 'block');
-        }
-        else{
-            $('.turnDeviceNotification').css('display', 'none');
-        }
-    }, 1000)
+
+
    })
 
 Template.Home.helpers({

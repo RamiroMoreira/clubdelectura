@@ -21,5 +21,9 @@ Template.nosotros.helpers({
     'presentacionFoto': function(){
         var texto = Textos.findOne({codigo:"presentacion"});
         return texto && texto.fotoUrl
+    },
+    'isDesktop':function(){
+        return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
+
     }
 })

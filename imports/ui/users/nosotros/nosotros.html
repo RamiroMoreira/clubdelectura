@@ -76,12 +76,12 @@
 
         {{#each personas}}
             <div class="row" style="padding-bottom:10px;margin-left:0px;margin-right:0px;margin-top:20px;padding-bottom:20px">
-                <div class="col-md-4" style="padding-left:0px;">
+                <div class="col-md-4 col-sm-4" style="padding-left:0px;">
                     <div style="float:left;padding-top:20px;padding-left: 10px">
                         <img src="{{urlFoto}}" style="max-width:150px;border-radius: 100%">
                     </div>
                 </div>
-                <div class="col-md-8" style="padding-right:0px">
+                <div class="col-md-8 col-sm-8" style="padding-right:0px">
                     <div style="padding:20px;">
                         <h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3>
                         <span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>
@@ -102,8 +102,13 @@
 <div style="height:60px;width:100%">
 
 </div>
-    <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
-
-        {{>barraHorizontal active="nosotros"}}
-    </div>
+    {{#if isDesktop}}
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+            {{>barraHorizontal active="nosotros"}}
+        </div>
+    {{else}}
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="height:8vh;z-index:5">
+            {{>barraHorizontalMovil active="nosotros"}}
+        </div>
+    {{/if}}
 </template>
