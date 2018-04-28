@@ -5,16 +5,23 @@ import { Actividades} from "../../../api/actividades/actividades";
 var activityId;
 var activity;
 var libro;
+var modal;
 ActividadController = RouteController.extend({
 
     action: function () {
-        activityId = this.params["_id"]
+        activityId = this.params["_id"] || this.data._id
         this.render('actividadInfo');
     }
 });
 var handlerSingleActivity;
 var handlerLibroActivity;
 Template.actividadInfo.onCreated(function(){
+    if(!activityId && this.data){
+        activityId = this.data._id;
+    }
+    if(this.data && this.data.modal){
+        modal = true;
+    }
     activity = new ReactiveVar();
     libro = new ReactiveVar();
     this.autorun(function(){
@@ -30,7 +37,15 @@ Template.actividadInfo.onCreated(function(){
     })
 })
 
+Template.actividadInfo.onDestroyed(function(){
+    activityId = undefined;
+    modal = undefined;
+})
+
 Template.actividadInfo.helpers({
+    'modal': function(){
+      return modal;
+    },
     'actividad':function(){
         return activity.get();
     },

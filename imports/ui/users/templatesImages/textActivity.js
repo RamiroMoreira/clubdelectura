@@ -1,6 +1,7 @@
 import './textActivity.html'
 import { Template } from 'meteor/templating'
 import '/imports/ui/admin/modals/galeriaFotos.js'
+import '/imports/ui/admin/modals/modalActivity.js'
 
 Template.colaboradoresDisplay.helpers({
     'colaboradores': function(){
@@ -39,13 +40,19 @@ Template.textImpar.helpers({
 Template.textPar.events({
    'click .galeriaFotos': function(){
        Modal.show("galeriaFotos",this);
+   },
+   'click .actividad-nombre': function(){
+       Modal.show("modalActivity",{_id: this._id});
    }
 })
 
 Template.textImpar.events({
    'click .galeriaFotos': function(){
        Modal.show("galeriaFotos",this);
-   }
+   },
+    'click .actividad-nombre': function(){
+        Modal.show("modalActivity",{_id: this._id});
+    }
 })
 
 Template.fechasDisplay.helpers({

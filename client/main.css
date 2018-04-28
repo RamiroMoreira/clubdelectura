@@ -473,7 +473,11 @@ li.notification {
         font-style: normal;
         margin:0px;
         color:white;
+        cursor:pointer;
         /*margin-right:40px;*/
+    }
+    .actividad-nombre :hover{
+        text-decoration: underline;
     }
     .actividad-descripcion{
         font-family: 'Open Sans', sans-serif;
