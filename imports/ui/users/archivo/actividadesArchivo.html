@@ -23,19 +23,21 @@
             </div>
 
                 {{#each actividades}}
-                   <div class="row">
+                   <div class="">
+                       <div style="margin-top:20px;padding-top:20px;height:120px;background-color:#1d2e39;">
                        <div class="col-md-11" style="padding-right:0px">
-                           <div style="margin-top:20px;padding:20px;height:100px;background-color:#1d2e39;">
-                               <h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3>
+                           <div style="">
+                               <a href="/actividadInfo/{{_id}}" style="text-decoration: none"><h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3></a>
                                <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
                                <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
                            </div>
                        </div>
                        <div class="col-md-1" style="padding-left:0px;">
-                           <div style="margin-top:20px;padding-top:20px;height:100px;background-color:#1d2e39;">
+                           <div style="">
                                <a  href="/actividadInfo/{{_id}}" class="btn btn-lg" style="background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:60px;height:60px" ></a>
 
                            </div>
+                       </div>
                        </div>
                    </div>
 
