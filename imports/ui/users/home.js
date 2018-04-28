@@ -52,9 +52,15 @@ Template.Home.onRendered(function(){
         .setPin("#background-lineaDelTiempo")
         // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
-
-
-})
+    Meteor.setInterval(function(){
+        if(window.innerHeight < window.innerWidth){
+            $('.turnDeviceNotification').css('display', 'block');
+        }
+        else{
+            $('.turnDeviceNotification').css('display', 'none');
+        }
+    }, 1000)
+   })
 
 Template.Home.helpers({
   'actividades': function(){
@@ -137,15 +143,8 @@ Template.Home.helpers({
       }
   },
   'isDesktop':function(){
-        // return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
-      var isMobile = window.matchMedia("only screen and (min-width: 760px)");
-      if (isMobile.matches) {
-          //Conditional script here
-          return false;
-      }
-      else{
-          return true;
-      }
+        return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
+
   },
   'getDibujoString':function(){
       return ""+this.dibujo + ".png"

@@ -3,19 +3,22 @@
     <!--<div class="up-and-fadeout mobile-margin-top mobile-margin-right" style="z-index:-1;background-position:center left;background-image:url('teconmedialunas2.png'); left:0;background-repeat: no-repeat;position:absolute;background-size: 100%;width:100vw;height:100%"></div>-->
     {{#if isDesktop}}
 
-        <div class="{{#if esPar}}col-md-7 par-left{{else}} col-md-5 impar-left{{/if}}" >
-    {{#if esPar}}
+    <div style="margin-top:150px">
+        <div class="{{#if esPar}}col-md-7 col-sm-7 par-left{{else}} col-md-5 col-sm-5 impar-left{{/if}}" style="margin-top:0px" >
+
+            {{#if esPar}}
         <div style="background-image:url('teconmedialunas.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
     {{else}}
         {{>textImpar}}
     {{/if}}
     </div>
-    <div class="{{#if esPar}}col-md-5 par-right{{else}} impar-right col-md-7{{/if}}" >
+    <div class="{{#if esPar}}col-md-5 col-sm-5 par-right{{else}} impar-right col-sm-7 col-md-7{{/if}}" style="margin-top:0px">
         {{#if esPar}}
             {{>textPar}}
         {{else}}
             <div style="background-image:url('teconmedialunas.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
         {{/if}}
+    </div>
     </div>
     {{else}}
 
