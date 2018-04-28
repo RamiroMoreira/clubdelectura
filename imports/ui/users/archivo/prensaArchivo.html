@@ -1,5 +1,6 @@
 <template name="prensaArchivo">
-    <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+    {{#if isDesktop}}
+        <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
         <div class="titulo" style="width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
             <div style="width:100%;height:270px;background-image: url('../portada_prensa.png');background-size:cover; background-repeat:no-repeat;">
 
@@ -89,4 +90,66 @@
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
         {{>barraHorizontal active="prensa"}}
     </div>
+    {{else}}
+        <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+            <div class="titulo" style="width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
+                <div style="margin-bottom:3vh;width:100%;height:270px;background-image: url('../portada_prensa.png');background-size:cover; background-repeat:no-repeat;">
+
+                </div>
+                <span style=" font-family:'Montserrat';font-weight: 700;font-size: 4vh;line-height:60px;font-style: normal; color:white;">
+                PRENSA
+            </span>
+            </div>
+            <div style="width:900px;margin:auto">
+                <div style="margin-top:20px;padding:10px;height:6vh;width:100%;background-color:#1d2e39;">
+                    <input class="search-prensa form-control" style="width:30%;height:4vh;display:inline" placeholder="Buscar">
+                    <button class="btn btn-primary" style="font-size:2vh;margin-left:15px;height:4vh;padding:4px 12px;background-color:#313a77;border-color:#313a77"><i class="glyphicon glyphicon-search" style="margin-right:3px"></i>Buscar</button>
+                    <span class="" style="{{#unless next}}margin-right:33px;{{/unless}}margin-left:10px;margin-top:2vh;float:right;font-family:'Montserrat';font-weight: 700;font-size: 2vh;line-height:15px;font-style: normal; color:white;">
+                    {{#if prev}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-left" style="margin-right:10px;color:#da3434"></i></a>{{/if}}
+                        Página: {{currentPage}} de {{totalPages}}
+                        {{#if next}}<a class="next-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-right" style="margin-right:10px;color:#da3434"></i></a>{{/if}}
+                </span>
+                </div>
+                <div class="row">
+                    {{#each prensa}}
+                            <div class="col-sm-12 " style="padding:0px;height:30vh;position:relative">
+                                    <div style="background-position:center;background-image: url('{{caratula}}'); background-size:cover; background-repeat:no-repeat; width:100%; height:100%"></div>
+
+                            </div>
+                            <div class="col-sm-12" style="padding:0px;height:35vh;position:relative">
+                                    <div style="padding-top:10px;padding-left:20px;padding-right:20px">
+                                        <h3 class="actividad-nombre" style="font-size:3vh;">Praesent ullamcorper ornare tortor</h3>
+                                        <p style="margin-top:10px;text-align:left; font-family: 'Open Sans', sans-serif; color:white; font-size:2vh">{{resumen}}</p>
+                                        <div style="position:absolute;height:150px;bottom:10px;width:100%;text-align:center;color:white">
+                                            {{#if tieneFotos}}
+                                                <span class="galeriaFotos btn btn-lg" style="background-image:url('../icono_galeria.png');background-size:contain;background-repeat:no-repeat;width:150px;height:150px" ></span>
+                                            {{/if}}
+                                            {{#if audio}}
+                                                <a href="{{audio}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_audio.png');background-size:contain;background-repeat:no-repeat;width:150px;height:150px" ></a>
+                                            {{/if}}
+                                            {{#if youtube}}
+                                                <a href="{{youtube}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_video.png');background-size:contain;background-repeat:no-repeat;width:150px;height:150px" ></a>
+                                            {{/if}}
+                                            {{#if link}}
+                                                <a href="{{link}}" target="_blank" class=" btn btn-lg" style="background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:150px;height:150px" ></a>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                            </div>
+                    {{/each}}
+                </div>
+                <div class="letritas-container" >
+                    <div style="background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                    <div class="rotation-very-slow " style="background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+                </div>
+            </div>
+
+        </div>
+        <div style="height:8vh;width:100%">
+
+        </div>
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="height:8vh;z-index:5">
+            {{>barraHorizontalMovil active="prensa"}}
+        </div>
+    {{/if}}
 </template>
