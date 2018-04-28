@@ -1,6 +1,7 @@
 import '/imports/ui/admin/adminHome.html';
 import '/imports/ui/admin/libros/librosAdmin.js';
 import '/imports/ui/users/home.js';
+import '/imports/ui/users/notFound.html';
 import '/imports/ui/users/archivo/actividadesArchivo.js';
 import '/imports/ui/users/actividad/actividad.js';
 import '/imports/ui/users/archivo/librosArchivo.js';
@@ -124,6 +125,10 @@ Router.route('/admin/contacto', function () {
 
 Router.route('/libraryOrganizer', function(){
   this.render('libraryOrganizer')
+})
+
+Router.configure({
+    notFoundTemplate: "NotFound"
 })
 //
 Deps.autorun(function () {

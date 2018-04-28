@@ -52,6 +52,9 @@ Template.prensaArchivo.helpers({
     },
     'tieneFotos': function(){
         return this.fotos.length > 0;
+    },
+    'isDesktop':function(){
+        return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
     }
 })
 
