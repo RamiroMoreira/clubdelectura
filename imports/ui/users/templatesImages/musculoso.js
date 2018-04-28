@@ -6,14 +6,28 @@ Template.musculoso.onCreated(() => {
         console.log(e.key)
         if(window.localStorage.getItem('estadoMusculoso') == "ArrowDown"){
            if(e.key == "ArrowLeft"){
-               window.localStorage.setItem('estadoMusculoso', "ArrowLeft")
+               window.localStorage.setItem('estadoMusculoso', "ArrowDownArrowLeft")
            }
         }
-        else if(window.localStorage.getItem('estadoMusculoso') == "ArrowLeft"){
+        else if(window.localStorage.getItem('estadoMusculoso') == "x"){
             if(e.key == "ArrowRight")
-            window.localStorage.setItem('estadoMusculoso', "ArrowRight")
+                window.localStorage.setItem('estadoMusculoso', "xArrowRight")
         }
-        else if(window.localStorage.getItem('estadoMusculoso') == "ArrowRight"){
+        else if(window.localStorage.getItem('estadoMusculoso') == "xArrowRight"){
+            if(e.key == "ArrowLeft")
+                window.localStorage.setItem('estadoMusculoso', "xArrowRightArrowLeft")
+        }
+        else if(window.localStorage.getItem('estadoMusculoso') == "ArrowDownArrowLeft"){
+            if(e.key == "ArrowRight")
+            window.localStorage.setItem('estadoMusculoso', "ArrowDownArrowLeftArrowRight")
+        }
+        else if(window.localStorage.getItem('estadoMusculoso') == "xArrowRightArrowLeft"){
+            if(e.key == "ArrowDown"){
+                alert("You fucking win")
+                window.localStorage.setItem('estadoMusculoso', "");
+            }
+        }
+        else if(window.localStorage.getItem('estadoMusculoso') == "ArrowDownArrowLeftArrowRight"){
             if(e.key == "x"){
                 alert("You fucking win")
                 window.localStorage.setItem('estadoMusculoso', "");
@@ -26,9 +40,16 @@ Template.musculoso.onCreated(() => {
                     window.localStorage.setItem('estadoMusculoso', "");
                 },2000)
             }
+            if(e.key == "x"){
+                window.localStorage.setItem('estadoMusculoso', "x");
+                Meteor.setTimeout(function(){
+                    window.localStorage.setItem('estadoMusculoso', "");
+                },2000)
+            }
         }
     });
 });
+
 Template.musculoso.onDestroyed(() => {
     $(document).off('keyup');
 });
