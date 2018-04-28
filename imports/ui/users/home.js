@@ -137,7 +137,15 @@ Template.Home.helpers({
       }
   },
   'isDesktop':function(){
-        return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
+        // return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
+      var isMobile = window.matchMedia("only screen and (min-width: 760px)");
+      if (isMobile.matches) {
+          //Conditional script here
+          return false;
+      }
+      else{
+          return true;
+      }
   },
   'getDibujoString':function(){
       return ""+this.dibujo + ".png"

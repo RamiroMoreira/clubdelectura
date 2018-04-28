@@ -99,7 +99,7 @@ body {
     background: none;
 }
 
-@media(min-width:768px) {
+@media(min-width:500px) {
     #wrapper {
         padding-left: 250px;
     }
@@ -309,12 +309,17 @@ li.notification {
 }
 
 
-@media only screen and (max-device-width: 720px) {
+@media only screen and (max-device-width: 500px) {
     .horizontal-menu-item {
         margin-left:0%;
         margin-right:0%;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size:50px;
+    }
+    .horizontal-menu-item-2 {
+       font-size:47px;
+       margin:20px;
     }
 }
 
@@ -428,13 +433,13 @@ li.notification {
 
 }
 
-@media only screen and (min-device-width: 768px)  {
+@media only screen and (min-device-width: 500px)  {
     .mobileOnly{
         display:none !important;
     }
 }
 
-@media only screen and (max-device-width:767px)  {
+@media only screen and (max-device-width:500px)  {
     .desktopOnly{
         display:none !important;
     }
@@ -515,7 +520,7 @@ li.notification {
     }
 }
 
-@media only screen and (max-device-width:767px)  {
+@media only screen and (max-device-width:500px)  {
     .no-height-mobil{
         height:0 !important;
     }
@@ -652,7 +657,7 @@ li.notification {
 }
 
 /*remove animations on mobile*/
-@media only screen and (max-device-width:767px)  {
+@media only screen and (max-device-width:500px)  {
     .up-and-down{
         -webkit-animation: none;
         -moz-animation: none;
@@ -720,7 +725,7 @@ li.notification {
     100%   { opacity: 1; left:0px;bottom:0 }
 }
 
-@media only screen and (min-device-width:768px)  {
+@media only screen and (min-device-width:500px)  {
 .right-continuos{
     -webkit-animation: rightcontinuos 2s linear infinite; /* Chrome, Safari 5 */
     -moz-animation: rightcontinuos 2s linear infinite; /* Firefox 5-15 */

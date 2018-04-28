@@ -18,3 +18,23 @@
             </li>
         </ul>
 </template>
+
+<template name="barraHorizontalMovil">
+    <ul style="margin-left:0px">
+        <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas" style="margin-right:70px">
+            <div class="btn-secondary" data-toggle="dropdown" >
+                <a class="glyphicon glyphicon-menu-hamburger" style="color:white;font-size:70px;padding-right:25px;padding-left:25px"></a>
+            </div>
+            <div class="dropdown-menu" style="background-color:#171f2a;width: 100vw;padding:25px" aria-labelledby="dropdownMenuButton">
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "aliados"}}horizontal-menu-item-2-selected{{/if}}"  href="/aliados">Aliados</a>
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "libros"}}horizontal-menu-item-2-selected{{/if}}"  href="/archivo/libros">Libros leidos</a>
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "nosotros"}}horizontal-menu-item-2-selected{{/if}}"   href="/nosotros">Nosotros</a>
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "actividades"}}horizontal-menu-item-2-selected{{/if}}"   href="/archivo/actividades">Actividades</a>
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "prensa"}}horizontal-menu-item-2-selected{{/if}}"   href="/archivo/prensa">Prensa</a>
+            </div>
+        </li>
+        <a href="/"><li class="horizontal-menu-item {{#if active "home"}}horizontal-menu-item-selected{{/if}}">HOME</li></a>
+        <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item">FACEBOOK</li></a>
+
+    </ul>
+</template>

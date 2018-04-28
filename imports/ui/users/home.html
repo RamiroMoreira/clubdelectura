@@ -40,7 +40,7 @@
 
 {{#if isDesktop}}
     <div data-0="top:0px; display:block" data-700="top:0px" data-1000="top:-1200px" data-2200="top:-1200px;opacity:1"
-         data-3000="display:none;top:-2000px;opacity:0" class="tipita">
+         data-3000="display:none;top:-2000px;opacity:0" class="tipita desktopOnly">
         <div class="rotation-slow layer-letras-tipita2"></div>
         <div class="rotation-very-slow layer-letras-tipita"></div>
         <div class="layer-tipita"></div>
@@ -95,14 +95,14 @@
         {{/if}}
     </div>
 {{else}}
-        <div class="tipita" style="position:absolute">
-            <div class="rotation-slow layer-letras-tipita2" style="width: 95%;position:absolute;margin-right:5px"> </div>
-            <div  class="rotation-very-slow layer-letras-tipita" style="position:absolute;margin-right:5px"> </div>
-            <div class="layer-tipita" style="position:absolute"> </div>
-            <div  class="layer-satie" style="position:absolute">
-                <span class="{{satie}}"  style="position:absolute">S</span>
-            </div>
-        </div>
+        <!--<div class="tipita" style="position:absolute">-->
+            <!--<div class="rotation-slow layer-letras-tipita2" style="width: 95%;position:absolute;margin-right:5px"> </div>-->
+            <!--<div  class="rotation-very-slow layer-letras-tipita" style="position:absolute;margin-right:5px"> </div>-->
+            <!--<div class="layer-tipita" style="position:absolute"> </div>-->
+            <!--<div  class="layer-satie" style="position:absolute">-->
+                <!--<span class="{{satie}}"  style="position:absolute">S</span>-->
+            <!--</div>-->
+        <!--</div>-->
 
 {{/if}}
 
@@ -153,7 +153,7 @@
     <!--<div id="example-wrapper" class="scrollContainer" style="pointer-events: none;position:relative;height:200vh;">-->
     <!--<div class="scrollContent" style="height:auto;position:relative; width:100vw;">-->
         <!--<div style="position:relative;width:100vw;height:auto">-->
-        <div  id="uniteAFacebook"  class="" style="top:98vh;z-index:1;position:absolute;right:15%;margin-top: 583.333px;">
+        <div  id="uniteAFacebook"  class="" style="top:98vh;z-index:1;position:absolute;right:15%;left:15%;margin-top: 583.333px;">
            <div class="">
             <h1>
                 <span  class="" style="    top: -70px;
@@ -169,12 +169,11 @@
 
             <br>
         </div>
-        </div>
-    <div style="z-index:1;position:absolute;margin-top:142vh;margin-left:40px;margin-right:40px;">
-        <p style="text-align:center;font-family: 'Open Sans', sans-serif;
+            <div style="">
+                <p style="text-align:center;font-family: 'Open Sans', sans-serif;
         color:white;font-size:46px">
-            Formá parte del #Clubdelectura.uy, un grupo variopinto de lectores que se reúne mensualmente en Casa Inju a compartir su entusiasmo por la lectura. Comentan libros, conocen nuevos autores y promueven actividades que difundan el hábito de leer. ¡Unite!        </p>
-        <div style="position:absolute;right:80px" ><button class="btn " style="background-color: white;
+                    Formá parte del #Clubdelectura.uy, un grupo variopinto de lectores que se reúne mensualmente en Casa Inju a compartir su entusiasmo por la lectura. Comentan libros, conocen nuevos autores y promueven actividades que difundan el hábito de leer. ¡Unite!        </p>
+                <div style="position:absolute;right:80px" ><button class="btn " style="background-color: white;
     width: 100px;
     height: 100px;
     border-radius: 20%;
@@ -184,10 +183,12 @@
     color: #2d3e54;
 
 "></i></button>
+                </div>
+
+
             </div>
+        </div>
 
-
-    </div>
 
     <!--</div>-->
     <!--</div>-->
@@ -202,14 +203,8 @@
         {{>barraHorizontal active="home"}}
     </div>
 {{else}}
-    <div id="nav" class="bottom-menu {{expandedMenuClass}}" style="z-index:5">
-        <ul>
-            <li href="/nosotros" class="horizontal-menu-item {{isSelected "nosotros"}}" style="font-size:30px" data-value="nosotros">NOSOTROS</li>
-            <li class="horizontal-menu-item {{isSelected "libros"}}" style="font-size:30px" data-value="libros">LIBROS LEIDOS</li>
-            <li class="horizontal-menu-item {{isSelected "reseñas"}}" style="font-size:30px" data-value="reseñas">RESEÑAS</li>
-            <li class="horizontal-menu-item {{isSelected "colaboradores"}}" style="font-size:30px" data-value="colaboradores">COLABORADORES</li>
-            <!--<li class="horizontal-menu-item">ACTIVIDADES</li>-->
-        </ul>
+    <div id="nav" class="bottom-menu {{expandedMenuClass}}" style="height:130px;z-index:5">
+        {{>barraHorizontalMovil active="home"}}
     </div>
 {{/if}}
 
