@@ -69,10 +69,10 @@
             </span>
             </div>
             <div style="width:900px;margin:auto">
-                <div style="margin-top:20px;padding:10px;height:3vh;width:100%;background-color:#1d2e39;">
-                    <input class="search-actividad form-control" style="width:30%;height:35px;display:inline" placeholder="Buscar">
-                    <button class="btn btn-primary" style="margin-left:5px;height:35px;padding:4px 12px;background-color:#313a77;border-color:#313a77"><i class="glyphicon glyphicon-search" style="margin-right:3px"></i>Buscar</button>
-                    <span class="" style="{{#unless next}}margin-right:33px;{{/unless}}margin-left:10px;margin-top:10px;float:right;font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:15px;font-style: normal; color:white;">
+                <div style="margin-top:20px;padding:10px;height:6vh;width:100%;background-color:#1d2e39;">
+                    <input class="search-actividad form-control" style="width:30%;height:4vh;display:inline" placeholder="Buscar">
+                    <button class="btn btn-primary" style="font-size:2vh;margin-left:15px;height:4vh;padding:4px 12px;background-color:#313a77;border-color:#313a77"><i class="glyphicon glyphicon-search" style="margin-right:3px"></i>Buscar</button>
+                    <span class="" style="{{#unless next}}margin-right:33px;{{/unless}}margin-left:10px;margin-top:2vh;float:right;font-family:'Montserrat';font-weight: 700;font-size: 2vh;line-height:15px;font-style: normal; color:white;">
                     {{#if prev}}<a class="prev-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-left" style="margin-right:10px;color:#da3434"></i></a>{{/if}}
                         Página: {{currentPage}} de {{totalPages}}
                         {{#if next}}<a class="next-page" style="cursor:pointer"><i class="glyphicon glyphicon-chevron-right" style="margin-right:10px;color:#da3434"></i></a>{{/if}}
@@ -81,18 +81,12 @@
 
                 {{#each actividades}}
                     <div class="">
-                        <div style="margin-top:20px;padding-top:20px;height:120px;background-color:#1d2e39;">
+                        <div style="margin-top:20px;padding-top:20px;height:15vh;background-color:#1d2e39;">
                             <div class="col-md-11" style="padding-right:0px">
                                 <div style="">
-                                    <a href="/actividadInfo/{{_id}}" style="text-decoration: none"><h3 class="actividad-nombre" style="font-size:18px;">{{nombre}}</h3></a>
-                                    <span style="font-family:'Montserrat';font-weight: 700;font-size: 14px;line-height:15px;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
+                                    <a href="/actividadInfo/{{_id}}" style="text-decoration: none"><h3 class="actividad-nombre" style="float:left;font-size:3vh;">{{nombre}}</h3></a>
+                                    <a><span style="font-family:'Montserrat';font-weight: 700;font-size: 2vh;line-height:1vh;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
                                     <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
-                                </div>
-                            </div>
-                            <div class="col-md-1" style="padding-left:0px;">
-                                <div style="">
-                                    <a  href="/actividadInfo/{{_id}}" class="btn btn-lg" style="background-image:url('../icono_mas.png');background-size:contain;background-repeat:no-repeat;width:60px;height:60px" ></a>
-
                                 </div>
                             </div>
                         </div>
