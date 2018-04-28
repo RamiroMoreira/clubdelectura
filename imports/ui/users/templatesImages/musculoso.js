@@ -1,5 +1,7 @@
 import '/imports/ui/users/templatesImages/musculoso.html'
 import './textActivity.js'
+import '/imports/ui/admin/modals/hombreIlustradoModal.js'
+
 
 Template.musculoso.onCreated(() => {
     $(document).on('keyup', (e) => {
@@ -23,13 +25,13 @@ Template.musculoso.onCreated(() => {
         }
         else if(window.localStorage.getItem('estadoMusculoso') == "xArrowRightArrowLeft"){
             if(e.key == "ArrowDown"){
-                alert("You fucking win")
+                Modal.show("hombreIlustradoModal");
                 window.localStorage.setItem('estadoMusculoso', "");
             }
         }
         else if(window.localStorage.getItem('estadoMusculoso') == "ArrowDownArrowLeftArrowRight"){
             if(e.key == "x"){
-                alert("You fucking win")
+                Modal.show("hombreIlustradoModal");
                 window.localStorage.setItem('estadoMusculoso', "");
             }
         }
