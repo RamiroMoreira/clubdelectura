@@ -1,5 +1,6 @@
 <template name="colaboradores">
-    <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+    {{#if isDesktop}}
+        <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
         <div class="titulo" style="margin-bottom:50px;width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
             <div style="margin-bottom:10px;width:100%;height:270px;background-image: url('../portada_colaboradores.png');background-size:cover; background-repeat:no-repeat;">
             </div>
@@ -39,4 +40,47 @@
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
         {{>barraHorizontal active="aliados"}}
     </div>
+    {{else}}
+        <div style="min-width:100wh;min-height:100vh;">
+            <div class="titulo" style="width:100%;margin:auto;text-align:center">
+                <div style="margin-bottom:10px;width:100%;height:270px;background-image: url('../portada_colaboradores.png');background-size:cover; background-repeat:no-repeat;">
+                </div>
+                <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
+                ALIADOS
+            </span>
+            </div>
+            <div style="width:900px;margin:auto">
+                <div style="margin-top:2vh;padding:10px;width:100%;">
+            <span class="" style="text-align:right; font-family: 'Open Sans', sans-serif; color:white; font-size:2vh">
+                {{presentacion}}
+            </span>
+                </div>
+                {{#each colaboradores}}
+                    <a href="{{url}}">
+                        <div class="col-md-4 col-sm-6" style="margin-top:5px">
+                        <div class="logo-button" style="border-width:0px;height:250px;overflow-y: hidden;display:table">
+                            <div style="padding:10px;display:table-cell;vertical-align: middle;max-height: 250px">
+                                <img src="{{urlFoto}}" style="width:100%;height:auto;border-radius: 0%;max-height: 250px">
+                            </div>
+                        </div>
+                        <!--<span style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;text-align: center"> {{nombre}}</span>-->
+                    </div>
+                    </a>
+
+                {{/each}}
+
+                <div class="letritas-container" >
+                    <div style="background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                    <div class="rotation-very-slow " style="background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+                </div>
+            </div>
+
+        </div>
+        <div style="height:8vh;width:100%">
+
+        </div>
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="height:8vh;z-index:5">
+            {{>barraHorizontalMovil active="nosotros"}}
+        </div>
+    {{/if}}
 </template>
