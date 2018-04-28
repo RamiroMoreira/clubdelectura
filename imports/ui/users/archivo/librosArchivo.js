@@ -35,6 +35,9 @@ Template.librosArchivo.helpers({
     },
     'prev': function(){
         return currentPage.get()>1
+    },
+    'isDesktop':function(){
+        return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
     }
 })
 
