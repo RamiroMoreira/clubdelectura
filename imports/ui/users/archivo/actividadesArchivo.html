@@ -83,11 +83,13 @@
                     <div class="">
                         <div style="margin-top:20px;padding-top:20px;height:15vh;background-color:#1d2e39;">
                             <div class="col-md-11" style="padding-right:0px">
-                                <div style="">
-                                    <a href="/actividadInfo/{{_id}}" style="text-decoration: none"><h3 class="actividad-nombre" style="float:left;font-size:3vh;">{{nombre}}</h3></a>
-                                    <a><span style="font-family:'Montserrat';font-weight: 700;font-size: 2vh;line-height:1vh;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
-                                    <!--<span style="font-family:'Open Sans', sans-serif;font-weight: 700;font-size: 12px;line-height:15px;font-style: normal; color:white;">{{texto}}</span>-->
-                                </div>
+                                    <div class="col-sm-12" style="margin-bottom:2vh">
+                                        <a href="/actividadInfo/{{_id}}" style="text-decoration: none"><h3 class="actividad-nombre" style="text-align:left;font-size:3vh;">{{nombre}}</h3></a>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <span style="font-family:'Montserrat';font-weight: 700;font-size: 2vh;line-height:1vh;font-style: normal; color:white;">{{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}</span>
+                                    </div>
+
                             </div>
                         </div>
                     </div>
