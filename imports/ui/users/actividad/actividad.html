@@ -1,4 +1,5 @@
 <template name="actividadInfo">
+    {{#if isDesktop}}
     <div style="min-width:100wh;min-height:100vh;padding:10px">
         <div style="width:900px;margin:auto">
             {{#with actividad}}
@@ -51,23 +52,63 @@
 
     </div>
     <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
-        <ul>
-            <a href="/"><li class="horizontal-menu-item" data-value="home">HOME</li></a>
-            <a href="/nosotros"><li class="horizontal-menu-item" data-value="prensa">NOSOTROS</li></a>
-            <a href="https://www.facebook.com/groups/clubdelectura.uy/"  target="_blank"><li class="horizontal-menu-item" data-value="facebook">FACEBOOK</li></a>
-            <a href="/archivo/prensa"><li class="horizontal-menu-item" data-value="colaboradores">PRENSA</li></a>
-            <a href="/colaboradores"><li class="horizontal-menu-item" data-value="colaboradores">COLABORADORES</li></a>
-            <li  id="dropdownMenuButton" class="dropdown dropup horizontal-menu-item" data-value="mas">
-                <!--<div class="dropdown dropup">-->
-                <div class="btn-secondary" data-toggle="dropdown" style="margin:-25px;padding:25px">
-                    MAS
-                </div>
-                <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/libros">Libros leidos</a>
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="/archivo/actividades">Actividades</a>
-                    <a class="horizontal-menu-item-2 dropdown-item"  href="#">Reseñas</a>
-                </div>
-            </li>
-        </ul>
+        {{>barraHorizontal active=""}}
     </div>
+    {{else}}
+        <div style="min-width:100wh;min-height:100vh;padding:10px">
+            <div style="width:900px;margin:auto">
+                {{#with actividad}}
+                    <div class="row" style="background-color:#1d2e39;height:90vh;margin-top:10px">
+                        <div class="col-md-4" style="height:500px;padding:0px;{{#if caratula}}background-color: #171f2a{{/if}}">
+                            {{#if caratula}}
+                                <div style="background-position:center;background-image:url({{caratula}}); background-size:cover; background-repeat:no-repeat; width:100%; height:100%"></div>
+                            {{else}}
+                                <div style="background-position:center;background-image:url('../{{dibujo}}.png'); background-size:150%; background-repeat:no-repeat; width:100%; height:100%"></div>
+                            {{/if}}
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="actividad-nombre" style="margin:25px;margin-top:35px;margin-bottom:15px">{{nombre}}</h3>
+                            <span style="font-family:'Montserrat';font-weight: 700;font-size: 2vh;line-height:15px;margin-left:25px;display:block;margin-right:25px;margin-bottom:25px;font-style: normal; color:white;">
+                                {{fechaInicio}}{{#if fechaFin}} - {{fechaFin}}{{/if}}
+                            </span>
+                            <p style="margin-left:25px;margin-right:25px;text-align:left; font-family: 'Open Sans', sans-serif; color:white; font-size:2vh">{{texto}}</p>
+
+                            {{#if libro}}
+                                {{#with libro}}
+                                    <span style="font-family:'Montserrat';margin-left:25px;font-weight: 700;font-size: 2vh;line-height:30px;font-style: normal; color:white;"> Libro: </span>
+                                    <span style="margin-left:5px; font-family: 'Open Sans', sans-serif;color:white;font-size: 2vh"> {{nombre}} - {{autor}}</span>
+                                {{/with}}
+                            {{/if}}
+                            {{#if colaboradores}}
+                                <div style="margin-top:10px;max-height:165px;overflow-y:hidden">
+                                    <span style="font-family:'Montserrat';margin-left:25px;font-weight: 700;font-size: 2vh;line-height:30px;font-style: normal; color:white;">Colaboran: </span>
+                                    {{#each colaboradores}}
+                                        <a href="{{url}}"
+                                           style="margin-left:5px; font-family: 'Open Sans', sans-serif;color:white;font-size: 2vh;">{{nombre}}</a>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+
+                            {{#if caratula}}
+                                <div style="height:2vh;margin-top:60px;width:100%;text-align:center;color:white"><span class="galeriaFotos btn btn-lg" style="background-image:url('../icono_galeria.png');background-size:contain;background-repeat:no-repeat;width:200px;height:200px" ></span></div>
+                            {{/if}}
+
+                        </div>
+
+
+                    </div>
+                {{/with}}
+                <div style="background-color:#2d3e54;position: fixed;width:100%;top:0px;left:0px;z-index:-1;padding-top:100px" >
+                    <div style=";background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                    <div class=" " style="width:100%;height:100vh;margin-top:-100vh"></div>
+                </div>
+            </div>
+        </div>
+        <div style="height:60px;width:100%">
+
+        </div>
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="height:8vh;z-index:1">
+            {{>barraHorizontalMovil active=""}}
+        </div>
+    {{/if}}
 </template>

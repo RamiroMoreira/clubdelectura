@@ -70,6 +70,9 @@ Template.actividadInfo.helpers({
     'dibujo': function(){
         if(activity.get())
           return activity.get().dibujo;
+    },
+    'isDesktop':function(){
+        return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
     }
 
 })
