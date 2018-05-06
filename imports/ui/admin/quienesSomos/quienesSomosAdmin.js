@@ -24,9 +24,9 @@ Template.quienesSomosAdmin.helpers({
     }
     return Personas.find();
   },
-  'presentacionFoto': function(){
+  'presentacionFotos': function(){
       var texto = Textos.findOne({codigo:"presentacion"});
-      return texto && texto.fotoUrl
+      return texto && texto.fotos
   }
 })
 
@@ -103,6 +103,12 @@ Template.quienesSomosAdmin.events({
 
             });
         });
+  },
+  'click .borrar-foto' (event, template) {
+      var texto = Textos.findOne({codigo:"presentacion"});
+      Meteor.call('textos.borrarFoto', texto._id, this.toString(), function(err, res){
+
+      })
   }
 })
 

@@ -24,8 +24,12 @@
                             <div class="panel-body">
                             <textarea type="text" class="form-control" id="textoPresentacion" rows="8" value="{{presentacion}}"></textarea>
                             </div>
-                            {{#if presentacionFoto}}
-                                <img style="max-width: 200px" src="{{presentacionFoto}}" alt="{{presentacionFoto}}">
+                            {{#if presentacionFotos}}
+                                {{#each presentacionFotos}}
+                                    <img style="max-width: 200px" src="{{this}}" alt="{{this}}">
+                                    <button class="borrar-foto btn btn-primary">Borrar foto</button>
+                                    <br>
+                                {{/each}}
                             {{/if}}
                             <div class="upload-area">
                                 <form id="upload">

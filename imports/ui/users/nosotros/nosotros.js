@@ -18,12 +18,19 @@ Template.nosotros.helpers({
         }
         return Personas.find();
     },
-    'presentacionFoto': function(){
+    'fotos': function(){
         var texto = Textos.findOne({codigo:"presentacion"});
-        return texto && texto.fotoUrl
+        console.log(texto.fotos);
+        return texto && texto.fotos
     },
     'isDesktop':function(){
         return !(( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false ) || (navigator.userAgent.toLowerCase().indexOf("android") > -1)) ;
+
+    },
+    'isActive': function(fotos){
+        if(fotos.hash.fotos[0].toString() == this.toString()){
+            return "active"
+        }
 
     }
 })
