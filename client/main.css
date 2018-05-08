@@ -1245,3 +1245,8 @@ body, html {
     background-image:url('/turnDevice.png');
     background-size:cover;
 }
+
+ul.notifications {
+    position: fixed;
+    z-index: 100;
+}

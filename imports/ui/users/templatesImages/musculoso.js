@@ -5,7 +5,6 @@ import '/imports/ui/admin/modals/hombreIlustradoModal.js'
 
 Template.musculoso.onCreated(() => {
     $(document).on('keyup', (e) => {
-        console.log(e.key)
         if(window.localStorage.getItem('estadoMusculoso') == "ArrowDown"){
            if(e.key == "ArrowLeft"){
                window.localStorage.setItem('estadoMusculoso', "ArrowDownArrowLeft")

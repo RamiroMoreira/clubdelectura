@@ -1,0 +1,18 @@
+<template name="newAchivementModal">
+    <div class="modal" style="">
+        <div class="" style="width:300px;margin:20px;float:right;color:white">
+            <div class="modal-content" style="background-color: #16272d">
+                <div style="margin:5px; font-family:'Montserrat';text-align: center">
+                    <h4 class="modal-title">{{getTitle}}</h4>
+                </div>
+                <div style="text-align:center">
+                    <span class="btn btn-lg" style="background-image:url({{getIcon}});background-size:contain;background-repeat:no-repeat;width:150px;height:150px" ></span>
+
+                </div>
+                <div style="margin:5px;margin-bottom:20px; font-family:'Open Sans';text-align: center">
+                    {{getText}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
