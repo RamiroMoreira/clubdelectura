@@ -1250,3 +1250,24 @@ ul.notifications {
     position: fixed;
     z-index: 100;
 }
+
+@media(max-width: 1024px) {
+    .walkman {
+        top: 15vw;
+        right: 35%;
+        height: 40px;
+        width: 30px;
+        display: block;
+        position: absolute;
+    }
+}
+@media(min-width: 1024px) {
+    .walkman {
+        top: 167px;
+        right: 35%;
+        height: 40px;
+        width: 30px;
+        display: block;
+        position: absolute;
+    }
+}

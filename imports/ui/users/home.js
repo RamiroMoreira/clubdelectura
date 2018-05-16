@@ -162,12 +162,28 @@ Template.Home.events({
      if(!audio) {
          audio = new Audio('satie.mp3');
          audio.loop = true;
-     }
-     if(!satie.get()) {
-         audio.stop();
          audio.play();
          satie.set(true);
      }
+     else{
+         audio = new Audio('satie.mp3');
+         audio.loop = true;
+         audio.play();
+         if(!satie.get()) {
+             satie.set(true);
+         }
+         else {
+             satie.set(false);
+         }
+     }
+     if(!window.localStorage.getItem('AchivementSatie')) {
+          Modal.show("newAchivementModal", {
+              title: "New achivement unlocked!",
+              texto: "Has desbloqueado un gymnopédie!",
+              icon: "../satie_desbloqueado.png"
+          })
+         window.localStorage.setItem('AchivementSatie', true);
+      }
 
   },
   'click .satieFalse': function(){

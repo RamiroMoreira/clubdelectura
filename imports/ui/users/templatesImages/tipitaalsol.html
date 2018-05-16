@@ -5,6 +5,7 @@
         <div style="margin-top:150px">
         <div class="{{#if esPar}}col-md-7 col-sm-7 par-left{{else}} col-md-5 col-sm-5 impar-left{{/if}}" style="margin-top:0px" >
             {{#if esPar}}
+                <span style="top:165px;left:210px;height:40px; width:30px;display:block;position:absolute"></span>
                 <div style="background-image:url('tipitaalsol.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
             {{else}}
                 {{>textImpar}}
@@ -14,7 +15,9 @@
             {{#if esPar}}
                 {{>textPar}}
             {{else}}
-                <div style="background-image:url('tipitaalsol.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%"></div>
+                <div style="background-image:url('tipitaalsol.png');transform: scaleX(-1);background-size:contain;background-repeat:no-repeat;width:100%;height:100%">
+                    <span class="walkman" style=""></span>
+                </div>
 
             {{/if}}
         </div>

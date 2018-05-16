@@ -94,6 +94,7 @@ Template.actividadInfo.helpers({
 
 Template.actividadInfo.events({
     'click .galeriaFotos': function(){
+        Modal.allowMultiple = true;
         Modal.show("galeriaFotos",activity.get());
     }
 })

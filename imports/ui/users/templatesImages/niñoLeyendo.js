@@ -30,14 +30,23 @@ Template.niñoLeyendo.events({
             audio.loop = false;
             audio.play()
             morty = new ReactiveVar(false);
-
+        var scrollY = window.scrollY;
         Meteor.setTimeout(function(){
+            window.scrollTo(0, scrollY);
             evilMorty.set(true);
             morty.set(true);
         },27750)
         Meteor.setTimeout(function(){
             evilMorty.set(false);
             morty.set(false);
+            if(!window.localStorage.getItem('AchivementEvilMorty')) {
+                Modal.show("newAchivementModal", {
+                    title: "New achivement unlocked!",
+                    texto: "Has desbloqueado un parche de villano!",
+                    icon: "../parche_desbloqueado.png"
+                })
+                window.localStorage.setItem('AchivementEvilMorty', true);
+            }
         },52000)
     }
 })
