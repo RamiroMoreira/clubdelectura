@@ -63,5 +63,12 @@ Template.aliadosAdmin.events({
 
             });
         });
+    },
+    'click .btn-remove-aliado' (e){
+        var id = this._id;
+        var nombre = this.nombre || " este aliado"
+        Modal.show("confirmModal",{title:"Eliminar aliado", texto:"Estas seguro que deseas eliminar a"+nombre+"?", actionIfConfirm: function(){
+            Meteor.call('colaboradores.remove', id);
+        }});
     }
 })
