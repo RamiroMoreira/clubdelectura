@@ -9,7 +9,8 @@ var texto = new ReactiveVar("");
 var actividadId = new ReactiveVar("");
 var dibujoInicial = new ReactiveVar("");
 
-var dibujosElejibles = [{value: "librocasa", displayName: "Libro casa"},
+var dibujosElejibles = [
+                        // {value: "librocasa", displayName: "Libro casa"},
                         {value: "teconmedialunas", displayName: "Te con medialunas"},
                         {value: "dragon", displayName: "Dragon"},
                         {value: "quiroga", displayName: "Quiroga"},
@@ -30,7 +31,7 @@ var dibujosElejibles = [{value: "librocasa", displayName: "Libro casa"},
 var dibujosRandom = ["teconmedialunas",
                      "dragon",
                      "libroclub",
-                     "librocasa",
+                     // "librocasa",
                      "calavera",
                      "camping",
                      "pantalla",

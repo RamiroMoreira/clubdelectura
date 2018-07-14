@@ -3,6 +3,7 @@ import '/imports/ui/admin/libros/librosAdmin.js';
 import '/imports/ui/users/home.js';
 import '/imports/ui/users/notFound.html';
 import '/imports/ui/users/archivo/actividadesArchivo.js';
+import '/imports/ui/users/achivements/achivements.js';
 import '/imports/ui/users/actividad/actividad.js';
 import '/imports/ui/users/archivo/librosArchivo.js';
 import '/imports/ui/users/archivo/prensaArchivo.js';
@@ -127,9 +128,14 @@ Router.route('/libraryOrganizer', function(){
   this.render('libraryOrganizer')
 })
 
+Router.route('/achievements', function () {
+    this.render('achivements');
+});
+
 Router.configure({
     notFoundTemplate: "NotFound"
 })
+
 //
 Deps.autorun(function () {
     var current = Router.current();

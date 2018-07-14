@@ -13,10 +13,11 @@
                 <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
                     <a class="horizontal-menu-item-2 dropdown-item {{#if active "aliados"}}horizontal-menu-item-2-selected{{/if}}"  href="/aliados">Aliados</a>
                     <a class="horizontal-menu-item-2 dropdown-item {{#if active "libros"}}horizontal-menu-item-2-selected{{/if}}"  href="/archivo/libros">Libros leidos</a>
+                    {{#if hasAchivement}}<a class="horizontal-menu-item-2 dropdown-item {{#if active "achivements"}}horizontal-menu-item-2-selected{{/if}}"  href="/achievements">Achivements</a>{{/if}}
                     <!--<a class="horizontal-menu-item-2 dropdown-item {{#if active "reseñas"}}horizontal-menu-item-2-selected{{/if}}"  href="#">Reseñas</a>-->
                 </div>
             </li>
-        </ul>
+       </ul>
 </template>
 
 <template name="barraHorizontalMovil">
