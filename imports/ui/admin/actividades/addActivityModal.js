@@ -111,9 +111,7 @@ Template.addActivityModal.rendered=function() {
   }
   else{
     this.$('#datetimepickerFin').datetimepicker({format:"DD/MM/YYYY h:mm A"});
-
   }
-
 }
 
 Template.addActivityModal.helpers({

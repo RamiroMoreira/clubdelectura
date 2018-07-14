@@ -16,7 +16,7 @@ Template.nosotros.helpers({
         if(!Personas.findOne()){
             return false;
         }
-        return Personas.find();
+        return Personas.find({},{sort:{nombre:1}});
     },
     'fotos': function(){
         var texto = Textos.findOne({codigo:"presentacion"});

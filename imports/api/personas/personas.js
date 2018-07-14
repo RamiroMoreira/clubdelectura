@@ -65,6 +65,6 @@ Meteor.methods({
 
   // This code only runs on the server
   Meteor.publish('personas', function personasPublication() {
-    return Personas.find();
+    return Personas.find({},{sort:{nombre:-1}});
   });
 }
