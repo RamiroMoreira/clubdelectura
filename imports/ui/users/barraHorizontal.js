@@ -8,7 +8,9 @@ Template.barraHorizontal.onCreated(function(){
         hasAchivements.set(ventana.localStorage.getItem('AchivementSpotify') ||
             ventana.localStorage.getItem('AchivementIlustrado') ||
             ventana.localStorage.getItem('AchivementSatie') ||
-            ventana.localStorage.getItem('AchivementEvilMorty'))
+            ventana.localStorage.getItem('AchivementEvilMorty') ||
+            ventana.localStorage.getItem('achivementCuriosidad'))
+
     },1000)
 })
 

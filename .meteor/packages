@@ -32,8 +32,9 @@ cfs:s3
 tsega:skrollr
 gfk:notifications
 bdunnette:leaflet-draw
-artwells:queue
 hipstersmoothie:scrollmagic
 raix:iscroll
 edgee:slingshot
 jesperwe:bootstrap-select
+http
+aldeed:scheduled-tasks

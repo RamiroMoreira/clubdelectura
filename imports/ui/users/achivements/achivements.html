@@ -5,10 +5,17 @@
                 <div style="margin-bottom:10px;width:100%;height:270px;background-image: url('../portada_colaboradores.png');background-size:cover; background-repeat:no-repeat;">
                 </div>
                 <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
-                ACHIEVEMENTS
-            </span>
+                    ACHIEVEMENTS
+                </span>
             </div>
             <div class="list-personas" style="width:900px;margin:auto;">
+                <br>
+                <div>
+                      <span class="" style="text-align:right; font-family: 'Open Sans', sans-serif; color:white; font-size:16px">
+Oh.. alguien por aquí... Bueno, esto nunca habia pasado antes... ¡Bienvenido!
+¿Que dónde estas? Esta es mi guarida, un lugar donde puedes guardar los logros que vayas obteniendo: pequeños secretos que dejé escondidos en mi código.
+¿Que si hay premio? bueno, esto es incómodo... tal vez, si ENCUENTRAS TODOS y eres el primero en hacerlo, quedarás inmortalizado por medio de una ilustración entre mis páginas. Antes de irte, ¡una advertencia! Puedes comentarles a tus camaradas sobre este lugar pero no reveles cómo obtener ningún logro ¡Buena suerte mequetrefe!                      </span>
+                </div>
                 <div class="persona" style="margin-left:65px;margin-right:65px">
                     <div class="row">
                         {{#each achivements}}
@@ -44,50 +51,54 @@
             </div>
         </div>
         <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
-            {{>barraHorizontal active="aliados"}}
+            {{>barraHorizontal active="achivements"}}
         </div>
     {{else}}
-        <div style="min-width:100wh;min-height:100vh;">
-            <div class="titulo" style="width:100%;margin:auto;text-align:center">
-                <div style="margin-bottom:3vh;width:100%;height:270px;background-image: url('../portada_colaboradores.png');background-size:cover; background-repeat:no-repeat;">
+        <div style="min-width:100wh;min-height:100vh;padding-left:10px;padding-right:10px;">
+            <div class="titulo" style="margin-bottom:50px;width:974px;margin:auto;padding-left:25px;padding-right:25px;text-align:center">
+                <div style="margin-bottom:10px;width:100%;height:270px;background-image: url('../portada_colaboradores.png');background-size:cover; background-repeat:no-repeat;">
                 </div>
-                <span style=" font-family:'Montserrat';font-weight: 700;font-size: 4vh;line-height:30px;font-style: normal; color:white;">
-                ALIADOS
+                <span style=" font-family:'Montserrat';font-weight: 700;font-size: 30px;line-height:30px;font-style: normal; color:white;">
+                ACHIEVEMENTS
             </span>
             </div>
-            <div style="width:900px;margin:auto">
-                <div style="margin-top:2vh;padding:10px;width:100%;">
-            <span class="" style="text-align:right; font-family: 'Open Sans', sans-serif; color:white; font-size:2vh">
-                {{presentacion}}
-            </span>
-                </div>
-                <div class="row">
-                    {{#each colaboradores}}
-                        <a href="{{url}}">
-                            <div class="col-md-4 col-sm-5 col-sm-offset-1" style="margin-top:5px">
-                                <div class="logo-button" style="border-width:0px;height:500px;overflow-y: hidden;display:table">
-                                    <div style="padding:10px;display:table-cell;vertical-align: middle;max-height: 500px">
-                                        <img src="{{urlFoto}}" style="width:100%;height:auto;border-radius: 0%;max-height: 500px">
+            <div class="list-personas" style="width:900px;margin:auto;">
+                <div class="persona" style="margin-left:65px;margin-right:65px">
+                    <div class="row">
+                        {{#each achivements}}
+                            <a>
+                                <div class="col-md-3" style="margin-top:25px">
+                                    <div class="logo-button" style="border-width:0px;height:250px;overflow-y: hidden;display:table">
+                                        <div style="padding:10px;display:table-cell;max-height: 250px">
+                                            {{#if unlocked}}
+                                                <img src="{{imageUnlocked}}" style="width:100%;height:auto;border-radius: 0%;max-height: 250px">
+                                            {{else}}
+                                                <img src="{{imageLocked}}" style="width:100%;height:auto;border-radius: 0%;max-height: 250px">
+                                            {{/if}}
+                                            <br>
+                                            {{#if unlocked}}
+                                                <h3 class="actividad-nombre" style="text-align:center;margin-left:10%;margin-right:10%;line-height:22px;font-size:18px;margin-top:10px;">{{nombre}}</h3>
+                                            {{else}}
+                                                <h3 class="actividad-nombre" style="text-align:center;margin-left:10%;margin-right:10%;line-height:22px;font-size:18px;margin-top:10px;">???????</h3>
+                                            {{/if}}
+                                        </div>
                                     </div>
                                 </div>
-                                <!--<span style="font-family:'Montserrat';font-weight: 700;font-size: 18px;line-height:30px;font-style: normal; color:white;text-align: center"> {{nombre}}</span>-->
-                            </div>
-                        </a>
-
-                    {{/each}}
+                            </a>
+                        {{/each}}
+                        <div class="letritas-container" >
+                            <div style="background-image:url('../letras_lineadetiempo.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
+                            <div class="rotation-very-slow " style="background-image:url('../letras_lineadetiempo2.png');background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="letritas-container" >
-                    <div style="background-size:contain;background-repeat:no-repeat;width:100%;height:100vh"></div>
-                    <div class="rotation-very-slow " style="background-size:contain;background-repeat:no-repeat;width:100%;height:100vh;margin-top:-100vh"></div>
+                <div style="height:60px;width:100%">
+                    <!---->
                 </div>
             </div>
-
         </div>
-        <div style="height:10vh;width:100%">
-
-        </div>
-        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="height:8vh;z-index:5">
-            {{>barraHorizontalMovil active="aliados"}}
+        <div id="nav" data-3000="bottom:-100px" data-3100="bottom:0px" class="bottom-menu {{expandedMenuClass}}" style="z-index:1">
+            {{>barraHorizontal active="achivements"}}
         </div>
     {{/if}}
 </template>

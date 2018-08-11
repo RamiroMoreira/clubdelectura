@@ -13,8 +13,9 @@
                 <div class="dropdown-menu" style="background-color:#171f2a;" aria-labelledby="dropdownMenuButton">
                     <a class="horizontal-menu-item-2 dropdown-item {{#if active "aliados"}}horizontal-menu-item-2-selected{{/if}}"  href="/aliados">Aliados</a>
                     <a class="horizontal-menu-item-2 dropdown-item {{#if active "libros"}}horizontal-menu-item-2-selected{{/if}}"  href="/archivo/libros">Libros leidos</a>
-                    {{#if hasAchivement}}<a class="horizontal-menu-item-2 dropdown-item {{#if active "achivements"}}horizontal-menu-item-2-selected{{/if}}"  href="/achievements">Achivements</a>{{/if}}
-                    <!--<a class="horizontal-menu-item-2 dropdown-item {{#if active "reseñas"}}horizontal-menu-item-2-selected{{/if}}"  href="#">Reseñas</a>-->
+                    {{#if hasAchivement}}<a class="horizontal-menu-item-2 dropdown-item {{#if active "achivements"}}horizontal-menu-item-2-selected{{/if}}"  href="/achievements" style="color:yellow">Achivements</a>{{/if}}
+                    <a class="horizontal-menu-item-2 dropdown-item {{#if active "libroFest"}}horizontal-menu-item-2-selected{{/if}}"  href="/libroFest">Libro Fest</a>
+                    <a class="horizontal-menu-item-2 dropdown-item {{#if active "reseñas"}}horizontal-menu-item-2-selected{{/if}}"  href="/resenas">Reseñas</a>
                 </div>
             </li>
        </ul>
@@ -32,6 +33,8 @@
                 <a class="horizontal-menu-item-2 dropdown-item {{#if active "libros"}}horizontal-menu-item-2-selected{{/if}}"  href="/archivo/libros">Libros leidos</a>
                 <a class="horizontal-menu-item-2 dropdown-item {{#if active "prensa"}}horizontal-menu-item-2-selected{{/if}}"   href="/archivo/prensa">Prensa</a>
                 <a class="horizontal-menu-item-2 dropdown-item {{#if active "aliados"}}horizontal-menu-item-2-selected{{/if}}"  href="/aliados">Aliados</a>
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "libroFest"}}horizontal-menu-item-2-selected{{/if}}"   href="/libroFest">Libro Fest</a>
+                <a class="horizontal-menu-item-2 dropdown-item {{#if active "reseñas"}}horizontal-menu-item-2-selected{{/if}}"  href="/resenas">Reseñas</a>
             </div>
         </li>
         <a href="/"><li class="horizontal-menu-item {{#if active "home"}}horizontal-menu-item-selected{{/if}}">HOME</li></a>

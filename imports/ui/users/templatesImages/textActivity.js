@@ -15,6 +15,29 @@ Template.colaboradoresDisplay.helpers({
     }
 })
 
+Template.colaboradoresDisplay.events({
+    'click .colaborador-link': function(){
+        if(!window.localStorage.getItem('achivementCuriosidad')) {
+            if (window.localStorage.getItem("curiosityStat")) {
+                var curiosityStat = window.localStorage.getItem("curiosityStat");
+                curiosityStat++;
+                window.localStorage.setItem("curiosityStat", curiosityStat);
+            }
+            else {
+                window.localStorage.setItem("curiosityStat", 1);
+            }
+            if (curiosityStat == 3) {
+                Modal.show("newAchivementModal", {
+                    title: "New achivement unlocked!",
+                    texto: "Felicidades amigo curioso! Has entrado a las paginas de 3 aliados.",
+                    icon: "../inspiracion_desbloqueado.png"
+                })
+                window.localStorage.setItem('achivementCuriosidad', true);
+            }
+        }
+    }
+})
+
 Template.textPar.helpers({
     'tieneFoto': function(){
         if(this.fotos && this.fotos.length>0){

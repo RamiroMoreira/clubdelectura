@@ -16,6 +16,8 @@ Template.achivements.helpers({
         achivementsList.push({nombre: 'Gymnopédie', unlocked: gymnopedie, imageLocked: "satie_bloqueado.png", imageUnlocked: "satie_desbloqueado.png"});
         var parcheDeVillano = window.localStorage.getItem('AchivementEvilMorty') ? true : false;
         achivementsList.push({nombre: 'Parche de villano', unlocked: parcheDeVillano, imageLocked: "parche_bloqueado.png", imageUnlocked: "parche_desbloqueado.png"});
+        var curiosidad = window.localStorage.getItem('achivementCuriosidad') ? true : false;
+        achivementsList.push({nombre: 'Curiosidad', unlocked: curiosidad, imageLocked: "inspiracion_bloqueado.png", imageUnlocked:"inspiracion_desbloqueado.png"});
         return achivementsList;
     },
     'isDesktop':function(){

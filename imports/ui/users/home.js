@@ -190,15 +190,6 @@ Template.Home.events({
       audio.pause();
       satie.set(false)
   },
-  // 'click .horizontal-menu-item':function(e){
-  //     if(expandedMenu.get() === e.target.getAttribute('data-value')){
-  //         expandedMenu.set(false);
-  //     }
-  //     else{
-  //         expandedMenu.set(e.target.getAttribute('data-value'));
-  //     }
-  //
-  // },
   'click .navigation-down':function(e){
       // window.scrollTo(0,5000)
       var scrollY = window.scrollY;
